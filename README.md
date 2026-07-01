@@ -66,7 +66,7 @@ Clone this repository into your local web root directory:
 * For WampServer: `C:\wamp64\www\`
 
 ```bash
-git clone https://github.com
+git clone https://github.com/ISURU-SAMPATH-SILVA/uniScholar.git
 ```
 *(Make sure the project folder is named `uniScholar` or `student_resource_hub` inside htdocs)*
 
