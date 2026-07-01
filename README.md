@@ -68,7 +68,7 @@ Clone this repository into your local web root directory:
 ```bash
 git clone https://github.com
 ```
-*(Make sure the project folder is named `uniScholar` or `student_resource_hub` inside htdocs)*
+*(Make sure the project folder is named `uniScholar`  inside htdocs)*
 
 ### 3. Start Local Server
 Open your XAMPP Control Panel and start both **Apache** and **MySQL** modules.
