@@ -4,8 +4,8 @@ A database-driven web application where students can upload, browse, and downloa
 
 ---
 ## 🔗 Project Resources
-* **🎨 Figma Design:** [View Wireframes & UI Components](https://figma.com)
-* **📄 Project Proposal:** [Read Documentation (OneDrive)](https://1drv.ms)
+* **🎨 Figma Design:** [View Wireframes & UI Components](https://www.figma.com/design/jELQAJaf5DkNNVfiscqRnF/uniScholar?node-id=12-2&t=wD71Vq9IuCy68lJv-1)
+* **📄 Project Proposal:** [Read Documentation (OneDrive)](https://1drv.ms/w/c/934766f0936f6af8/IQAMKWC3WVbjQZtNHSvbXc7lAeTUH-EKvZGMdhdKr-umInk?e=3r6cjM)
 
 ---
 ## 🏛️ Academic Context
