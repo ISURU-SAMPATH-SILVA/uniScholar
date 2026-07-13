@@ -3,10 +3,11 @@
 A database-driven web application where students can upload, browse, and download academic resources (lecture notes, past papers, tutorial sheets, etc.) organized by subject code and category. This platform also helps students seamlessly search, apply, and track educational scholarship opportunities in one centralized system.
 
 ---
-## Resources 
-**Figma Design** = https://www.figma.com/design/jELQAJaf5DkNNVfiscqRnF/uniScholar?node-id=12-2&t=wD71Vq9IuCy68lJv-1.
-**propasal doc** = https://1drv.ms/w/c/934766f0936f6af8/IQAMKWC3WVbjQZtNHSvbXc7lAeTUH-EKvZGMdhdKr-umInk?e=3r6cjM
+## 🔗 Project Resources
+* **🎨 Figma Design:** [View Wireframes & UI Components](https://figma.com)
+* **📄 Project Proposal:** [Read Documentation (OneDrive)](https://1drv.ms)
 
+---
 ## 🏛️ Academic Context
 * **University:** Rajarata University of Sri Lanka (RUSL)
 * **Department:** Department of ICT
