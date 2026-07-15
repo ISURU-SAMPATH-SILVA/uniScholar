@@ -3,4 +3,11 @@
   --color-primry: #fffef8;
   --color-secondary: #1c2728;
   --color-accent: #f1890a;
+  --font-base:"poppins", sans-serif;/*manfrond eken lod wela passe poppins ennewa*/
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-base);
 }
