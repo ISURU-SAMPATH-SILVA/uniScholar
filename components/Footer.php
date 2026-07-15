@@ -6,7 +6,7 @@
     text-align: center;
 }
 </style>
-<footer class="main-footer container">
+<footer class="main-footer ">
    <div>
     <img src="img/Brand/Favicon-White.svg" alt="uniScholar-logo">
    </div>
