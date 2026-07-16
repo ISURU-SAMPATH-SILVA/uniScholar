@@ -20,12 +20,9 @@
   <!--  Image Carousel Component  -->
   <?php require 'components/image_carousel.php'; ?>
 
-  <!--  Footer Component  -->
-  <?php require 'components/Footer.php'; ?>
-  
-  
-  
-  
+
+
+  <?php require 'components/item_carousel.php'; ?>
   <!-- Bootstrap v5 JS Bundle  -->
   <script src="https://jsdelivr.net"></script>
 </body>
