@@ -1,4 +1,5 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div class="container-fluid caraousel-container">
+   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <!-- Indicators -->
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -45,4 +46,6 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+
 </div>

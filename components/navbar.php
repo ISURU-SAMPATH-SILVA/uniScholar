@@ -4,13 +4,13 @@
 
 
         <div class="logo">
-            <a href="/index.php">
+            <a href="/uniScholar/index.php">
 
                 <img src="/uniScholar/img/Brand/Favicon-White.svg" alt="uniScholar">
             </a>
         </div>
         <div class="">
-            <a href="/index.php">
+            <a href="/uniScholar/index.php">
                 <h3>
                     uniScholar
                 </h3>
