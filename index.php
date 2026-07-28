@@ -13,18 +13,19 @@
 </head>
 
 <body>
+  <?php require 'components/GPA.php'; ?> 
   <!--  Navbar Component  -->
   <?php require 'components/navbar.php'; ?>
 
   <h1>uniScholar</h1>
   <!--  Image Carousel Component  -->
-  <?php require 'components/image_carousel.php'; ?>
+   
+  
 
-
-
-  <?php require 'components/item_carousel.php'; ?>
+  
   <!-- Bootstrap v5 JS Bundle  -->
   <script src="https://jsdelivr.net"></script>
+  <script src="/App.js"></script>
 </body>
 
 </body>
