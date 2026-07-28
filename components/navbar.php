@@ -1,26 +1,42 @@
 <style>
-    
+
 </style>
 <nav class="main-navbar">
-    <div class="logo">
-        
-        <img src="img/Brand/Favicon-Black.svg" alt="uniScholar">
+
+    <div class="logo-container">
+
+
+        <div class="logo">
+            <a href="/index.php">
+
+                <img src="./img/Brand/Favicon-White.svg" alt="uniScholar">
+            </a>
+        </div>
+        <div class="">
+            <a href="/index.php">
+                <h3>
+                    uniScholar
+                </h3>
+                <h6>
+                    The Ultimate University <br> Study Hub
+                </h6>
+            </a>
+        </div>
+
     </div>
-    <div>
-        <h3>
-            uniScholar
-        </h3>
-        <h6>
-            The Ultimate University <br> Study Hub
-        </h6>
-    </div>
-    <ul class="nav-links">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="Explore.php">Explore</a></li>
-        <li><a href="Course.php">Course</a></li>
-        <li><a href="About.php">About</a></li>
-    </ul>
-    <div>
-        <a href="Login.php"  rel="noopener noreferrer">Login</a>
+     <!-- Hamburger Menu Button  -->
+     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#uniScholarNavbar" aria-controls="uniScholarNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="uniScholarNavbar">
+        <ul class="nav-links">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="Explore.php">Explore</a></li>
+            <li><a href="Course.php">Course</a></li>
+            <li><a href="About.php">About</a></li>
+        </ul>
+        <div>
+            <a href="Login.php" rel="noopener noreferrer">Login</a>
+        </div>
     </div>
 </nav>

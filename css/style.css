@@ -1,41 +1,264 @@
 :root {
   --color-body: #22242a;
-  --color-primry: #fffef8;
+  --color-primary: #fffef8; 
   --color-secondary: #1c2728;
   --color-accent: #f1890a;
-  --font-base:"poppins", sans-serif;/*manfrond eken lod wela passe poppins ennewa*/
+  --font-base: "Poppins", sans-serif;
 }
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-base);
 }
-.text{
-  text-align: center;
-  color: var(--color-primry);
+
+a {
+  text-decoration: none;
 }
-.card{
-  background-color: var(--color-primry);
+
+/* ---- Navbar ---- */
+.main-navbar {
+    background-color: var(--color-body) !important;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #2d3038;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+.logo-container {
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    height: 100%;
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.main-navbar .logo img {
+    height: 40px;
+    width: auto;
+    flex-shrink: 0;
+    display: block;
+}
+
+.main-navbar h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.main-navbar h6 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    opacity: 0.7;
+    line-height: 1.2;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li a {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary) !important;
+    font-size: 0.95rem;
+    line-height: normal;
+    transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--color-accent) !important;
+}
+
+/* Login button */
+.navbar-collapse > div {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-collapse > div a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.4rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    background-color: var(--color-accent);
+    color: var(--color-body);
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: normal;
+    transition: all 0.2s ease;
+}
+
+.navbar-collapse > div a:hover {
+    opacity: 0.85;
+    color: var(--color-body);
+}
+
+.custom-toggler {
+    display: none;
+    border-color: var(--color-accent) !important;
+    background: transparent;
+    order: 3;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+}
+
+/* ---- Desktop: Single-row layout, all items vertically centered ---- */
+@media (min-width: 992px) {
+    .main-navbar {
+        
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container {
+        width: auto;
+        justify-content: flex-start;
+        align-self: center;
+    }
+
+    .navbar-collapse {
+        display: flex !important;
+        justify-content: flex-end;
+        align-items: center;
+        align-self: center;
+        gap: 2rem;
+        width: auto;
+        height: 100%;
+    }
+
+    .navbar-collapse .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-collapse > div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* ---- Responsive (Mobile/Tablet) ---- */
+@media (max-width: 991px) {
+
+    .main-navbar {
+        justify-content: space-between;
+    }
+
+    .logo-container {
+        order: 1;
+    }
+
+    .custom-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none;
+        width: 100%;
+        order: 4;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+        background-color: #16171b;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 15px;
+        border: 1px solid #2d3038;
+    }
+
+    .navbar-collapse .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .navbar-collapse > div {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .main-navbar h6 br {
+        display: none;
+    }
+}
+
+/* ---- Cards Layout ---- */
+.text {
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.card {
+  background-color: var(--color-primary);
   color: var(--color-secondary);
   text-align: center;
   border: 2px solid var(--color-secondary);
-  width: 40vh;
-  margin-top: 7%;
-  
+  width: 100%;         
+  max-width: 300px;    
+  margin: 7% auto 0 auto; 
+  border-radius: 12px;
+  overflow: hidden;
 }
-.card img{
+
+.card img {
   padding: 5%;
   width: 100%;
-  height: 30vh;
-  border-radius: 9%;
+  height: 200px;       
+  object-fit: cover;   
+  border-radius: 14px;
 }
-.card p{
+
+.card p {
   padding: 5%;
 }
-.card h3{
+
+.card h3 {
   font-weight: 700;
 }
-.multiCardCarousel-padi{
+
+.multiCardCarousel-padi {
   padding: 10%;
+}
+/* GPA Calculator */
+.GPA-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-items: center;
 }
