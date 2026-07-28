@@ -16,7 +16,8 @@
 
   <!--  Navbar Component  -->
   <?php require 'components/navbar.php'; ?>
-  <?php require 'components/GPA.php'; ?>
+  <?php require 'components/'; ?>
+
 
   <h1>uniScholar</h1>
   <!--  Image Carousel Component  -->

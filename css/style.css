@@ -1,7 +1,7 @@
 :root {
-  --color-body: #22242a;
-  --color-primary: #fffef8; 
-  --color-secondary: #1c2728;
+  --color-body: #020718;
+  --color-primary: #fffef8;
+  --color-secondary: #0f172b;
   --color-accent: #f1890a;
   --font-base: "Poppins", sans-serif;
 }
@@ -19,202 +19,200 @@ a {
 
 /* ---- Navbar ---- */
 .main-navbar {
-    background-color: var(--color-body) !important;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #2d3038;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 80px;
+  background-color: var(--color-body) !important;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #2d3038;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
 }
 
 .logo-container {
-    display: flex;
-    gap: 1rem;
-    text-decoration: none;
-    height: 100%;
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  height: 100%;
 }
 
 .logo-container a {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
 
 .main-navbar .logo img {
-    height: 40px;
-    width: auto;
-    flex-shrink: 0;
-    display: block;
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
+  display: block;
 }
 
 .main-navbar h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    font-weight: 600;
-    white-space: nowrap;
-    line-height: 1.2;
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .main-navbar h6 {
-    margin: 0;
-    font-weight: 400;
-    font-size: 0.75rem;
-    color: var(--color-primary);
-    opacity: 0.7;
-    line-height: 1.2;
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  opacity: 0.7;
+  line-height: 1.2;
 }
 
 /* Nav Links */
 .nav-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .nav-links li {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links li a {
-    display: flex;
-    align-items: center;
-    color: var(--color-primary) !important;
-    font-size: 0.95rem;
-    line-height: normal;
-    transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  color: var(--color-primary) !important;
+  font-size: 0.95rem;
+  line-height: normal;
+  transition: color 0.2s ease;
 }
 
 .nav-links li a:hover {
-    color: var(--color-accent) !important;
+  color: var(--color-accent) !important;
 }
 
 /* Login button */
 .navbar-collapse > div {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-collapse > div a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1.4rem;
-    border: 1px solid var(--color-accent);
-    border-radius: 4px;
-    background-color: var(--color-accent);
-    color: var(--color-body);
-    font-weight: 500;
-    white-space: nowrap;
-    line-height: normal;
-    transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.4rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  background-color: var(--color-accent);
+  color: var(--color-body);
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: normal;
+  transition: all 0.2s ease;
 }
 
 .navbar-collapse > div a:hover {
-    opacity: 0.85;
-    color: var(--color-body);
+  opacity: 0.85;
+  color: var(--color-body);
 }
 
 .custom-toggler {
-    display: none;
-    border-color: var(--color-accent) !important;
-    background: transparent;
-    order: 3;
+  display: none;
+  border-color: var(--color-accent) !important;
+  background: transparent;
+  order: 3;
 }
 
 .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
 }
 
 /* ---- Desktop: Single-row layout, all items vertically centered ---- */
 @media (min-width: 992px) {
-    .main-navbar {
-        
-        justify-content: space-between;
-        align-items: center;
-    }
+  .main-navbar {
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .logo-container {
-        width: auto;
-        justify-content: flex-start;
-        align-self: center;
-    }
+  .logo-container {
+    width: auto;
+    justify-content: flex-start;
+    align-self: center;
+  }
 
-    .navbar-collapse {
-        display: flex !important;
-        justify-content: flex-end;
-        align-items: center;
-        align-self: center;
-        gap: 2rem;
-        width: auto;
-        height: 100%;
-    }
+  .navbar-collapse {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: center;
+    gap: 2rem;
+    width: auto;
+    height: 100%;
+  }
 
-    .navbar-collapse .nav-links {
-        display: flex;
-        align-items: center;
-    }
+  .navbar-collapse .nav-links {
+    display: flex;
+    align-items: center;
+  }
 
-    .navbar-collapse > div {
-        display: flex;
-        align-items: center;
-    }
+  .navbar-collapse > div {
+    display: flex;
+    align-items: center;
+  }
 }
 
 /* ---- Responsive (Mobile/Tablet) ---- */
 @media (max-width: 991px) {
+  .main-navbar {
+    justify-content: space-between;
+  }
 
-    .main-navbar {
-        justify-content: space-between;
-    }
+  .logo-container {
+    order: 1;
+  }
 
-    .logo-container {
-        order: 1;
-    }
+  .custom-toggler {
+    display: block;
+  }
 
-    .custom-toggler {
-        display: block;
-    }
+  .navbar-collapse {
+    display: none;
+    width: 100%;
+    order: 4;
+  }
 
-    .navbar-collapse {
-        display: none;
-        width: 100%;
-        order: 4;
-    }
+  .navbar-collapse.show {
+    display: block;
+    background-color: #16171b;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #2d3038;
+  }
 
-    .navbar-collapse.show {
-        display: block;
-        background-color: #16171b;
-        padding: 20px;
-        border-radius: 8px;
-        margin-top: 15px;
-        border: 1px solid #2d3038;
-    }
+  .navbar-collapse .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
 
-    .navbar-collapse .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.2rem;
-        width: 100%;
-        margin-bottom: 1.5rem;
-    }
+  .navbar-collapse > div {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
 
-    .navbar-collapse > div {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .main-navbar h6 br {
-        display: none;
-    }
+  .main-navbar h6 br {
+    display: none;
+  }
 }
 
 /* ---- Cards Layout ---- */
@@ -228,9 +226,9 @@ a {
   color: var(--color-secondary);
   text-align: center;
   border: 2px solid var(--color-secondary);
-  width: 100%;         
-  max-width: 300px;    
-  margin: 7% auto 0 auto; 
+  width: 100%;
+  max-width: 300px;
+  margin: 7% auto 0 auto;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -238,8 +236,8 @@ a {
 .card img {
   padding: 5%;
   width: 100%;
-  height: 200px;       
-  object-fit: cover;   
+  height: 200px;
+  object-fit: cover;
   border-radius: 14px;
 }
 
@@ -254,11 +252,211 @@ a {
 .multiCardCarousel-padi {
   padding: 10%;
 }
-/* GPA Calculator */
-.GPA-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    align-items: center;
+
+/* GPA CALCULATOR  */
+
+.GPA-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  color: var(--color-primary);
+  min-height: 100vh;
+
+}
+
+.GPA-container h1 {
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 4rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.GPA-select {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  background-color: var(--color-secondary);
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(241, 137, 10, 0.15);
+}
+
+/* First field (university) and the results block span full width */
+.GPA-select > select#universitySelect,
+.GPA-select > .GPA-Results {
+  grid-column: 1 / -1;
+}
+
+.GPA-select > select#universitySelect {
+  order: -1;
+}
+
+.GPA-select p {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+.GPA-select > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Selects & inputs */
+.GPA-select select,
+.GPA-select input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2d3038;
+  background-color: var(--color-body);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-base);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.GPA-select input[type="text"] {
+  cursor: text;
+}
+
+.GPA-select select:hover,
+.GPA-select input[type="text"]:hover {
+  border-color: var(--color-accent);
+}
+
+.GPA-select select:focus,
+.GPA-select input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(241, 137, 10, 0.25);
+}
+
+.GPA-select select option {
+  background-color: var(--color-body);
+  color: var(--color-primary);
+}
+
+.GPA-select input::placeholder {
+  color: rgba(255, 254, 248, 0.4);
+}
+
+/* Course code group */
+.GPA-cours {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+}
+
+.GPA-cours label.GPA-cours {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+/* Results bar */
+.GPA-Results {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-accent);
+  background: linear-gradient(135deg, rgba(241, 137, 10, 0.12), rgba(241, 137, 10, 0.03));
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.GPA-Results:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(241, 137, 10, 0.2);
+}
+
+.GPA-Results-achieve,
+.GPA-Results-calculator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GPA-Results-achieve img{
+  width: 8%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.GPA-Results-calculator img {
+  width: 35%;
+  height: auto;
+  filter: brightness(0) invert(1);
+  margin-top: 15%;
+  opacity: 20%;
+}
+
+.GPA-Results p {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 768px) {
+  .GPA-container {
+    padding: 2rem 1rem;
+  }
+
+  .GPA-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .GPA-select {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+    gap: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .GPA-Results {
+    padding: 0.9rem 1.2rem;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 480px) {
+  .GPA-select {
+    padding: 1.25rem;
+  }
+
+  .GPA-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .GPA-select select,
+  .GPA-select input[type="text"] {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .GPA-Results-achieve img{
+    width: 10%;
+  }
+  .GPA-Results-calculator img {
+    width: 25%;
+    height: auto;
+  }
 }
