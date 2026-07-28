@@ -1,6 +1,6 @@
 <footer class="main-footer mt-5"> 
     <div>
-        <img src="img/Brand/Favicon-White.svg" alt="uniScholar-logo">
+        <img src="../img/Brand/Favicon-White.svg" alt="uniScholar-logo">
     </div>
     <div class="divQuickLinks">
         <h2>Quick Links</h2>
