@@ -6,7 +6,7 @@
         <div class="logo">
             <a href="/uniScholar/index.php">
 
-                <img src="/uniScholar/img/Brand/Favicon-White.svg" alt="uniScholar">
+                <img src="uniScholar/img/Brand/Favicon-White.svg" alt="uniScholar">
             </a>
         </div>
         <div class="">
