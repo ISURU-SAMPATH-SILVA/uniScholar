@@ -11,6 +11,7 @@
 
     
     <div class="description-text-box">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium ea saepe unde aut, vel similique iure ipsum eos nesciunt hic nostrum quia pariatur sunt ipsa obcaecati explicabo esse culpa maxime.
+        Discover Our Mission
+UniScholar is a centralized, student-driven academic ecosystem developed specifically for higher education institutes. The platform serves a dual purpose: acting as a digital repository for high-quality academic resources and a comprehensive search engine for educational scholarships
     </div>
 </div>

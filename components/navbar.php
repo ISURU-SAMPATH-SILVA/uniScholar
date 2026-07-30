@@ -33,6 +33,9 @@
             <li><a href="/uniScholar/components/About.php">About</a></li>
             <li><a href="/uniScholar/components/GPA.php">GPA calculators</a></li>
         </ul>
+          <div>
+            <a href="/uniScholar/components/sing in.php" rel="noopener noreferrer">sing in</a>
+        </div>
         <div>
             <a href="/uniScholar/components/Login.php" rel="noopener noreferrer">Login</a>
         </div>
