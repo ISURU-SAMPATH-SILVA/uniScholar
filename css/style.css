@@ -747,3 +747,140 @@ a {
     text-align: center;
   }
 }
+/* ---- About Page ---- */
+.About_UniScholar {
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
+    color: var(--color-primary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.About_UniScholar h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.8rem;
+}
+
+.About_UniScholar h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.About_UniScholar p {
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.85;
+    color: var(--color-body);
+}
+
+.What_We_Offer {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+    color: var(--color-secondary);
+}
+
+.What_We_Offer h3 {
+    color: var(--color-accent);
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.What_We_Offer p {
+    opacity: 0.85;
+    font-size: 1rem;
+}
+
+/* Feature cards */
+.Resource_Sharing,
+.Scholarship_Finder,
+.Student_Dashboard {
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+    padding: 2rem;
+    background-color: var(--color-secondary);
+    border-radius: 16px;
+    border: 1px solid rgba(241, 137, 10, 0.15);
+    color: var(--color-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Student_Dashboard {
+    margin-bottom: 3rem;
+}
+
+.Resource_Sharing:hover,
+.Scholarship_Finder:hover,
+.Student_Dashboard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(241, 137, 10, 0.12);
+}
+
+.Resource_Sharing h4,
+.Scholarship_Finder h4,
+.Student_Dashboard h4 {
+    color: var(--color-accent);
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.Resource_Sharing p,
+.Scholarship_Finder p,
+.Student_Dashboard p {
+    line-height: 1.7;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 768px) {
+    .About_UniScholar h1 {
+        font-size: 2rem;
+    }
+
+    .Resource_Sharing,
+    .Scholarship_Finder,
+    .Student_Dashboard {
+        padding: 1.5rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 480px) {
+    .About_UniScholar {
+        padding: 2.5rem 1.2rem 2rem;
+    }
+
+    .About_UniScholar h1 {
+        font-size: 1.6rem;
+    }
+
+    .What_We_Offer {
+        padding: 0 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .Resource_Sharing,
+    .Scholarship_Finder,
+    .Student_Dashboard {
+        padding: 1.2rem;
+        margin-left: 1.2rem;
+        margin-right: 1.2rem;
+        border-radius: 12px;
+    }
+
+    .Resource_Sharing h4,
+    .Scholarship_Finder h4,
+    .Student_Dashboard h4 {
+        font-size: 1.1rem;
+    }
+}
