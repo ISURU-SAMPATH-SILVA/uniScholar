@@ -110,6 +110,8 @@
 
         </div>
     </div>
+        <?php require 'Footer.php'; ?>
+
 
 
 </body>
