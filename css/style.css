@@ -894,21 +894,8 @@ a {
     font-size: 1.1rem;
   }
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 
-body {
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #31103f 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px 0;
-}
+
 
 .card {
   background: rgba(255, 255, 255, 0.96);
