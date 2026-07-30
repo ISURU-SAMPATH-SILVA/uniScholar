@@ -31,7 +31,8 @@
     </div>
     <div>
         <h2>About</h2>
-        <p>public University located in the historic city of Mihintale, near Anuradhapura, Sri Lanka. The Rajarata University of Sri Lanka was established as the eleventh University in Sri Lanka and was opened on January 31st, 1996.</p>
+        <p>Discover Our Mission
+UniScholar is a centralized, student-driven academic ecosystem developed specifically for higher education institutes. The platform serves a dual purpose: acting as a digital repository for high-quality academic resources and a comprehensive search engine for educational scholarships</p>
     </div>
     <div>
         <p>&copy; Footer: © 2026 uniScholar |
