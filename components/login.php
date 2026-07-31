@@ -7,41 +7,43 @@
     <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
     <title>uniScholar - Login</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
 
 </head>
 
 <body>
-    <div class="card">
+    <div class="Login-card">
         <!-- Logo Area -->
-        <div class="avatar-box"></div>
-        <h1 class="brand-name">uniScholar</h1>
-        <h2 class="form-title">LOGIN</h2>
+        <div class="Login-avatar-box">
+            <img src="../img/Brand/Logo.svg" alt="uniScholar Logo" class="Login-avatar">
+        </div>
+        <h1 class="Login-brand-name">uniScholar</h1>
+        <h2 class="Login-form-title">LOGIN</h2>
 
         <!-- Login Form -->
         <form action="#">
-            <div class="input-group">
+            <div class="Login-input-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" placeholder="username@email.com" required>
                 <a href="#" class="forgot-link">Forgot Email?</a>
             </div>
 
-            <div class="input-group">
+            <div class="Login-input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" placeholder="••••••••••••" required>
                 <a href="#" class="forgot-link">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="btn btn-primary">SUBMIT</button>
+            <button type="submit" class="Login-btn btn-primary">SUBMIT</button>
 
-            <button type="button" class="btn btn-google">
+            <button type="button" class="Login-btn btn-google">
                 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
                 Login With Google
             </button>
         </form>
 
-        <p class="footer-text">
+        <p class="Login-footer-text">
             Don't have an account? <a href="register.php">Register</a>
         </p>
     </div>

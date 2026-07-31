@@ -894,147 +894,163 @@ a {
     font-size: 1.1rem;
   }
 }
+/* ---- Login Page ---- */
 
-.card {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.Login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  padding: 2rem 1rem;
+}
+
+.Login-card{
   width: 100%;
   max-width: 420px;
-  min-height: 560px;
-  padding: 40px 30px;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.2);
+  background-color: var(--color-secondary);
+  border: 1px solid rgba(241, 137, 10, 0.15);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 24px;
-  justify-content: center;
+  text-align: center;
 }
 
 
-.avatar-box {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #4f46e5, #06b6d4);
-  border-radius: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.3);
+.Login-avatar-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-body);
+  border: 2px solid var(--color-accent);
+  margin-bottom: 1rem;
 }
 
-.brand-name {
-  font-size: 26px;
+.Login-brand-name {
+  color: var(--color-accent);
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #0f172a;
-  letter-spacing: -0.5px;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
 }
 
-.form-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #64748b;
-  margin-bottom: 24px;
+.Login-form-title {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 2px;
+  opacity: 0.8;
+  margin-bottom: 2rem;
 }
 
-
-form {
+/* Form */
+.Login-card form {
   width: 100%;
-}
-
-.row {
-  display: flex;
-  gap: 12px;
-}
-
-.row .input-group {
-  flex: 1;
-}
-
-.input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  gap: 1.25rem;
 }
 
-.input-group label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #334155;
-  margin-bottom: 6px;
+.login-input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
-.input-group input {
+.login-input-group label {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-bottom: 0.4rem;
+}
+
+.login-input-group input {
   width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 12px;
-  background-color: #f8fafc;
-  font-size: 14px;
-  color: #0f172a;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2d3038;
+  background-color: var(--color-body);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-base);
   outline: none;
-  transition: all 0.25s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.input-group input:focus {
-  border-color: #4f46e5;
-  background-color: #fff;
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+.login-input-group input::placeholder {
+  color: rgba(255, 254, 248, 0.4);
+}
+
+.login-input-group input:hover {
+  border-color: var(--color-accent);
+}
+
+.login-input-group input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(241, 137, 10, 0.25);
 }
 
 .forgot-link {
   align-self: flex-end;
-  font-size: 12px;
-  color: #4f46e5;
-  text-decoration: none;
-  font-weight: 500;
-  margin-top: 5px;
+  margin-top: 0.4rem;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
 }
 
 .forgot-link:hover {
+  opacity: 1;
   text-decoration: underline;
 }
 
-
-.btn {
+.Login-btn {
   width: 100%;
-  padding: 13px;
-  border-radius: 12px;
-  font-size: 14px;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-accent);
+  font-size: 0.95rem;
   font-weight: 600;
+  font-family: var(--font-base);
   cursor: pointer;
-  border: none;
-  transition: all 0.2s ease;
-  margin-top: 8px;
+  transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+.Login-btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-body);
 }
 
-.btn-primary:hover {
-  opacity: 0.95;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.45);
+.Login-btn-primary:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
-
 
 .btn-google {
-  background-color: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  color: #334155;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.btn-google:hover {
-  background-color: #f8fafc;
-  border-color: #94a3b8;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2d3038;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .btn-google img {
@@ -1042,21 +1058,73 @@ form {
   height: 18px;
 }
 
-.footer-text {
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 22px;
-  text-align: center;
+.btn-google:hover {
+background-color: var(--color-primary);
+opacity: calc(.59);
+transform: translateY(-2px);}
+
+
+.login-footer-text {
+  margin-top: 1.5rem;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
 
-.footer-text a {
-  color: #4f46e5;
+.login-footer-text a {
+  color: var(--color-accent);
   font-weight: 600;
-  text-decoration: none;
 }
 
-.footer-text a:hover {
+.login-footer-text a:hover {
   text-decoration: underline;
 }
 
->>>>>>>24eeb19dc4c5e15cc8066cb27de1d53cb0d4e76d
+/* ---- Tablet ---- */
+@media (max-width: 768px) {
+  .Login-card.Login-body {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .Login-brand-name {
+    font-size: 1.4rem;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 480px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+
+  .Login-card.Login-body {
+    padding: 1.75rem 1.25rem;
+    max-width: 100%;
+  }
+
+  .Login-avatar-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .Login-brand-name {
+    font-size: 1.25rem;
+  }
+
+  .Login-form-title {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .login-input-group input {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .Login-btn,
+  .btn-google {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+}
