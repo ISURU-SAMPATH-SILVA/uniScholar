@@ -16,7 +16,7 @@
     <div class="Login-card">
         <!-- Logo Area -->
         <div class="Login-avatar-box">
-            <img src="../img/Brand/Logo.svg" alt="uniScholar Logo" class="Login-avatar">
+            <img src="../img/Brand/Favicon-White.svg" alt="uniScholar Logo" class="Login-avatar">
         </div>
         <h1 class="Login-brand-name">uniScholar</h1>
         <h2 class="Login-form-title">LOGIN</h2>
@@ -35,7 +35,7 @@
                 <a href="#" class="forgot-link">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="Login-btn btn-primary">SUBMIT</button>
+            <button type="submit" class="Login-btn Login-btn-primary">SUBMIT</button>
 
             <button type="button" class="Login-btn btn-google">
                 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
