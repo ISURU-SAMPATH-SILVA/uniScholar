@@ -112,6 +112,8 @@
     </div>
         <?php require 'Footer.php'; ?>
 
+        <script src="../js/gpa_calculator.js"></script>
+
 
 
 </body>
