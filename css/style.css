@@ -1055,7 +1055,8 @@ a {
 }
 
 .Login-btn.btn-google:hover {
-  opacity: 0.85;
+  color: var(--color-primary);
+  opacity: 0.75;
   transform: none;
 }
 
@@ -1072,6 +1073,7 @@ a {
 }
 
 .Login-footer-text a:hover {
+  color: var(--color-accent);
   text-decoration: underline;
 }
 

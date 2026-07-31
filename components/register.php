@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
     <title>uniScholar - Register</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.bundle.min.js" defer></script>
 </head>
 
 <body>
     <div class="Login-card">
         <!-- Logo Area -->
-        <div class="Login-avatar-box"></div>
+        <div class="Login-avatar-box">
+            <img src="../img/Brand/Favicon-White.svg" alt="">
+        </div>
         <h1 class="Login-brand-name">uniScholar</h1>
         <h2 class="Login-form-title">REGISTER</h2>
 
@@ -46,16 +49,16 @@
                 <input type="password" id="confirm-pass" placeholder="••••••••" required>
             </div>
 
-            <button type="submit" class="Login-btn btn-primary">Register</button>
+            <button type="submit" class="Login-btn Login-btn-primary">Register</button>
 
-            <button type="button" class="btn btn-google">
+            <button type="button" class="Login-btn btn-google">
                 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
                 Login With Google
             </button>
         </form>
 
         <p class="Login-footer-text">
-            Already have an account? <a href="login.html">Login</a>
+            Already have an account? <a href="/uniScholar/components/Login.php">Login</a>
         </p>
     </div>
 </body>
