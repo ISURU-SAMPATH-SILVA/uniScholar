@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
     <title>uniScholar - Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="../js/bootstrap.bundle.min.js" defer></script>
+
 </head>
 
 <body>
@@ -40,7 +42,7 @@
         </form>
 
         <p class="footer-text">
-            Don't have an account? <a href="register.html">Register</a>
+            Don't have an account? <a href="register.php">Register</a>
         </p>
     </div>
 </body>
