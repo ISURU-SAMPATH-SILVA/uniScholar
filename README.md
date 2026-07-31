@@ -106,8 +106,4 @@ You can log in using this pre-configured testing account or register a new one:
 
 ---
 
-## 🤝 Contributing
-Contributions are welcome! Please fork this repository and open a pull request for any improvements, UI enhancements, or bug fixes.
 
-## 📄 License
-This project is open-source and licensed under the [MIT License](https://opensource.org).

@@ -215,6 +215,12 @@ a {
     display: none;
   }
 }
+/*carasal*/
+.carousel-item img {
+    height: 78vh; 
+    object-fit: cover;
+}
+
 
 /* ---- Cards Layout ---- */
 .text {
