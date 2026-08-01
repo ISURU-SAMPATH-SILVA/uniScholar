@@ -17,7 +17,8 @@
 
     <div class="Admin-wrapper">
 
-        <?php require 'components/admin-sidebar.php'; ?>
+        <?php require 'slide_bar.php'; ?> 
+        <?php require 'admin_slide_bar_script.php'; ?>
 
         <!-- Main content -->
         <main class="Admin-main">
@@ -122,7 +123,7 @@
         </main>
     </div>
 
-    <?php require 'components/admin-sidebar-script.php'; ?>
+    <?php require 'admin_slide_bar_script.php'; ?>
 
 </body>
 
