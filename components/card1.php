@@ -1,10 +1,10 @@
 <div class="container card">
   <div class="">
-    <img src="img/icon/loupe.png" class="d-block w-100" alt="First Slide">
+    <img src="img/icon/apply-flag.png" class="d-block w-100" alt="First Slide">
   </div>
   <div class="">
-    <h3>What is course</h3>
+    <h3>Applied Sciences Faculty</h3>
   </div>
-  <div class=""><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, corrupti eos. Modi atque excepturi facilis dicta velit nisi quod inventore minima, facere praesentium corporis deserunt nesciunt hic aperiam, quis nostrum?</p></div>
+  <div class=""><p>Bridge theory and practical innovation through scientific research, data analysis, and real-world problem-solving.</p></div>
   <div><a href="#"><h5><b>Seen more ..</b></h5></a></div>
 </div>
