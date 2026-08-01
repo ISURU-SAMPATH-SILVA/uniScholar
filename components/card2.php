@@ -1,10 +1,10 @@
 <div class="container card">
   <div class="">
-    <img src="img/icon/robotic-arm.png" class="d-block w-100" alt="First Slide">
+    <img src="img/icon/arg-flag.png" class="d-block w-100" alt="First Slide">
   </div>
   <div class="">
-    <h3>What is course</h3>
+    <h3>Agriculture Faculty</h3>
   </div>
-  <div class=""><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, corrupti eos. Modi atque excepturi facilis dicta velit nisi quod inventore minima, facere praesentium corporis deserunt nesciunt hic aperiam, quis nostrum?</p></div>
+  <div class=""><p>Master sustainable farming techniques, agricultural technology, and modern practices to drive productivity and food security</p></div>
   <div><a href="#"><h5><b>Seen more ..</b></h5></a></div>
 </div>
