@@ -33,8 +33,8 @@ if (!isset($activePage)) {
             <li class="<?php echo $activePage === 'search' ? 'active' : ''; ?>">
                 <a href="admin-search.php"><img src="../img/icon/students.svg" alt="" class="Admin-icon-img"> Students</a>
             </li>
-            <li class="<?php echo $activePage === 'universities' ? 'active' : ''; ?>">
-                <a href="admin-universities.php"><img src="../img/icon/universities.svg" alt="" class="Admin-icon-img"> Universities</a>
+            <li class="<?php echo $activePage === 'student' ? 'active' : ''; ?>">
+                <a href="admin-student.php"><img src="../img/icon/universities.svg" alt="" class="Admin-icon-img"> Universities</a>
             </li>
             <li class="<?php echo $activePage === 'courses' ? 'active' : ''; ?>">
                 <a href="admin-courses.php"><img src="../img/icon/courses.svg" alt="" class="Admin-icon-img"> Courses</a>
