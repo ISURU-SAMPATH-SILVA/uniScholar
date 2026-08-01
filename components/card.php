@@ -3,8 +3,8 @@
     <img src="img/icon/medical.png" class="d-block w-100" alt="First Slide">
   </div>
   <div class="">
-    <h3>What is course</h3>
+    <h3>Medicine Faculty</h3>
   </div>
-  <div class=""><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, corrupti eos. Modi atque excepturi facilis dicta velit nisi quod inventore minima, facere praesentium corporis deserunt nesciunt hic aperiam, quis nostrum?</p></div>
+  <div class=""><p>Gain essential healthcare knowledge, clinical insights, and medical advancements to improve patient outcomes and well-being.</p></div>
   <div><a href="#"><h5><b>Seen more ..</b></h5></a></div>
 </div>
