@@ -31,13 +31,13 @@ if (!isset($activePage)) {
                 <a href="admin-dashboard.php"><img src="../img/icon/dashboard.svg" alt="" class="Admin-icon-img"> Dashboard</a>
             </li>
             <li class="<?php echo $activePage === 'search' ? 'active' : ''; ?>">
-                <a href="admin-search.php"><img src="../img/icon/students.svg" alt="" class="Admin-icon-img"> Students</a>
+                <a href="admin-search.php"><img src="../img/icon/students.svg" alt="" class="Admin-icon-img"> Search</a>
             </li>
             <li class="<?php echo $activePage === 'student' ? 'active' : ''; ?>">
-                <a href="admin-student.php"><img src="../img/icon/universities.svg" alt="" class="Admin-icon-img"> Universities</a>
+                <a href="admin-student.php"><img src="../img/icon/universities.svg" alt="" class="Admin-icon-img"> Student</a>
             </li>
-            <li class="<?php echo $activePage === 'courses' ? 'active' : ''; ?>">
-                <a href="admin-courses.php"><img src="../img/icon/courses.svg" alt="" class="Admin-icon-img"> Courses</a>
+            <li class="<?php echo $activePage === 'classroom' ? 'active' : ''; ?>">
+                <a href="admin-classroom.php"><img src="../img/icon/courses.svg" alt="" class="Admin-icon-img"> Classroom</a>
             </li>
             <li class="<?php echo $activePage === 'scholarships' ? 'active' : ''; ?>">
                 <a href="admin-scholarships.php"><img src="../img/icon/scholarships.svg" alt="" class="Admin-icon-img"> Scholarships</a>
