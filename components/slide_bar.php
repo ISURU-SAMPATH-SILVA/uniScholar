@@ -30,8 +30,8 @@ if (!isset($activePage)) {
             <li class="<?php echo $activePage === 'dashboard' ? 'active' : ''; ?>">
                 <a href="admin-dashboard.php"><img src="../img/icon/dashboard.svg" alt="" class="Admin-icon-img"> Dashboard</a>
             </li>
-            <li class="<?php echo $activePage === 'students' ? 'active' : ''; ?>">
-                <a href="admin-students.php"><img src="../img/icon/students.svg" alt="" class="Admin-icon-img"> Students</a>
+            <li class="<?php echo $activePage === 'search' ? 'active' : ''; ?>">
+                <a href="admin-search.php"><img src="../img/icon/students.svg" alt="" class="Admin-icon-img"> Students</a>
             </li>
             <li class="<?php echo $activePage === 'universities' ? 'active' : ''; ?>">
                 <a href="admin-universities.php"><img src="../img/icon/universities.svg" alt="" class="Admin-icon-img"> Universities</a>
