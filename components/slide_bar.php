@@ -1,8 +1,5 @@
 <?php
-// components/admin-sidebar.php
-// Me file eka admin pages okkoma athule include karanna.
-// Active link eka auto-highlight wenna, oya page ekema top ekata me variable eka danna:
-//   $activePage = 'dashboard'; // 'students' | 'universities' | 'courses' | 'scholarships' | 'resources' | 'settings'
+
 if (!isset($activePage)) {
     $activePage = '';
 }
@@ -28,32 +25,32 @@ if (!isset($activePage)) {
     <nav class="Admin-nav">
         <ul>
             <li class="<?php echo $activePage === 'dashboard' ? 'active' : ''; ?>">
-                <a href="admin-dashboard.php"><img src="../img/icon/dashboard.svg" alt="" class="Admin-icon-img"> Dashboard</a>
+                <a href="admin-dashboard.php"><img src="../img/icon/dashboard.png" alt="" class="Admin-icon-img"> Dashboard</a>
             </li>
             <li class="<?php echo $activePage === 'search' ? 'active' : ''; ?>">
-                <a href="admin-search.php"><img src="../img/icon/students.svg" alt="" class="Admin-icon-img"> Search</a>
+                <a href="admin-search.php"><img src="../img/icon/loupe.png" alt="" class="Admin-icon-img"> Search</a>
             </li>
             <li class="<?php echo $activePage === 'student' ? 'active' : ''; ?>">
-                <a href="admin-student.php"><img src="../img/icon/universities.svg" alt="" class="Admin-icon-img"> Student</a>
+                <a href="admin-student.php"><img src="../img/icon/graduated.png" alt="" class="Admin-icon-img"> Student</a>
             </li>
             <li class="<?php echo $activePage === 'classroom' ? 'active' : ''; ?>">
-                <a href="admin-classroom.php"><img src="../img/icon/courses.svg" alt="" class="Admin-icon-img"> Classroom</a>
+                <a href="admin-classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
             </li>
             <li class="<?php echo $activePage === 'admission' ? 'active' : ''; ?>">
-                <a href="admin-admission.php"><img src="../img/icon/scholarships.svg" alt="" class="Admin-icon-img"> Admission</a>
+                <a href="admin-admission.php"><img src="../img/icon/edit.png" alt="" class="Admin-icon-img"> Admission</a>
             </li>
             <li class="<?php echo $activePage === 'broadcast' ? 'active' : ''; ?>">
-                <a href="admin-broadcast.php"><img src="../img/icon/resources.svg" alt="" class="Admin-icon-img"> Broadcast</a>
+                <a href="admin-broadcast.php"><img src="../img/icon/messages.png" alt="" class="Admin-icon-img"> Broadcast</a>
             </li>
             <li class="<?php echo $activePage === 'course' ? 'active' : ''; ?>">
-                <a href="admin-course.php"><img src="../img/icon/settings.svg" alt="" class="Admin-icon-img"> Course</a>
+                <a href="admin-course.php"><img src="../img/icon/folder.png" alt="" class="Admin-icon-img"> Course</a>
             </li>
         </ul>
     </nav>
 
     <div class="Admin-sidebar-footer">
         <a href="logout.php" class="Admin-logout-link">
-            <img src="../img/icon/logout.svg" alt="" class="Admin-icon-img"> Logout
+            <img src="../img/icon/power.png" alt="" class="Admin-icon-img"> Logout
         </a>
     </div>
 </aside>

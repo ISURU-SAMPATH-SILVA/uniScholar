@@ -30,7 +30,7 @@
                 </div>
                 <div class="Admin-topbar-profile">
                     <span>Admin</span>
-                    <img src="../img/Brand/Favicon-White.svg" alt="Admin">
+                    <img src="../img/icon/graduated.png" alt="Admin">
                 </div>
             </div>
 
@@ -40,30 +40,30 @@
             <!-- Stat cards -->
             <div class="Admin-stats-grid">
                 <div class="Admin-stat-card">
-                    <div class="Admin-stat-icon">🎓</div>
+                    <div class="Admin-stat-icon">👨‍🎓</div>
                     <div>
                         <h2>1,248</h2>
                         <p>Total Students</p>
                     </div>
                 </div>
                 <div class="Admin-stat-card">
-                    <div class="Admin-stat-icon">🏛️</div>
+                    <div class="Admin-stat-icon">🏫</div>
                     <div>
                         <h2>18</h2>
                         <p>Universities</p>
                     </div>
                 </div>
                 <div class="Admin-stat-card">
-                    <div class="Admin-stat-icon">📚</div>
+                    <div class="Admin-stat-icon">📑</div>
                     <div>
                         <h2>342</h2>
                         <p>Courses Listed</p>
                     </div>
                 </div>
                 <div class="Admin-stat-card">
-                    <div class="Admin-stat-icon">💰</div>
+                    <div class="Admin-stat-icon">✈️</div>
                     <div>
-                        <h2>27</h2>
+                        <h2>2</h2>
                         <p>Active Scholarships</p>
                     </div>
                 </div>
@@ -88,28 +88,22 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Nimasha Perera</td>
+                                <td>Nisal Nethsara</td>
                                 <td>University of Colombo</td>
                                 <td>Computer Science</td>
                                 <td><span class="Admin-badge Admin-badge-active">Active</span></td>
                                 <td>2026-07-28</td>
                             </tr>
                             <tr>
-                                <td>Kasun Fernando</td>
+                                <td>Menuka Sadaruwan</td>
                                 <td>University of Moratuwa</td>
                                 <td>Electronics Eng.</td>
                                 <td><span class="Admin-badge Admin-badge-pending">Pending</span></td>
                                 <td>2026-07-27</td>
                             </tr>
+                        
                             <tr>
-                                <td>Dilani Wickramasinghe</td>
-                                <td>University of Peradeniya</td>
-                                <td>Business Mgmt.</td>
-                                <td><span class="Admin-badge Admin-badge-active">Active</span></td>
-                                <td>2026-07-25</td>
-                            </tr>
-                            <tr>
-                                <td>Ashan Silva</td>
+                                <td>Indika Thotawaththa</td>
                                 <td>University of Kelaniya</td>
                                 <td>Mathematics</td>
                                 <td><span class="Admin-badge Admin-badge-inactive">Inactive</span></td>
