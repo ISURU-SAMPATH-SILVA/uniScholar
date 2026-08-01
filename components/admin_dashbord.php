@@ -17,7 +17,7 @@
 
     <div class="Admin-wrapper">
 
-        <?php require 'slide_bar.php'; ?> 
+        <?php require 'admin_slide_bar.php'; ?> 
         <?php require 'admin_slide_bar_script.php'; ?>
 
         <!-- Main content -->

@@ -5,7 +5,7 @@ if (!isset($activePage)) {
 }
 ?>
 
-<!-- Mobile top bar (shown only on small screens) -->
+
 <div class="Admin-mobile-topbar">
     <button class="Admin-toggle-btn" id="sidebarToggle" type="button">
         <span></span><span></span><span></span>

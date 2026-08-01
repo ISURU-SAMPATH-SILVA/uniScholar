@@ -1,0 +1,58 @@
+<?php
+
+if (!isset($activePage)) {
+    $activePage = '';
+}
+?>
+
+
+<div class="Admin-mobile-topbar">
+    <button class="Admin-toggle-btn" id="sidebarToggle" type="button">
+        <span></span><span></span><span></span>
+    </button>
+    <span class="Admin-mobile-brand">uniScholar Admin</span>
+</div>
+
+<aside class="Admin-sidebar" id="adminSidebar">
+    <div class="Admin-sidebar-brand">
+        <img src="../img/Brand/Favicon-White.svg" alt="uniScholar" class="Admin-sidebar-logo">
+        <div>
+            <h3>uniScholar</h3>
+            <h6>Admin Panel</h6>
+        </div>
+    </div>
+
+    <nav class="Admin-nav">
+        <ul>
+            <li class="<?php echo $activePage === 'dashboard' ? 'active' : ''; ?>">
+                <a href="admin-dashboard.php"><img src="../img/icon/dashboard.png" alt="" class="Admin-icon-img"> Dashboard</a>
+            </li>
+            <li class="<?php echo $activePage === 'search' ? 'active' : ''; ?>">
+                <a href="admin-search.php"><img src="../img/icon/loupe.png" alt="" class="Admin-icon-img"> Search</a>
+            </li>
+            <li class="<?php echo $activePage === 'student' ? 'active' : ''; ?>">
+                <a href="admin-student.php"><img src="../img/icon/graduated.png" alt="" class="Admin-icon-img"> Student</a>
+            </li>
+            <li class="<?php echo $activePage === 'classroom' ? 'active' : ''; ?>">
+                <a href="admin-classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
+            </li>
+            <li class="<?php echo $activePage === 'admission' ? 'active' : ''; ?>">
+                <a href="admin-admission.php"><img src="../img/icon/edit.png" alt="" class="Admin-icon-img"> Admission</a>
+            </li>
+            <li class="<?php echo $activePage === 'broadcast' ? 'active' : ''; ?>">
+                <a href="admin-broadcast.php"><img src="../img/icon/messages.png" alt="" class="Admin-icon-img"> Broadcast</a>
+            </li>
+            <li class="<?php echo $activePage === 'course' ? 'active' : ''; ?>">
+                <a href="admin-course.php"><img src="../img/icon/folder.png" alt="" class="Admin-icon-img"> Course</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="Admin-sidebar-footer">
+        <a href="logout.php" class="Admin-logout-link">
+            <img src="../img/icon/power.png" alt="" class="Admin-icon-img"> Logout
+        </a>
+    </div>
+</aside>
+
+<div class="Admin-overlay" id="adminOverlay"></div>
