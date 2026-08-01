@@ -1127,3 +1127,639 @@ a {
     padding: 0.7rem 1rem;
   }
 }
+/* ---- Admin Dashboard ---- */
+
+.Admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-body);
+}
+
+/* ---- Sidebar ---- */
+.Admin-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background-color: var(--color-secondary);
+  border-right: 1px solid #2d3038;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.Admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid #2d3038;
+  margin-bottom: 1rem;
+}
+
+.Admin-sidebar-logo {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.Admin-sidebar-brand h3 {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.Admin-sidebar-brand h6 {
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.Admin-nav {
+  flex: 1;
+}
+
+.Admin-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Admin-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1.5rem;
+  color: var(--color-primary);
+  opacity: 0.75;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: background-color 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.Admin-nav li a:hover {
+  background-color: rgba(241, 137, 10, 0.08);
+  opacity: 1;
+}
+
+.Admin-nav li.active a {
+  background-color: rgba(241, 137, 10, 0.12);
+  border-left-color: var(--color-accent);
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.Admin-icon {
+  font-style: normal;
+  font-size: 1.05rem;
+  width: 20px;
+  text-align: center;
+}
+
+.Admin-sidebar-footer {
+  padding: 1rem 1.5rem 0;
+  border-top: 1px solid #2d3038;
+  margin-top: 1rem;
+}
+
+.Admin-logout-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: var(--color-primary);
+  opacity: 0.75;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.6rem 0;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.Admin-logout-link:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* ---- Overlay (mobile) ---- */
+.Admin-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(2, 7, 24, 0.6);
+  z-index: 999;
+}
+
+.Admin-overlay-show {
+  display: block;
+}
+
+/* ---- Mobile top bar ---- */
+.Admin-mobile-topbar {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-secondary);
+  border-bottom: 1px solid #2d3038;
+  padding: 1rem 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+}
+
+.Admin-toggle-btn {
+  width: 32px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Admin-toggle-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.Admin-mobile-brand {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ---- Main content ---- */
+.Admin-main {
+  flex: 1;
+  padding: 2rem 2.5rem 3rem;
+  min-width: 0;
+}
+
+.Admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.Admin-topbar-search input {
+  width: 320px;
+  max-width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2d3038;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.Admin-topbar-search input::placeholder {
+  color: var(--color-primary);
+  opacity: 0.5;
+}
+
+.Admin-topbar-search input:focus {
+  border-color: var(--color-accent);
+}
+
+.Admin-topbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.Admin-topbar-profile img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  padding: 4px;
+  background-color: var(--color-secondary);
+}
+
+.Admin-page-title {
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.Admin-page-subtitle {
+  color: var(--color-primary);
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* ---- Stat cards ---- */
+.Admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.Admin-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-secondary);
+  border: 1px solid rgba(241, 137, 10, 0.15);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Admin-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(241, 137, 10, 0.12);
+}
+
+.Admin-stat-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border-radius: 12px;
+  background-color: rgba(241, 137, 10, 0.12);
+}
+
+.Admin-stat-card h2 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.Admin-stat-card p {
+  color: var(--color-primary);
+  opacity: 0.7;
+  font-size: 0.82rem;
+  margin: 0.2rem 0 0;
+}
+
+/* ---- Panel / Table ---- */
+.Admin-panel {
+  background-color: var(--color-secondary);
+  border: 1px solid rgba(241, 137, 10, 0.15);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.Admin-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.Admin-panel-header h3 {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.Admin-panel-header a {
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.Admin-panel-header a:hover {
+  text-decoration: underline;
+}
+
+.Admin-table-wrap {
+  overflow-x: auto;
+}
+
+.Admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.Admin-table th {
+  text-align: left;
+  color: var(--color-primary);
+  opacity: 0.6;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid #2d3038;
+}
+
+.Admin-table td {
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  padding: 0.9rem 0.8rem;
+  border-bottom: 1px solid #2d3038;
+}
+
+.Admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.Admin-table tbody tr:hover {
+  background-color: rgba(241, 137, 10, 0.05);
+}
+
+/* Action links inside table cells (e.g. Edit / Delete) */
+.Admin-table td a {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 0.8rem;
+  transition: opacity 0.2s ease;
+}
+
+.Admin-table td a:last-child {
+  margin-right: 0;
+}
+
+.Admin-table td a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.Admin-table td a.Admin-action-delete {
+  color: #ef4444;
+}
+
+.Admin-badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.Admin-badge-active {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.Admin-badge-pending {
+  background-color: rgba(241, 137, 10, 0.15);
+  color: var(--color-accent);
+}
+
+.Admin-badge-inactive {
+  background-color: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 1024px) {
+  .Admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Mobile / Sidebar collapse ---- */
+@media (max-width: 900px) {
+  .Admin-mobile-topbar {
+    display: flex;
+  }
+
+  .Admin-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .Admin-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .Admin-main {
+    padding: 1.5rem 1.25rem 2.5rem;
+  }
+
+  .Admin-topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .Admin-topbar-search input {
+    width: 100%;
+  }
+
+  .Admin-topbar-profile {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 560px) {
+  .Admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Admin-page-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* ---- Resources: card grid ---- */
+.Admin-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.Admin-resource-card {
+  background-color: var(--color-secondary);
+  border: 1px solid rgba(241, 137, 10, 0.15);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Admin-resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(241, 137, 10, 0.12);
+}
+
+.Admin-resource-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  background-color: rgba(241, 137, 10, 0.12);
+}
+
+.Admin-resource-card h4 {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.Admin-resource-card p {
+  color: var(--color-primary);
+  opacity: 0.65;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.Admin-resource-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #2d3038;
+}
+
+.Admin-resource-card-footer a {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.Admin-resource-card-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Settings: form ---- */
+.Admin-settings-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.Admin-settings-form .Admin-field-full {
+  grid-column: 1 / -1;
+}
+
+.Admin-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.Admin-field label {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.Admin-field input,
+.Admin-field select,
+.Admin-field textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2d3038;
+  background-color: var(--color-body);
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-family: var(--font-base);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Admin-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.Admin-field input:focus,
+.Admin-field select:focus,
+.Admin-field textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(241, 137, 10, 0.2);
+}
+
+.Admin-settings-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.Admin-btn {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--color-accent);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.Admin-btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-body);
+}
+
+.Admin-btn-primary:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.Admin-btn-secondary {
+  background-color: transparent;
+  border-color: #2d3038;
+  color: var(--color-primary);
+}
+
+.Admin-btn-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ---- Mobile: resources / settings ---- */
+@media (max-width: 560px) {
+  .Admin-settings-form {
+    grid-template-columns: 1fr;
+  }
+
+  .Admin-settings-actions {
+    justify-content: stretch;
+    flex-direction: column;
+  }
+
+  .Admin-btn {
+    width: 100%;
+  }
+}
