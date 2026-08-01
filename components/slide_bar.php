@@ -42,8 +42,8 @@ if (!isset($activePage)) {
             <li class="<?php echo $activePage === 'admission' ? 'active' : ''; ?>">
                 <a href="admin-admission.php"><img src="../img/icon/scholarships.svg" alt="" class="Admin-icon-img"> Admission</a>
             </li>
-            <li class="<?php echo $activePage === 'resources' ? 'active' : ''; ?>">
-                <a href="admin-resources.php"><img src="../img/icon/resources.svg" alt="" class="Admin-icon-img"> Resources</a>
+            <li class="<?php echo $activePage === 'broadcast' ? 'active' : ''; ?>">
+                <a href="admin-broadcast.php"><img src="../img/icon/resources.svg" alt="" class="Admin-icon-img"> Broadcast</a>
             </li>
             <li class="<?php echo $activePage === 'settings' ? 'active' : ''; ?>">
                 <a href="admin-settings.php"><img src="../img/icon/settings.svg" alt="" class="Admin-icon-img"> Settings</a>
