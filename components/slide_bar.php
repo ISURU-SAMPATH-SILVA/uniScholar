@@ -1,4 +1,8 @@
 <?php
+// components/admin-sidebar.php
+// Me file eka admin pages okkoma athule include karanna.
+// Active link eka auto-highlight wenna, oya page ekema top ekata me variable eka danna:
+//   $activePage = 'dashboard'; // 'students' | 'universities' | 'courses' | 'scholarships' | 'resources' | 'settings'
 if (!isset($activePage)) {
     $activePage = '';
 }
@@ -24,32 +28,32 @@ if (!isset($activePage)) {
     <nav class="Admin-nav">
         <ul>
             <li class="<?php echo $activePage === 'dashboard' ? 'active' : ''; ?>">
-                <a href="admin-dashboard.php"><img src="../img/icon/dashboard" alt=""> Dashboard</a>
+                <a href="admin-dashboard.php"><img src="../img/icon/dashboard.svg" alt="" class="Admin-icon-img"> Dashboard</a>
             </li>
             <li class="<?php echo $activePage === 'students' ? 'active' : ''; ?>">
-                <a href="admin-students.php"><<img src="" alt=""> Students</a>
+                <a href="admin-students.php"><img src="../img/icon/students.svg" alt="" class="Admin-icon-img"> Students</a>
             </li>
             <li class="<?php echo $activePage === 'universities' ? 'active' : ''; ?>">
-                <a href="admin-universities.php"><<img src="" alt=""> Universities</a>
+                <a href="admin-universities.php"><img src="../img/icon/universities.svg" alt="" class="Admin-icon-img"> Universities</a>
             </li>
             <li class="<?php echo $activePage === 'courses' ? 'active' : ''; ?>">
-                <a href="admin-courses.php"><<img src="" alt=""> Courses</a>
+                <a href="admin-courses.php"><img src="../img/icon/courses.svg" alt="" class="Admin-icon-img"> Courses</a>
             </li>
             <li class="<?php echo $activePage === 'scholarships' ? 'active' : ''; ?>">
-                <a href="admin-scholarships.php"><<img src="" alt=""> Scholarships</a>
+                <a href="admin-scholarships.php"><img src="../img/icon/scholarships.svg" alt="" class="Admin-icon-img"> Scholarships</a>
             </li>
             <li class="<?php echo $activePage === 'resources' ? 'active' : ''; ?>">
-                <a href="admin-resources.php"><<img src="" alt=""> Resources</a>
+                <a href="admin-resources.php"><img src="../img/icon/resources.svg" alt="" class="Admin-icon-img"> Resources</a>
             </li>
             <li class="<?php echo $activePage === 'settings' ? 'active' : ''; ?>">
-                <a href="admin-settings.php"><<img src="" alt=""> Settings</a>
+                <a href="admin-settings.php"><img src="../img/icon/settings.svg" alt="" class="Admin-icon-img"> Settings</a>
             </li>
         </ul>
     </nav>
 
     <div class="Admin-sidebar-footer">
         <a href="logout.php" class="Admin-logout-link">
-            <img src="" alt=""> Logout
+            <img src="../img/icon/logout.svg" alt="" class="Admin-icon-img"> Logout
         </a>
     </div>
 </aside>
