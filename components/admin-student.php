@@ -33,13 +33,13 @@
                 </div>
             </div>
 
-            <h1 class="Admin-page-title">student</h1>
+            <h1 class="Admin-page-title">Course</h1>
             <p class="Admin-page-subtitle">Manage the list of students shown on uniScholar.</p>
 
             <div class="Admin-panel">
                 <div class="Admin-panel-header">
-                    <h3>All Students</h3>
-                    <a href="admin-student-add.php">+ Add Student</a>
+                    <h3>All Course</h3>
+                    <a href="admin-student-add.php">+ Add Course</a>
                 </div>
                 <div class="Admin-table-wrap">
                     <table class="Admin-table">
