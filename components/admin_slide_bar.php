@@ -25,7 +25,7 @@ if (!isset($activePage)) {
     <nav class="Admin-nav">
         <ul>
             <li class="<?php echo $activePage === 'dashboard' ? 'active' : ''; ?>">
-                <a href="admin-dashboard.php"><img src="../img/icon/dashboard.png" alt="" class="Admin-icon-img"> Dashboard</a>
+                <a href="admin_dashbord.php"><img src="../img/icon/dashboard.png" alt="" class="Admin-icon-img"> Dashboard</a>
             </li>
             <li class="<?php echo $activePage === 'search' ? 'active' : ''; ?>">
                 <a href="admin-search.php"><img src="../img/icon/loupe.png" alt="" class="Admin-icon-img"> Search</a>
@@ -34,13 +34,13 @@ if (!isset($activePage)) {
                 <a href="admin-student.php"><img src="../img/icon/graduated.png" alt="" class="Admin-icon-img"> Student</a>
             </li>
             <li class="<?php echo $activePage === 'classroom' ? 'active' : ''; ?>">
-                <a href="admin-classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
+                <a href="admin_classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
             </li>
             <li class="<?php echo $activePage === 'admission' ? 'active' : ''; ?>">
                 <a href="admin-admission.php"><img src="../img/icon/edit.png" alt="" class="Admin-icon-img"> Admission</a>
             </li>
-            <li class="<?php echo $activePage === 'broadcast' ? 'active' : ''; ?>">
-                <a href="admin-broadcast.php"><img src="../img/icon/messages.png" alt="" class="Admin-icon-img"> Broadcast</a>
+            <li class="<?php echo $activePage === 'universities' ? 'active' : ''; ?>">
+                <a href="admin_universities.php"><img src="../img/icon/ssh-flag.png" alt="" class="Admin-icon-img"> Universities</a>
             </li>
             <li class="<?php echo $activePage === 'course' ? 'active' : ''; ?>">
                 <a href="admin-course.php"><img src="../img/icon/folder.png" alt="" class="Admin-icon-img"> Course</a>

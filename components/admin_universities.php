@@ -17,7 +17,9 @@
 
     <div class="Admin-wrapper">
 
-        <?php require 'components/admin-sidebar.php'; ?>
+       
+        <?php require 'admin_slide_bar.php'; ?> 
+        <?php require 'admin_slide_bar_script.php'; ?>
 
         <main class="Admin-main">
 
@@ -27,7 +29,7 @@
                 </div>
                 <div class="Admin-topbar-profile">
                     <span>Admin</span>
-                    <img src="../img/Brand/Favicon-White.svg" alt="Admin">
+                    <img src="../img/icon/graduated.png" alt="Admin">
                 </div>
             </div>
 
@@ -52,11 +54,9 @@
                         </thead>
                         <tbody>
                             <?php
-                            // TODO: Replace me ekath sample array eka, oyage database eken
-                            // fetch karana rows walata (mysqli/PDO query -> foreach).
+                            
                             $universities = [
-                                ['name' => 'University of Colombo', 'location' => 'Colombo', 'courses' => 42, 'status' => 'active'],
-                                ['name' => 'University of Moratuwa', 'location' => 'Moratuwa', 'courses' => 38, 'status' => 'active'],
+                               
                                 ['name' => 'University of Peradeniya', 'location' => 'Peradeniya', 'courses' => 51, 'status' => 'active'],
                                 ['name' => 'University of Jaffna', 'location' => 'Jaffna', 'courses' => 21, 'status' => 'inactive'],
                             ];
@@ -82,7 +82,10 @@
         </main>
     </div>
 
-    <?php require 'components/admin-sidebar-script.php'; ?>
+    
+    <?php require 'admin_slide_bar_script.php'; ?>
+    <?php require 'Footer.php'; ?>
+
 
 </body>
 

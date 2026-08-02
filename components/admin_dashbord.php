@@ -118,6 +118,8 @@
     </div>
 
     <?php require 'admin_slide_bar_script.php'; ?>
+    <?php require 'Footer.php'; ?>
+
 
 </body>
 

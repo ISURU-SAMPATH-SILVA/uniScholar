@@ -1,0 +1,9 @@
+
+        <?php require 'admin_slide_bar.php'; ?> 
+        <?php require 'admin_slide_bar_script.php'; ?>
+
+
+    <?php require 'admin_slide_bar_script.php'; ?> 
+
+
+     <?php require 'navbar.php'; ?> #incude karana eka aka
