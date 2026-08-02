@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
-    <title>uniScholar - Universities</title>
+    <title>uniScholar - classroom</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
@@ -33,21 +33,21 @@
                 </div>
             </div>
 
-            <h1 class="Admin-page-title">Universities</h1>
-            <p class="Admin-page-subtitle">Manage the list of universities shown on uniScholar.</p>
+            <h1 class="Admin-page-title">Classrooms</h1>
+            <p class="Admin-page-subtitle">Manage the list of classrooms shown on uniScholar.</p>
 
             <div class="Admin-panel">
                 <div class="Admin-panel-header">
-                    <h3>All Universities</h3>
-                    <a href="admin-university-add.php">+ Add University</a>
+                    <h3>All Classrooms</h3>
+                    <a href="admin-classroom-add.php">+ Add Classroom</a>
                 </div>
                 <div class="Admin-table-wrap">
                     <table class="Admin-table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Location</th>
-                                <th>Courses</th>
+                                <th>Classroom</th>
+                                <th>Course Code</th>
+                                <th>Semester</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -55,22 +55,22 @@
                         <tbody>
                             <?php
                             
-                            $universities = [
+                            $classrooms = [
                                
-                                ['name' => 'University of Peradeniya', 'location' => 'Peradeniya', 'courses' => 51, 'status' => 'active'],
-                                ['name' => 'University of Jaffna', 'location' => 'Jaffna', 'courses' => 21, 'status' => 'inactive'],
+                                ['Classroom' => 'Mathematics for Technology I', 'Course Code' => 'CMT 1307', 'Semester' => 1, 'status' => 'active'],
+                                ['Classroom' => 'CMT 1308 - Physics for Technology II', 'Course Code' => 'CMT 1308', 'Semester' => 2, 'status' => 'inactive'],
                             ];
 
-                            foreach ($universities as $u):
-                                $badgeClass = $u['status'] === 'active' ? 'Admin-badge-active' : 'Admin-badge-inactive';
+                            foreach ($classrooms as $c):
+                                $badgeClass = $c['status'] === 'active' ? 'Admin-badge-active' : 'Admin-badge-inactive';
                             ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($u['name']); ?></td>
-                                    <td><?php echo htmlspecialchars($u['location']); ?></td>
-                                    <td><?php echo (int) $u['courses']; ?></td>
-                                    <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($u['status']); ?></span></td>
+                                    <td><?php echo htmlspecialchars($c['Classroom']); ?></td>
+                                    <td><?php echo htmlspecialchars($c['Course Code']); ?></td>
+                                    <td><?php echo (int) $c['Semester']; ?></td>
+                                    <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
                                     <td>
-                                        <a href="admin-university-edit.php?id=<?php echo urlencode($u['name']); ?>">Edit</a>
+                                       <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['Classroom']); ?>">Edit</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -83,7 +83,6 @@
     </div>
 
     
-    <?php require 'admin_slide_bar_script.php'; ?>
     <?php require 'Footer.php'; ?>
 
 
