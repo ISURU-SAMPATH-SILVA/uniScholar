@@ -38,7 +38,7 @@
             <div class="Admin-panel">
                 <div class="Admin-panel-header">
                     <h3>All Students</h3>
-                    <a href="admin-student.php">+ Add Student</a>
+                    <a href="admin-student-add.php">+ Add Student</a>
                 </div>
                 <div class="Admin-table-wrap">
                     <table class="Admin-table">

@@ -128,8 +128,8 @@
                     </div>
 
                     <div class="Admin-field">
-                        <label for="AdmissionsFaculty">Choose your Faculty</label>
-                        <select id="AdmissionsFaculty" name="faculty">
+                        <label for="StudentFaculty">Choose your Faculty</label>
+                        <select id="StudentFaculty" name="faculty">
                             <option value="">-- Select Faculty --</option>
                             <option value="Faculty of Technology">Faculty of Technology</option>
                             <option value="Faculty of Applied Sciences">Faculty of Applied Sciences</option>
@@ -145,21 +145,21 @@
 
 
                     <div class="Admin-field">
-                        <label for="classroomStatus">Status</label>
-                        <select id="classroomStatus" name="status">
+                        <label for="studentStatus">Status</label>
+                        <select id="studentStatus" name="status">
                             <option value="active" selected>Active</option>
                             <option value="inactive">Inactive</option>
                         </select>
                     </div>
 
                     <div class="Admin-field Admin-field-full">
-                        <label for="classroomDescription">Description</label>
-                        <textarea id="classroomDescription" name="description" placeholder="Short description of the classroom..."></textarea>
+                        <label for="StudentDescription">Description</label>
+                        <textarea id="StudentDescription" name="description" placeholder="Short description of the student...."></textarea>
                     </div>
 
                     <div class="Admin-settings-actions">
-                        <a href="admin-classrooms.php" class="Admin-btn Admin-btn-secondary" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">Cancel</a>
-                        <button type="submit" class="Admin-btn Admin-btn-primary">Add Classroom</button>
+                        <a href="admin-students.php" class="Admin-btn Admin-btn-secondary" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">Cancel</a>
+                        <button type="submit" class="Admin-btn Admin-btn-primary">Add Student</button>
                     </div>
                 </form>
             </div>
