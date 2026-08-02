@@ -25,7 +25,7 @@
 
             <div class="Admin-topbar">
                 <div class="Admin-topbar-search">
-                    <input type="text" placeholder="Search universities...">
+                    <input type="text" placeholder="Search classroom...">
                 </div>
                 <div class="Admin-topbar-profile">
                     <span>Admin</span>
