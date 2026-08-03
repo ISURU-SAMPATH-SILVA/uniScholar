@@ -5,6 +5,8 @@
   <div class="">
     <h3>Faculty of Applied Sciences</h3>
   </div>
-  <div class=""><p>Bridge theory and practical innovation through scientific research, data analysis, and real-world problem-solving</p></div>
+  <div class=""><p>Bridge theory and practical innovation through scientific research, data analysis, and real-world problem-solving
+    <br><br>
+  </p></div>
   <div><a href="#"><h5><b>Seen more ..</b></h5></a></div>
 </div>
