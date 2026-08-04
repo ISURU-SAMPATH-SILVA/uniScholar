@@ -25,10 +25,11 @@ if (!isset($activePage)) {
     <nav class="Admin-nav">
         <ul>
             <li class="<?php echo $activePage === 'dashboard' ? 'active' : ''; ?>">
-                <a href="student-dashboard.php"><img src="../img/icon/dashboard.png" alt="" class="Admin-icon-img"> Dashboard</a>
+                <a href="student_dashbord.php"><img src="../img/icon/dashboard.png" alt="" class="Admin-icon-img"> Dashboard</a>
             </li>
             <li class="<?php echo $activePage === 'search' ? 'active' : ''; ?>">
-                <a href="student-search.php"><img src="../img/icon/loupe.png" alt="" class="Admin-icon-img"> Search</a>
+                <a href="student_search.php
+                "><img src="../img/icon/loupe.png" alt="" class="Admin-icon-img"> Search</a>
             </li>
 
             <li class="<?php echo $activePage === 'classroom' ? 'active' : ''; ?>">

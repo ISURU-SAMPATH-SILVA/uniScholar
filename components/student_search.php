@@ -18,7 +18,7 @@
     <div class="Admin-wrapper">
 
        
-        <?php require 'studend_slide_bar.php'; ?> 
+        <?php require 'studend_slide_bar.php'; ?>
         <?php require 'student_slide_bar_script.php'; ?>
 
         <main class="Admin-main">
