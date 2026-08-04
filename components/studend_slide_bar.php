@@ -35,8 +35,8 @@ if (!isset($activePage)) {
                 <a href="student-classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
             </li>
 
-            <li class="<?php echo $activePage === 'broadcast' ? 'active' : ''; ?>">
-                <a href="student-broadcast.php"><img src="../img/icon/messages.png" alt="" class="Admin-icon-img"> Broadcast</a>
+            <li class="<?php echo $activePage === 'admission' ? 'active' : ''; ?>">
+                <a href="student-broadcast.php"><img src="../img/icon/messages.png" alt="" class="Admin-icon-img"> Admission</a>
             </li>
 
         </ul>
