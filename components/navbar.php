@@ -34,10 +34,10 @@
             <li><a href="/uniScholar/components/GPA.php">GPA calculators</a></li>
         </ul>
           <div>
-            <a href="/uniScholar/components/register.PHP" rel="noopener noreferrer">sing in</a>
+            <a href="/uniScholar/auth/register.PHP" rel="noopener noreferrer">sing in</a>
         </div>
         <div>
-            <a href="/uniScholar/components/Login.php" rel="noopener noreferrer">Login</a>
+            <a href="/uniScholar/auth/Login.php" rel="noopener noreferrer">Login</a>
         </div>
     
     </div>
