@@ -33,7 +33,7 @@ if (!isset($activePage)) {
             </li>
 
             <li class="<?php echo $activePage === 'classroom' ? 'active' : ''; ?>">
-                <a href="student-classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
+                <a href="student_classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
             </li>
 
             <li class="<?php echo $activePage === 'admission' ? 'active' : ''; ?>">

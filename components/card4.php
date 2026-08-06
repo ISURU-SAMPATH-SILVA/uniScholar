@@ -1,6 +1,6 @@
 <div class="container card">
   <div class="">
-    <img src="img/icon/medical.png" class="d-block w-100" alt="First Slide">
+    <img src="../img/icon/medical.png" class="d-block w-100" alt="First Slide">
   </div>
   <div class="">
     <h3>Faculty of Medicine</h3>
