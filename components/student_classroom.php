@@ -18,8 +18,8 @@
     <div class="Admin-wrapper">
 
        
-        <?php require 'admin_slide_bar.php'; ?> 
-        <?php require 'admin_slide_bar_script.php'; ?>
+        <?php require 'student_slide_bar.php'; ?> 
+        <?php require 'student_slide_bar_script.php'; ?>
 
         <main class="Admin-main">
 
@@ -28,7 +28,7 @@
                     <input type="text" placeholder="Search classroom...">
                 </div>
                 <div class="Admin-topbar-profile">
-                    <span>Admin</span>
+                    <span>Student</span>
                     <img src="../img/icon/graduated.png" alt="Admin">
                 </div>
             </div>
@@ -39,7 +39,7 @@
             <div class="Admin-panel">
                 <div class="Admin-panel-header">
                     <h3>All Classrooms</h3>
-                    <a href="admin-classroom-add.php">+ Add Classroom</a>
+                    <a href="student-classroom-add.php">+ Add Classroom</a>
                 </div>
                 <div class="Admin-table-wrap">
                     <table class="Admin-table">
@@ -71,7 +71,7 @@
                                     <td><?php echo (int) $c['Semester']; ?></td>
                                     <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
                                     <td>
-                                       <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['Classroom']); ?>">Edit</a>
+                                       <a href="student-classroom-edit.php?id=<?php echo urlencode($c['Classroom']); ?>">Edit</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
