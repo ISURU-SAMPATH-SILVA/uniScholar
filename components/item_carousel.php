@@ -1,7 +1,6 @@
 <?php
-
-    $totalCards = 3;
-    $cardIndex  = 0; 
+$totalCards = 4; // cards 4ම පෙන්නන්න 4 කළා
+$cardIndex = 0;
 ?>
 <div id="multiCardCarousel" class="multiCardCarousel-padi carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -9,10 +8,11 @@
 
         <div class="carousel-item active">
             <div class="row">
-                <?php for ($i = 0; $i < 4; $i++) {
+                <?php for ($i = 1; $i < 5; $i++) {
                     $cardIndex++;
-                    $cardNum  = (($cardIndex - 1) % $totalCards) + 1;
+                    $cardNum = (($cardIndex - 1) % $totalCards) + 1;
                     $cardFile = "components/card{$cardNum}.php";
+
                     if (!file_exists($cardFile)) {
                         $cardFile = 'components/card.php';
                     }
@@ -24,10 +24,11 @@
 
         <div class="carousel-item">
             <div class="row">
-                <?php for ($i = 0; $i < 4; $i++) {
+                <?php for ($i = 1; $i < 5; $i++) {
                     $cardIndex++;
-                    $cardNum  = (($cardIndex - 1) % $totalCards) + 1;
+                    $cardNum = (($cardIndex - 1) % $totalCards) + 1;
                     $cardFile = "components/card{$cardNum}.php";
+
                     if (!file_exists($cardFile)) {
                         $cardFile = 'components/card.php';
                     }
@@ -36,6 +37,5 @@
                 <?php } ?>
             </div>
         </div>
-
     </div>
 </div>
