@@ -1,5 +1,5 @@
 <?php
-$totalCards = 4; // cards 4ම පෙන්නන්න 4 කළා
+$totalCards = 4;
 $cardIndex = 0;
 ?>
 <div id="multiCardCarousel" class="multiCardCarousel-padi carousel slide" data-bs-ride="carousel">

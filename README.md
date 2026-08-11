@@ -14,7 +14,7 @@ A database-driven web application where students can upload, browse, and downloa
 * **Batch:** 2024
 * **Module:** ICT 1209 – Web Technologies
 * **Group Members:** ITT/2024/103 - A.M.I.S Silva
-                     ITT/2024/072 - A.K Nisal Nethsaram
+                     ITT/2024/072 - A.K Nisal Nethsara
 * **Phase:** All three phases completed (Proposal → Frontend → Backend)
 
 ---

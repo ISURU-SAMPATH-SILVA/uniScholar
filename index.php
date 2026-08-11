@@ -14,18 +14,12 @@
 
 <body>
 
-  <!--  Navbar Component  -->
-  <?php require 'components/navbar.php'; ?>
 
-  <!--  search Component  -->
+  <?php require 'components/navbar.php'; ?>
   <?php require 'components/search.php'; ?>
-   <!--  Image Carousel Component  -->
   <?php require 'components/image_carousel.php'; ?>
-   <!--  Item Carousel Component  -->
   <?php require 'components/item_carousel.php'; ?>
   <?php require 'components/Home-about.php'; ?>
-
-   <!--  footer Component  -->
   <?php require 'components/footer.php'; ?>
   
 
