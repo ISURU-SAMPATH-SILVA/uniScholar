@@ -1,5 +1,22 @@
+<?php
+
+if (
+    isset($_GET['reset']) &&
+    $_GET['reset'] === 'success'
+) {
+
+    echo '
+        <div class="alert alert-success">
+            Password reset successfully.
+            Please login with your new password.
+        </div>
+    ';
+
+}
+
+?>
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -14,33 +31,56 @@
 
 <body>
     <div class="Login-card">
-        <!-- Logo Area -->
+        <!-- logo  -->
         <div class="Login-avatar-box">
             <img src="../img/Brand/Favicon-White.svg" alt="uniScholar Logo" class="Login-avatar">
         </div>
         <h1 class="Login-brand-name">uniScholar</h1>
         <h2 class="Login-form-title">LOGIN</h2>
 
-        <!-- Login Form -->
-        <form action="#">
+        <!--  form -->
+       <form action="../database/login.php" method="POST">
             <div class="Login-input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="username@email.com" required>
-                <a href="#" class="forgot-link">Forgot Email?</a>
-            </div>
 
-            <div class="Login-input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="••••••••••••" required>
-                <a href="#" class="forgot-link">Forgot Password?</a>
-            </div>
+    <label for="email">Email Address</label>
 
-            <button type="submit" class="Login-btn Login-btn-primary">SUBMIT</button>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="username@gmail.com"
+        autocomplete="email"
+        required
+    >
 
-            <button type="button" class="Login-btn btn-google">
-                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
-                Login With Google
-            </button>
+</div>
+<div class="Login-input-group">
+
+    <label for="password">Password</label>
+
+    <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="******"
+        autocomplete="current-password"
+        required
+    >
+
+    <a href="ForgotPassword.php" class="forgot-link">
+        Forgot Password?
+    </a>
+
+</div>
+
+           <button
+    type="submit"
+    class="Login-btn Login-btn-primary"
+    name="login"
+>
+    SUBMIT
+</button>
+          
         </form>
 
         <p class="Login-footer-text">
