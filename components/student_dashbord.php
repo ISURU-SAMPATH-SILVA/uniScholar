@@ -111,9 +111,9 @@
                         <p>Need Help?</p>
                     </div>
                 </div>
-                </a>
+                </a><center>
                 FINO THẾ COURSE PONF FOR TOUH GONL<br>
-            Select the program tailored to your success 
+            Select the program tailored to your success </center>
 
 
 

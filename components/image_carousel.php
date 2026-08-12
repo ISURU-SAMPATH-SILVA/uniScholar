@@ -13,7 +13,7 @@
       
       <div class="carousel-caption">
         <h5 class="text-white fw-bold">uniScholar</h5>
-        <p class="text-white">Wellcome</p>
+        <p class="text-white">Welcome</p>
       </div>
     </div>
 
@@ -21,7 +21,7 @@
       <img src="img/carasal/carasal03.jpeg" class="d-block w-100" alt="Second Slide">
       <div class="carousel-caption">
         <h5 class="text-white fw-bold">unischolar</h5>
-        <p class="text-white">Wellcome</p>
+        <p class="text-white">Welcome</p>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
       <img src="img/carasal/carsa02.jpeg" class="d-block w-100" alt="Third Slide">
       <div class="carousel-caption">
         <h5 class="text-white-bold">uniScholar</h5>
-        <p class="text-white">Wellcome</p>
+        <p class="text-white">Welcome</p>
       </div>
     </div>
 
@@ -43,6 +43,6 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div><!--getig code getbootstrap.com -->
+</div>
 
 </div>

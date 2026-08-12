@@ -19,7 +19,6 @@ a {
 color: var(--color-primary);
 }
 
-/* ---- Navbar ---- */
 .main-navbar {
   background-color: var(--color-body) !important;
   padding: 1rem 2rem;
@@ -69,7 +68,6 @@ color: var(--color-primary);
   line-height: 1.2;
 }
 
-/* Nav Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -98,7 +96,6 @@ color: var(--color-primary);
   color: var(--color-accent) !important;
 }
 
-/* Login button */
 .navbar-collapse>div {
   display: flex;
   align-items: center;
@@ -135,7 +132,6 @@ color: var(--color-primary);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
 }
 
-/* ---- Desktop: Single-row layout, all items vertically centered ---- */
 @media (min-width: 992px) {
   .main-navbar {
     justify-content: space-between;
@@ -169,7 +165,6 @@ color: var(--color-primary);
   }
 }
 
-/* ---- Responsive (Mobile/Tablet) ---- */
 @media (max-width: 991px) {
   .main-navbar {
     justify-content: space-between;
@@ -216,14 +211,11 @@ color: var(--color-primary);
     display: none;
   }
 }
-/*carasal*/
 .carousel-item img {
     height: 78vh; 
     object-fit: cover;
 }
 
-
-/* ---- Cards Layout ---- */
 .text {
   text-align: center;
   color: var(--color-primary);
@@ -261,7 +253,6 @@ color: var(--color-primary);
   padding: 10%;
 }
 
-/* GPA CALCULATOR  */
 
 .GPA-container {
   display: flex;
@@ -296,7 +287,6 @@ color: var(--color-primary);
   border: 1px solid rgba(241, 137, 10, 0.15);
 }
 
-/* First field (university) and the results block span full width */
 .GPA-select>select#universitySelect,
 .GPA-select>.GPA-Results {
   grid-column: 1 / -1;
@@ -319,7 +309,6 @@ color: var(--color-primary);
   flex-direction: column;
 }
 
-/* Selects & inputs */
 .GPA-select select,
 .GPA-select input[type="text"] {
   width: 100%;
@@ -359,7 +348,6 @@ color: var(--color-primary);
   color: rgba(255, 254, 248, 0.4);
 }
 
-/* Course code group */
 .GPA-cours {
   display: flex;
   flex-direction: column;
@@ -374,7 +362,6 @@ color: var(--color-primary);
   opacity: 0.85;
 }
 
-/* Results bar */
 .GPA-Results {
   width: 100%;
   display: flex;
@@ -423,7 +410,6 @@ color: var(--color-primary);
   letter-spacing: 0.5px;
 }
 
-/* ---- Tablet ---- */
 @media (max-width: 768px) {
   .GPA-container {
     padding: 2rem 1rem;
@@ -445,7 +431,6 @@ color: var(--color-primary);
   }
 }
 
-/* ---- Mobile ---- */
 @media (max-width: 480px) {
   .GPA-select {
     padding: 1.25rem;
@@ -477,7 +462,6 @@ color: var(--color-primary);
   max-height: 80%;
 }
 
-/*footer*/
 .main-footer {
   background-color: var(--color-body);
   color: var(--color-primary);
@@ -546,7 +530,6 @@ color: var(--color-primary);
   margin-bottom: 0.5rem;
 }
 
-/* Copyright bar - spans full width */
 .main-footer>div:last-child {
   grid-column: 1 / -1;
   border-top: 1px solid #2d3038;
@@ -569,7 +552,6 @@ color: var(--color-primary);
   font-size: 0.85rem;
 }
 
-/* ---- Tablet ---- */
 @media (max-width: 900px) {
   .main-footer {
     grid-template-columns: repeat(2, 1fr);
@@ -585,7 +567,6 @@ color: var(--color-primary);
   }
 }
 
-/* ---- Mobile ---- */
 @media (max-width: 560px) {
   .main-footer {
     grid-template-columns: 1fr;
@@ -609,7 +590,6 @@ color: var(--color-primary);
   margin-top: 10%;
 }
 
-/* search bar*/
 .search-conterner {
   display: flex;
   align-items: end;
@@ -666,7 +646,6 @@ color: var(--color-primary);
   opacity: 0.85;
 }
 
-/* ---- Tablet ---- */
 @media (max-width: 768px) {
   .d-flex[role="search"] {
     max-width: 100%;
@@ -674,7 +653,6 @@ color: var(--color-primary);
 
 }
 
-/* ---- Mobile ---- */
 @media (max-width: 480px) {
   .d-flex[role="search"] {
     flex-direction: column;
@@ -687,8 +665,6 @@ color: var(--color-primary);
     width: 100%;
   }
 }
-
-/* ---- Logo and Text Side-by-Side Layout ---- */
 
 .logo-description-container {
   display: flex;
@@ -750,7 +726,6 @@ color: var(--color-primary);
   margin-top: 2%;
 }
 
-/* ---- Mobile & Tablet  ---- */
 @media (max-width: 768px) {
   .logo-description-container {
     flex-direction: column;
@@ -764,7 +739,6 @@ color: var(--color-primary);
   }
 }
 
-/* ---- About Page ---- */
 .About_UniScholar {
   text-align: center;
   padding: 4rem 1.5rem 3rem;
@@ -814,7 +788,6 @@ color: var(--color-primary);
   font-size: 1rem;
 }
 
-/* Feature cards */
 .Resource_Sharing,
 .Scholarship_Finder,
 .Student_Dashboard {
@@ -856,7 +829,6 @@ color: var(--color-primary);
   font-size: 0.95rem;
 }
 
-/* ---- Tablet ---- */
 @media (max-width: 768px) {
   .About_UniScholar h1 {
     font-size: 2rem;
@@ -871,7 +843,6 @@ color: var(--color-primary);
   }
 }
 
-/* ---- Mobile ---- */
 @media (max-width: 480px) {
   .About_UniScholar {
     padding: 2.5rem 1.2rem 2rem;
@@ -901,7 +872,6 @@ color: var(--color-primary);
     font-size: 1.1rem;
   }
 }
-/* ---- Login Page ---- */
 
 .Login-card {
   position: absolute;
@@ -921,7 +891,6 @@ color: var(--color-primary);
   text-align: center;
 }
 
-/* Logo */
 .Login-avatar-box {
   width: 72px;
   height: 72px;
@@ -959,7 +928,6 @@ color: var(--color-primary);
   margin-bottom: 2rem;
 }
 
-/* Form */
 .Login-card form {
   width: 100%;
   display: flex;
@@ -1021,7 +989,6 @@ color: var(--color-primary);
   text-decoration: underline;
 }
 
-/* Buttons (shared base) */
 .Login-btn {
   width: 100%;
   display: flex;
@@ -1084,7 +1051,6 @@ color: var(--color-primary);
   text-decoration: underline;
 }
 
-/* ---- Tablet ---- */
 @media (max-width: 768px) {
   .Login-card {
     padding: 2rem 1.5rem;
@@ -1096,7 +1062,6 @@ color: var(--color-primary);
   }
 }
 
-/* ---- Mobile ---- */
 @media (max-width: 480px) {
   .Login-card {
     width: calc(100% - 2rem);
@@ -1128,7 +1093,7 @@ color: var(--color-primary);
     padding: 0.7rem 1rem;
   }
 }
-/* ---- Admin Dashboard ---- */
+
 
 .Admin-wrapper {
   display: flex;
@@ -1136,7 +1101,6 @@ color: var(--color-primary);
   background-color: var(--color-primary);
 }
 
-/* ---- Sidebar ---- */
 .Admin-sidebar {
   width: 260px;
   flex-shrink: 0;
@@ -1230,7 +1194,6 @@ color: var(--color-primary);
   height: 18px;
   flex-shrink: 0;
   object-fit: contain;
-  /* Icon eka white/light color ekakata convert karanawa (dark icon ekak nam) */
   filter: brightness(0) invert(1);
   opacity: 0.85;
 }
@@ -1265,7 +1228,6 @@ color: var(--color-primary);
   opacity: 1;
 }
 
-/* ---- Overlay (mobile) ---- */
 .Admin-overlay {
   display: none;
   position: fixed;
@@ -1278,7 +1240,6 @@ color: var(--color-primary);
   display: block;
 }
 
-/* ---- Mobile top bar ---- */
 .Admin-mobile-topbar {
   display: none;
   align-items: center;
@@ -1319,7 +1280,6 @@ color: var(--color-primary);
   font-size: 1rem;
 }
 
-/* ---- Main content ---- */
 .Admin-main {
   flex: 1;
   padding: 2rem 2.5rem 3rem;
@@ -1389,7 +1349,6 @@ color: var(--color-primary);
   margin-bottom: 2rem;
 }
 
-/* ---- Stat cards ---- */
 .Admin-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1439,7 +1398,6 @@ color: var(--color-primary);
   margin: 0.2rem 0 0;
 }
 
-/* ---- Panel / Table ---- */
 .Admin-panel {
   background-color: var(--color-secondary);
   border: 1px solid rgba(241, 137, 10, 0.15);
@@ -1554,14 +1512,12 @@ color: var(--color-primary);
   color: #94a3b8;
 }
 
-/* ---- Tablet ---- */
 @media (max-width: 1024px) {
   .Admin-stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ---- Mobile / Sidebar collapse ---- */
 @media (max-width: 900px) {
   .Admin-mobile-topbar {
     display: flex;
@@ -1569,7 +1525,6 @@ color: var(--color-primary);
 
   .Admin-wrapper {
     padding-top: 62px;
-    /* space for the fixed mobile topbar */
   }
 
   .Admin-sidebar {
@@ -1615,7 +1570,6 @@ color: var(--color-primary);
   }
 }
 
-/* ---- Resources: card grid ---- */
 .Admin-resource-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -1683,7 +1637,6 @@ color: var(--color-primary);
   text-decoration: underline;
 }
 
-/* ---- Settings: form ---- */
 .Admin-settings-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1773,7 +1726,6 @@ color: var(--color-primary);
   color: var(--color-accent);
 }
 
-/* ---- Mobile: resources / settings ---- */
 @media (max-width: 560px) {
   .Admin-settings-form {
     grid-template-columns: 1fr;
