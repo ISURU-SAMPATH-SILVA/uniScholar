@@ -59,7 +59,7 @@
                                 ['name' => 'Nimasha Perera', 'university' => 'University of Colombo', 'course' => 'Computer Science', 'status' => 'active', 'joined' => '2026-07-28'],
                                 ['name' => 'Kasun Fernando', 'university' => 'University of Moratuwa', 'course' => 'Electronics Eng.', 'status' => 'pending', 'joined' => '2026-07-27'],
                                 ['name' => 'Dilani Wickramasinghe', 'university' => 'University of Peradeniya', 'course' => 'Business Mgmt.', 'status' => 'active', 'joined' => '2026-07-25'],
-                                ['name' => 'Ashan Silva', 'university' => 'University of Kelaniya', 'course' => 'Mathematics', 'status' => 'inactive', 'joined' => '2026-07-22'],
+                                ['name' => 'Ashan Silva', 'university' => 'University of Kelaniya', 'course' => 'Arts', 'status' => 'inactive', 'joined' => '2026-07-22'],
                             ];
 
                             $badgeMap = [

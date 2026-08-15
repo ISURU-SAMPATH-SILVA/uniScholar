@@ -24,7 +24,7 @@
         <ul class="nav-links">
             <li><a href="/uniScholar/index.php">Home</a></li>
             <li><a href="/uniScholar/components/Explore.php">Explore</a></li>
-            <li><a href="/uniScholar/components/Course.php">Course</a></li>
+            <li><a href="/uniScholar/components/Course.php">Calendar</a></li>
             <li><a href="/uniScholar/components/About.php">About</a></li>
             <li><a href="/uniScholar/components/GPA.php">GPA calculators</a></li>
         </ul>
