@@ -87,12 +87,12 @@ Open your XAMPP Control Panel and start both **Apache** and **MySQL** modules.
 5. Click **Go** to import all tables and sample data.
 
 ### 5. Configuration
-Open `includes/db.php` to verify your database connection credentials. Default XAMPP settings are pre-configured:
+Open `databade/connection.php` to verify your database connection credentials. Default XAMPP settings are pre-configured:
 ```php
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'unischolar_db');
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "unischolar";
 ```
 
 ### 6. Run the Application
@@ -103,8 +103,10 @@ http://localhost/uniScholar/
 
 ### 🔑 Demo Account Credentials
 You can log in using this pre-configured testing account or register a new one:
-* **Email:** `demo@example.com`
-* **Password:** `Demo@1234`
+* **Email:** `admin@gmail.com`
+* **Password:** `123456`
+* **Email:** `user@gmail.com`
+* **Password:** `123456`
 
 ---
 
