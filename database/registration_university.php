@@ -7,59 +7,79 @@ ini_set('display_errors', 1);
 
 include("connection.php");
 
-// Check user is registered
+/* Check user is registered */
+
 if (!isset($_SESSION["user_id"])) {
     die("User not found. Please register again.");
 }
 
-// Get logged-in user's ID
 $user_id = $_SESSION["user_id"];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+/* Only POST requests */
 
-    $university = $_POST["university"];
-    $faculty = $_POST["faculty"];
-    $study_year = $_POST["study_year"];
-    $semester = $_POST["semester"];
-
-    // Update user's university details
-    $sql = "UPDATE users
-            SET university = ?,
-                choose_your_faculty = ?,
-                study_year = ?,
-                semester = ?
-            WHERE id = ?";
-
-    $stmt = $conn->prepare($sql);
-
-    if (!$stmt) {
-        die("Prepare failed: " . $conn->error);
-    }
-
-    $stmt->bind_param(
-        "ssiii",
-        $university,
-        $faculty,
-        $study_year,
-        $semester,
-        $user_id
-    );
-
-    if ($stmt->execute()) {
-
-        echo "Registration successful!";
-        header("Location: ../auth/login.php");
-        exit();
-
-      
-
-    } else {
-
-        echo "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
-    $conn->close();
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    die("Invalid request.");
 }
+
+/* Get form data */
+
+$university = trim($_POST["university"] ?? '');
+$faculty = trim($_POST["faculty"] ?? '');
+$study_year = $_POST["study_year"] ?? '';
+$semester = $_POST["semester"] ?? '';
+
+
+
+if (
+    empty($university) ||
+    empty($faculty) ||
+    empty($study_year) ||
+    empty($semester)
+) {
+    die("Please complete all fields.");
+}
+
+/* Update user's university details */
+
+$sql = "UPDATE users
+        SET university = ?,
+            choose_your_faculty = ?,
+            study_year = ?,
+            semester = ?
+        WHERE id = ?";
+
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    die("Prepare failed: " . $conn->error);
+}
+
+$stmt->bind_param(
+    "ssiii",
+    $university,
+    $faculty,
+    $study_year,
+    $semester,
+    $user_id
+);
+
+if ($stmt->execute()) {
+
+
+    $_SESSION["university"] = $university;
+    $_SESSION["faculty"] = $faculty;
+    $_SESSION["study_year"] = $study_year;
+    $_SESSION["semester"] = $semester;
+
+    header("Location: ../login.php");
+    exit();
+
+} else {
+
+    die("Error: " . $stmt->error);
+}
+
+$stmt->close();
+$conn->close();
 
 ?>
