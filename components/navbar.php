@@ -3,12 +3,7 @@
     <div class="logo-container">
 
 
-        <div class="logo">
-            <a href="/uniScholar/index.php">
-
-                <img src="../img/Brand/Favicon-White.svg" alt="uniScholar">
-            </a>
-        </div>
+        
         <div class="">
             <a href="/uniScholar/index.php">
                 <h3>

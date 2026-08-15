@@ -1,4 +1,17 @@
-<?php $activePage = 'classroom'; ?>
+<?php
+
+session_start();
+
+$activePage = 'classroom';
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+$fullName = $_SESSION['fname'] . " " . $_SESSION['lname'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +23,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
+
 </head>
 
 <body>
@@ -18,7 +31,8 @@
     <div class="Admin-wrapper">
 
        
-        <?php require 'student_slide_bar.php'; ?> 
+      
+        <?php require 'studend_slide_bar.php'; ?>
         <?php require 'student_slide_bar_script.php'; ?>
 
         <main class="Admin-main">
@@ -28,7 +42,9 @@
                     <input type="text" placeholder="Search classroom...">
                 </div>
                 <div class="Admin-topbar-profile">
-                    <span>Student</span>
+                    <span><span>
+    <?php echo htmlspecialchars($fullName); ?>
+</span></span>
                     <img src="../img/icon/graduated.png" alt="Admin">
                 </div>
             </div>
@@ -39,7 +55,7 @@
             <div class="Admin-panel">
                 <div class="Admin-panel-header">
                     <h3>All Classrooms</h3>
-                    <a href="student-classroom-add.php">+ Add Classroom</a>
+                    <a href="student-classroom-join.php">+ Join Classroom</a>
                 </div>
                 <div class="Admin-table-wrap">
                     <table class="Admin-table">
