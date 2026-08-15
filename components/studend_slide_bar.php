@@ -14,13 +14,16 @@ if (!isset($activePage)) {
 </div>
 
 <aside class="Admin-sidebar" id="adminSidebar">
+     <a href="../index.php">
     <div class="Admin-sidebar-brand">
         <img src="../img/Brand/Favicon-White.svg" alt="uniScholar" class="Admin-sidebar-logo">
         <div>
             <h3>uniScholar</h3>
             <h6>Student Panel</h6>
         </div>
+       
     </div>
+     </a>
 
     <nav class="Admin-nav">
         <ul>
