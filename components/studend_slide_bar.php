@@ -39,8 +39,6 @@ if (!isset($activePage)) {
                 <a href="student_classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
             </li>
 
-            <
-
         </ul>
     </nav>
 

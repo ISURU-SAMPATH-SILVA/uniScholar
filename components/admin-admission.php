@@ -59,7 +59,7 @@
                                 ['applicant' => 'Ravindu Jayasuriya', 'university' => 'University of Colombo', 'course' => 'Computer Science', 'date' => '2026-07-30', 'status' => 'pending'],
                                 ['applicant' => 'Sithumi Bandara', 'university' => 'University of Moratuwa', 'course' => 'Electronics Eng.', 'date' => '2026-07-29', 'status' => 'approved'],
                                 ['applicant' => 'Thisara Gunasekara', 'university' => 'University of Peradeniya', 'course' => 'Business Mgmt.', 'date' => '2026-07-26', 'status' => 'rejected'],
-                                ['applicant' => 'Hansika Rathnayake', 'university' => 'University of Kelaniya', 'course' => 'Mathematics', 'date' => '2026-07-24', 'status' => 'approved'],
+                                ['applicant' => 'Hansika Rathnayake', 'university' => 'University of Kelaniya', 'course' => 'Arts', 'date' => '2026-07-24', 'status' => 'approved'],
                             ];
 
                             $badgeMap = [

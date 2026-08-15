@@ -57,7 +57,7 @@
                             
                             $universities = [
                                
-                                ['name' => 'University of Peradeniya', 'location' => 'Peradeniya', 'courses' => 51, 'status' => 'active'],
+                                ['name' => 'University of Peradeniya', 'location' => 'Kandy', 'courses' => 51, 'status' => 'active'],
                                 ['name' => 'University of Jaffna', 'location' => 'Jaffna', 'courses' => 21, 'status' => 'inactive'],
                             ];
 
