@@ -45,7 +45,7 @@ if (!isset($activePage)) {
     </nav>
 
     <div class="Admin-sidebar-footer">
-        <a href="logout.php" class="Admin-logout-link">
+        <a href="../auth/logout.php" class="Admin-logout-link">
             <img src="../img/icon/power.png" alt="" class="Admin-icon-img"> Logout
         </a>
     </div>

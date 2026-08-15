@@ -147,10 +147,10 @@
             <button
                 type="submit"
                 class="Login-btn Login-btn-primary"
-                name="register"
-                value="register"
+                name="NEXT"
+                value="NEXT"
             >
-                Register
+                NEXT
             </button>
 
         </form>

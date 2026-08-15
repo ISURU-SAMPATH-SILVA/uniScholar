@@ -1,11 +1,13 @@
 <?php
 
+session_start();
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include("connection.php");
 
-if (isset($_POST['register'])) {
+if (isset($_POST['NEXT'])) {
 
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -13,12 +15,10 @@ if (isset($_POST['register'])) {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-
     // Check passwords
     if ($password !== $confirm_password) {
         die("Passwords do not match!");
     }
-
 
     // Check email already exists
     $check_sql = "SELECT id FROM users WHERE email = ?";
@@ -34,11 +34,9 @@ if (isset($_POST['register'])) {
 
     $check_result = $check_stmt->get_result();
 
-
     if ($check_result->num_rows > 0) {
         die("Email already registered!");
     }
-
 
     // Hash password
     $hashed_password = password_hash(
@@ -46,9 +44,8 @@ if (isset($_POST['register'])) {
         PASSWORD_DEFAULT
     );
 
-
     // Insert user
-    $sql = "INSERT INTO users 
+    $sql = "INSERT INTO users
             (fname, lname, email, password)
             VALUES (?, ?, ?, ?)";
 
@@ -58,7 +55,6 @@ if (isset($_POST['register'])) {
         die("Prepare failed: " . $conn->error);
     }
 
-
     $stmt->bind_param(
         "ssss",
         $fname,
@@ -67,17 +63,23 @@ if (isset($_POST['register'])) {
         $hashed_password
     );
 
+    if ($stmt->execute()) {
 
-   if ($stmt->execute()) {
+        // Get newly created user ID
+        $user_id = $conn->insert_id;
 
-    header("Location: ../auth/login.php");
-    exit;
+        // Save user ID in session
+        $_SESSION["user_id"] = $user_id;
 
-} else {
+        // Go to university registration page
+        header("Location: ../auth/registration_university.php");
+        exit();
 
-    echo "Error: " . $stmt->error;
+    } else {
 
-}
+        echo "Error: " . $stmt->error;
+
+    }
 
     $check_stmt->close();
     $stmt->close();
