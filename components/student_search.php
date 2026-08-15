@@ -1,4 +1,17 @@
-<?php $activePage = 'search'; ?>
+<?php
+
+session_start();
+
+$activePage = 'search';
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+$fullName = $_SESSION['fname'] . " " . $_SESSION['lname'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,8 +38,10 @@
 
             <div class="Admin-topbar">
                 
-                <div class="Admin-topbar-profile">
-                    <span>Student</span>
+                <div class="Admin-topbar-profile align=left">
+                   <span>
+    <?php echo htmlspecialchars($fullName); ?>
+</span>
                     <img src="../img/icon/graduated.png" alt="Admin">
                 </div>
             </div>

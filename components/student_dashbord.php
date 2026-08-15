@@ -1,4 +1,17 @@
-<?php $activePage = 'dashboard'; ?>
+<?php
+
+session_start();
+
+$activePage = 'dashboard';
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+$fullName = $_SESSION['fname'] . " " . $_SESSION['lname'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +19,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
-    <title>uniScholar - Admin Dashboard</title>
+    <title>uniScholar - Student Dashboard</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/student-dashboard.css">
 </head>
 
 <body>
@@ -27,7 +40,9 @@
                     <input type="text" placeholder="Search students, courses...">
                 </div>
                 <div class="Admin-topbar-profile">
-                    <span>Nisal Nethsara</span>
+                    <span>
+    Welcome, <?php echo htmlspecialchars($fullName); ?>!
+</span>
                     <img src="../img/icon/graduated.png" alt="Admin">
                 </div>
             </div>
