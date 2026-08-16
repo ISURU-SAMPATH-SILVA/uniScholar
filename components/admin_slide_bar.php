@@ -31,9 +31,7 @@ if (!isset($activePage)) {
             <li class="<?php echo $activePage === 'search' ? 'active' : ''; ?>">
                 <a href="admin_search.php"><img src="../img/icon/loupe.png" alt="" class="Admin-icon-img"> Search</a>
             </li>
-            <li class="<?php echo $activePage === 'student' ? 'active' : ''; ?>">
-                <a href="admin-student.php"><img src="../img/icon/graduated.png" alt="" class="Admin-icon-img"> Student</a>
-            </li>
+           
             <li class="<?php echo $activePage === 'classroom' ? 'active' : ''; ?>">
                 <a href="admin_classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
             </li>

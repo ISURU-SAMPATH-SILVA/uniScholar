@@ -20,14 +20,17 @@
         <?php require 'admin_slide_bar_script.php'; ?>
 
         <?php
-        // ---- Database connection ----
-        require '../database/connection.php'; // $conn (mysqli) expected
+  
+        require '../database/connection.php'; /*data base eke path eka*/
 
-        // ---- Stat counts ----
+        $successMsg = '';
+        $errorMsg = '';
         $totalStudents = 0;
         $totalUniversities = 0;
+        $totalScholarships = 0;
+        $totalCourses_Listed = 0;
 
-        $res = mysqli_query($conn, "SELECT COUNT(*) AS cnt FROM users WHERE role = 'user'");
+        $res = mysqli_query($conn, "SELECT COUNT(*) AS cnt FROM users WHERE role IN ('user')");
         if ($res) {
             $row = mysqli_fetch_assoc($res);
             $totalStudents = $row['cnt'];
@@ -39,25 +42,42 @@
             $totalUniversities = $row2['cnt'];
         }
 
-        // ---- Recent students (latest registered) ----
-        $students = [];
-        $sql = "SELECT id, fname, lname, university, choose_your_faculty, study_year, semester, role
-                FROM users
-                WHERE role = 'user'
-                ORDER BY id DESC
-                LIMIT 5";
-        $result = mysqli_query($conn, $sql);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_role'])) {
+            $userId  = (int) $_POST['user_id'];
+            $newRole = $_POST['new_role'];
+
+          
+            $allowedRoles = ['user', 'admin'];
+            if (in_array($newRole, $allowedRoles, true)) {
+
+                $stmt = mysqli_prepare($conn, "UPDATE users SET role = ? WHERE id = ?");
+                mysqli_stmt_bind_param($stmt, "si", $newRole, $userId);
+
+                if (mysqli_stmt_execute($stmt)) {
+                    $successMsg = "User #$userId role updated to '$newRole'.";
+                } else {
+                    $errorMsg = "Update error occurred.";
+                }
+                mysqli_stmt_close($stmt);
+            } else {
+                $errorMsg = "Invalid role value provided.";
+            }
+        }
+
+    
+        $users = [];
+        $result = mysqli_query($conn, "SELECT id, fname, lname, email, role, university, choose_your_faculty, study_year, semester FROM users ORDER BY role DESC, id DESC");
         if ($result) {
             while ($r = mysqli_fetch_assoc($result)) {
-                $students[] = $r;
+                $users[] = $r;
             }
         }
         ?>
 
         <!-- Main content -->
         <main class="Admin-main">
+            
 
-            <!-- Desktop top bar -->
             <div class="Admin-topbar">
                 <div class="Admin-topbar-search">
                     <input type="text" placeholder="Search students, courses...">
@@ -68,10 +88,9 @@
                 </div>
             </div>
 
-            <h1 class="Admin-page-title">Dashboard</h1>
-            <p class="Admin-page-subtitle">Welcome back, here's what's happening today.</p>
+            <h1 class="Admin-page-title">Manage Users</h1>
+            
 
-            <!-- Stat cards -->
             <div class="Admin-stats-grid">
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">👨‍🎓</div>
@@ -103,37 +122,66 @@
                 </div>
             </div>
 
-            <!-- Recent activity table -->
+            <?php if ($successMsg): ?>
+                <div class="alert alert-success" style="padding:10px; background:#d4edda; color:#155724; border-radius:6px; margin-bottom:15px;">
+                    <?= htmlspecialchars($successMsg) ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($errorMsg): ?>
+                <div class="alert alert-danger" style="padding:10px; background:#f8d7da; color:#721c24; border-radius:6px; margin-bottom:15px;">
+                    <?= htmlspecialchars($errorMsg) ?>
+                </div>
+            <?php endif; ?>
+
             <div class="Admin-panel">
                 <div class="Admin-panel-header">
-                    <h3>Recent Registrations</h3>
-                    <a href="admin-students.php">View all</a>
+                    <h3>All Users (<?= count($users) ?>)</h3>
                 </div>
                 <div class="Admin-table-wrap">
                     <table class="Admin-table">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Name</th>
+                                <th>Email</th>
                                 <th>University</th>
                                 <th>Faculty</th>
-                                <th>Year / Semester</th>
-                                <th>Role</th>
+                                <th>Current Role</th>
+                                <th>Change Role</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (count($students) > 0): ?>
-                                <?php foreach ($students as $s): ?>
+                            <?php if (count($users) > 0): ?>
+                                <?php foreach ($users as $u): ?>
                                     <tr>
-                                        <td><?= htmlspecialchars($s['fname'] . ' ' . $s['lname']) ?></td>
-                                        <td><?= htmlspecialchars($s['university']) ?></td>
-                                        <td><?= htmlspecialchars($s['choose_your_faculty']) ?></td>
-                                        <td>Y<?= htmlspecialchars($s['study_year']) ?> / S<?= htmlspecialchars($s['semester']) ?></td>
-                                        <td><span class="Admin-badge Admin-badge-active"><?= htmlspecialchars($s['role']) ?></span></td>
+                                        <td><?= htmlspecialchars($u['id']) ?></td>
+                                        <td><?= htmlspecialchars($u['fname'] . ' ' . $u['lname']) ?></td>
+                                        <td><?= htmlspecialchars($u['email']) ?></td>
+                                        <td><?= htmlspecialchars($u['university']) ?></td>
+                                        <td><?= htmlspecialchars($u['choose_your_faculty']) ?></td>
+                                        <td>
+                                            <?php if ($u['role'] === 'admin'): ?>
+                                                <span class="Admin-badge Admin-badge-active">Admin</span>
+                                            <?php else: ?>
+                                                <span class="Admin-badge Admin-badge-pending">User</span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <form method="POST" style="display:flex; gap:6px; align-items:center;">
+                                                <input type="hidden" name="user_id" value="<?= htmlspecialchars($u['id']) ?>">
+                                                <select name="new_role" style="padding:4px 8px; border-radius:5px;">
+                                                    <option value="user" <?= $u['role'] === 'user' ? 'selected' : '' ?>>User</option>
+                                                    <option value="admin" <?= $u['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>
+                                                </select>
+                                                <button type="submit" name="update_role" class="btn btn-sm btn-primary">Update</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>
                                 <tr>
-                                    <td colspan="5" style="text-align:center;">No students found.</td>
+                                    <td colspan="7" style="text-align:center;">No users found.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
