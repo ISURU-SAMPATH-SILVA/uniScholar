@@ -116,8 +116,8 @@
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">✈️</div>
                     <div>
-                        <h2>2</h2>
-                        <p>Active Scholarships</p>
+                        <h2>Scholarships</h2>
+                        <p><?= htmlspecialchars($totalScholarships) ?></p>
                     </div>
                 </div>
             </div>
