@@ -10,15 +10,49 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    
 </head>
 
 <body>
 
     <div class="Admin-wrapper">
 
-        <?php require 'admin_slide_bar.php'; ?> 
+        <?php require 'admin_slide_bar.php'; ?>
         <?php require 'admin_slide_bar_script.php'; ?>
+
+        <?php
+        // ---- Database connection ----
+        require '../database/connection.php'; // $conn (mysqli) expected
+
+        // ---- Stat counts ----
+        $totalStudents = 0;
+        $totalUniversities = 0;
+
+        $res = mysqli_query($conn, "SELECT COUNT(*) AS cnt FROM users WHERE role = 'user'");
+        if ($res) {
+            $row = mysqli_fetch_assoc($res);
+            $totalStudents = $row['cnt'];
+        }
+
+        $res2 = mysqli_query($conn, "SELECT COUNT(DISTINCT university) AS cnt FROM users WHERE role = 'user'");
+        if ($res2) {
+            $row2 = mysqli_fetch_assoc($res2);
+            $totalUniversities = $row2['cnt'];
+        }
+
+        // ---- Recent students (latest registered) ----
+        $students = [];
+        $sql = "SELECT id, fname, lname, university, choose_your_faculty, study_year, semester, role
+                FROM users
+                WHERE role = 'user'
+                ORDER BY id DESC
+                LIMIT 5";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            while ($r = mysqli_fetch_assoc($result)) {
+                $students[] = $r;
+            }
+        }
+        ?>
 
         <!-- Main content -->
         <main class="Admin-main">
@@ -42,14 +76,14 @@
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">👨‍🎓</div>
                     <div>
-                        <h2>1,248</h2>
+                        <h2><?= htmlspecialchars($totalStudents) ?></h2>
                         <p>Total Students</p>
                     </div>
                 </div>
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">🏫</div>
                     <div>
-                        <h2>18</h2>
+                        <h2><?= htmlspecialchars($totalUniversities) ?></h2>
                         <p>Universities</p>
                     </div>
                 </div>
@@ -81,34 +115,27 @@
                             <tr>
                                 <th>Name</th>
                                 <th>University</th>
-                                <th>Course</th>
-                                <th>Status</th>
-                                <th>Joined</th>
+                                <th>Faculty</th>
+                                <th>Year / Semester</th>
+                                <th>Role</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Nisal Nethsara</td>
-                                <td>University of Colombo</td>
-                                <td>Computer Science</td>
-                                <td><span class="Admin-badge Admin-badge-active">Active</span></td>
-                                <td>2026-07-28</td>
-                            </tr>
-                            <tr>
-                                <td>Menuka Sadaruwan</td>
-                                <td>University of Moratuwa</td>
-                                <td>Electronics Eng.</td>
-                                <td><span class="Admin-badge Admin-badge-pending">Pending</span></td>
-                                <td>2026-07-27</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>Indika Thotawaththa</td>
-                                <td>University of Kelaniya</td>
-                                <td>Mathematics</td>
-                                <td><span class="Admin-badge Admin-badge-inactive">Inactive</span></td>
-                                <td>2026-07-22</td>
-                            </tr>
+                            <?php if (count($students) > 0): ?>
+                                <?php foreach ($students as $s): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($s['fname'] . ' ' . $s['lname']) ?></td>
+                                        <td><?= htmlspecialchars($s['university']) ?></td>
+                                        <td><?= htmlspecialchars($s['choose_your_faculty']) ?></td>
+                                        <td>Y<?= htmlspecialchars($s['study_year']) ?> / S<?= htmlspecialchars($s['semester']) ?></td>
+                                        <td><span class="Admin-badge Admin-badge-active"><?= htmlspecialchars($s['role']) ?></span></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="5" style="text-align:center;">No students found.</td>
+                                </tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -119,7 +146,6 @@
 
     <?php require 'admin_slide_bar_script.php'; ?>
     <?php require 'Footer.php'; ?>
-
 
 </body>
 

@@ -7,21 +7,19 @@ ini_set('display_errors', 1);
 
 include("connection.php");
 
-/* Check user is registered */
-
 if (!isset($_SESSION["user_id"])) {
     die("User not found. Please register again.");
 }
 
 $user_id = $_SESSION["user_id"];
 
-/* Only POST requests */
+
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     die("Invalid request.");
 }
 
-/* Get form data */
+
 
 $university = trim($_POST["university"] ?? '');
 $faculty = trim($_POST["faculty"] ?? '');
@@ -71,7 +69,7 @@ if ($stmt->execute()) {
     $_SESSION["study_year"] = $study_year;
     $_SESSION["semester"] = $semester;
 
-    header("Location: ../login.php");
+    header("Location: ../auth/login.php");
     exit();
 
 } else {

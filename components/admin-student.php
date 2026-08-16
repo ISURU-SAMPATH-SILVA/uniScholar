@@ -1,3 +1,45 @@
+<?php
+
+session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include("../auth/connection.php");
+
+// Check login
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+// Check admin
+if ($_SESSION['role'] !== 'admin') {
+    header("Location: ../user/dashboard.php");
+    exit;
+}
+
+// Get all students
+$sql = "SELECT 
+            id,
+            fname,
+            lname,
+            email,
+            university,
+            choose_your_faculty,
+            study_year,
+            semester
+        FROM users
+        WHERE role = 'user'
+        ORDER BY id DESC";
+
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("Database error: " . $conn->error);
+}
+
+?>
 <?php $activePage = 'student'; ?>
 <!DOCTYPE html>
 <html lang="en">
