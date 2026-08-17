@@ -10,20 +10,74 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    
 </head>
 
 <body>
 
     <div class="Admin-wrapper">
 
-        <?php require 'admin_slide_bar.php'; ?> 
+        <?php require 'admin_slide_bar.php'; ?>
         <?php require 'admin_slide_bar_script.php'; ?>
+
+        <?php
+  
+        require '../database/connection.php'; /*data base eke path eka*/
+
+        $successMsg = '';
+        $errorMsg = '';
+        $totalStudents = 0;
+        $totalUniversities = 0;
+        $totalScholarships = 0;
+        $totalCourses_Listed = 0;
+
+        $res = mysqli_query($conn, "SELECT COUNT(*) AS cnt FROM users WHERE role IN ('user')");
+        if ($res) {
+            $row = mysqli_fetch_assoc($res);
+            $totalStudents = $row['cnt'];
+        }
+
+        $res2 = mysqli_query($conn, "SELECT COUNT(DISTINCT university) AS cnt FROM users WHERE role = 'user'");
+        if ($res2) {
+            $row2 = mysqli_fetch_assoc($res2);
+            $totalUniversities = $row2['cnt'];
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_role'])) {
+            $userId  = (int) $_POST['user_id'];
+            $newRole = $_POST['new_role'];
+
+          
+            $allowedRoles = ['user', 'admin'];
+            if (in_array($newRole, $allowedRoles, true)) {
+
+                $stmt = mysqli_prepare($conn, "UPDATE users SET role = ? WHERE id = ?");
+                mysqli_stmt_bind_param($stmt, "si", $newRole, $userId);
+
+                if (mysqli_stmt_execute($stmt)) {
+                    $successMsg = "User #$userId role updated to '$newRole'.";
+                } else {
+                    $errorMsg = "Update error occurred.";
+                }
+                mysqli_stmt_close($stmt);
+            } else {
+                $errorMsg = "Invalid role value provided.";
+            }
+        }
+
+    
+        $users = [];
+        $result = mysqli_query($conn, "SELECT id, fname, lname, email, role, university, choose_your_faculty, study_year, semester FROM users ORDER BY role DESC, id DESC");
+        if ($result) {
+            while ($r = mysqli_fetch_assoc($result)) {
+                $users[] = $r;
+            }
+        }
+        ?>
 
         <!-- Main content -->
         <main class="Admin-main">
+            
 
-            <!-- Desktop top bar -->
             <div class="Admin-topbar">
                 <div class="Admin-topbar-search">
                     <input type="text" placeholder="Search students, courses...">
@@ -34,22 +88,21 @@
                 </div>
             </div>
 
-            <h1 class="Admin-page-title">Dashboard</h1>
-            <p class="Admin-page-subtitle">Welcome back, here's what's happening today.</p>
+            <h1 class="Admin-page-title">Manage Users</h1>
+            
 
-            <!-- Stat cards -->
             <div class="Admin-stats-grid">
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">👨‍🎓</div>
                     <div>
-                        <h2>1,248</h2>
+                        <h2><?= htmlspecialchars($totalStudents) ?></h2>
                         <p>Total Students</p>
                     </div>
                 </div>
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">🏫</div>
                     <div>
-                        <h2>18</h2>
+                        <h2><?= htmlspecialchars($totalUniversities) ?></h2>
                         <p>Universities</p>
                     </div>
                 </div>
@@ -63,52 +116,74 @@
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">✈️</div>
                     <div>
-                        <h2>2</h2>
-                        <p>Active Scholarships</p>
+                        <h2>Scholarships</h2>
+                        <p><?= htmlspecialchars($totalScholarships) ?></p>
                     </div>
                 </div>
             </div>
 
-            <!-- Recent activity table -->
+            <?php if ($successMsg): ?>
+                <div class="alert alert-success" style="padding:10px; background:#d4edda; color:#155724; border-radius:6px; margin-bottom:15px;">
+                    <?= htmlspecialchars($successMsg) ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($errorMsg): ?>
+                <div class="alert alert-danger" style="padding:10px; background:#f8d7da; color:#721c24; border-radius:6px; margin-bottom:15px;">
+                    <?= htmlspecialchars($errorMsg) ?>
+                </div>
+            <?php endif; ?>
+
             <div class="Admin-panel">
                 <div class="Admin-panel-header">
-                    <h3>Recent Registrations</h3>
-                    <a href="admin-students.php">View all</a>
+                    <h3>All Users (<?= count($users) ?>)</h3>
                 </div>
                 <div class="Admin-table-wrap">
                     <table class="Admin-table">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Name</th>
+                                <th>Email</th>
                                 <th>University</th>
-                                <th>Course</th>
-                                <th>Status</th>
-                                <th>Joined</th>
+                                <th>Faculty</th>
+                                <th>Current Role</th>
+                                <th>Change Role</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Nisal Nethsara</td>
-                                <td>University of Colombo</td>
-                                <td>Computer Science</td>
-                                <td><span class="Admin-badge Admin-badge-active">Active</span></td>
-                                <td>2026-07-28</td>
-                            </tr>
-                            <tr>
-                                <td>Menuka Sadaruwan</td>
-                                <td>University of Moratuwa</td>
-                                <td>Electronics Eng.</td>
-                                <td><span class="Admin-badge Admin-badge-pending">Pending</span></td>
-                                <td>2026-07-27</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>Indika Thotawaththa</td>
-                                <td>University of Kelaniya</td>
-                                <td>Mathematics</td>
-                                <td><span class="Admin-badge Admin-badge-inactive">Inactive</span></td>
-                                <td>2026-07-22</td>
-                            </tr>
+                            <?php if (count($users) > 0): ?>
+                                <?php foreach ($users as $u): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($u['id']) ?></td>
+                                        <td><?= htmlspecialchars($u['fname'] . ' ' . $u['lname']) ?></td>
+                                        <td><?= htmlspecialchars($u['email']) ?></td>
+                                        <td><?= htmlspecialchars($u['university']) ?></td>
+                                        <td><?= htmlspecialchars($u['choose_your_faculty']) ?></td>
+                                        <td>
+                                            <?php if ($u['role'] === 'admin'): ?>
+                                                <span class="Admin-badge Admin-badge-active">Admin</span>
+                                            <?php else: ?>
+                                                <span class="Admin-badge Admin-badge-pending">User</span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <form method="POST" style="display:flex; gap:6px; align-items:center;">
+                                                <input type="hidden" name="user_id" value="<?= htmlspecialchars($u['id']) ?>">
+                                                <select name="new_role" style="padding:4px 8px; border-radius:5px;">
+                                                    <option value="user" <?= $u['role'] === 'user' ? 'selected' : '' ?>>User</option>
+                                                    <option value="admin" <?= $u['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>
+                                                </select>
+                                                <button type="submit" name="update_role" class="btn btn-sm btn-primary">Update</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="7" style="text-align:center;">No users found.</td>
+                                </tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -119,7 +194,6 @@
 
     <?php require 'admin_slide_bar_script.php'; ?>
     <?php require 'Footer.php'; ?>
-
 
 </body>
 

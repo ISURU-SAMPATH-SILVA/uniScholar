@@ -87,28 +87,23 @@
                             <option name="faculty_name" value="Faculty of Social Sciences">Faculty of Social Sciences</option>
                         </select>
                     </div>
-                  <div class="Login-input-group">
-
-                    <label for="confirm-pass">
-                    Confirm Password
-                    </label>
-
-                   <input
-                    type="text"
-                    id="study_year"
-                    name="study_year"
-                    placeholder="2024"
-                    minlength="4"
-                    required
-                   >
-
-                 </div>
+                    
+                    <div class="Admin-field">
+                        <label for="AdmissionsSemester">Study Year</label>
+                        <select id="AdmissionsSemester" name="study_year">
+                            <option name="study_year" value="1" selected>1</option>
+                            <option name="study_year" value="2">2</option>
+                            <option name="study_year" value="3">3</option>
+                            <option name="study_year" value="4">4</option>
+                        </select>
+                    </div>
+                 
                    
                     <div class="Admin-field">
                         <label for="AdmissionsSemester">Semester</label>
                         <select id="AdmissionsSemester" name="semester">
-                            <option name="Semester" value="1" selected>1</option>
-                            <option name="Semester" value="2">2</option>
+                            <option name="semester" value="1" selected>1</option>
+                            <option name="semester" value="2">2</option>
                         </select>
                     </div>
 
