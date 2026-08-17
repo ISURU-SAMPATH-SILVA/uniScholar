@@ -787,7 +787,17 @@ color: var(--color-primary);
   opacity: 0.85;
   font-size: 1rem;
 }
+.Developers{
+  color: #f1890a;
+}
+.about_detals{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 
+ 
+  
+}
 .Resource_Sharing,
 .Scholarship_Finder,
 .Student_Dashboard {
