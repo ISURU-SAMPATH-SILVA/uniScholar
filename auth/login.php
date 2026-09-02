@@ -27,7 +27,36 @@ if (
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Font Awesome icons සඳහා link එක -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .password-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .password-container input {
+            width: 100%;
+            padding: 10px 40px 10px 10px; /* දකුණු පසින් icon එකට ඉඩ තැබීමට */
+            box-sizing: border-box;
+        }
+
+        .toggle-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+        }
+    </style>
 </head>
+
 
 <body>
     <div class="Login-card">
@@ -87,6 +116,25 @@ if (
             Don't have an account? <a href="register.php">Register</a>
         </p>
     </div>
+    <div class="password-container">
+        <input type="password" id="passwordInput" placeholder="Password">
+        <i class="fa-solid fa-eye toggle-icon" id="togglePassword"></i>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordInput = document.querySelector('#passwordInput');
+
+        togglePassword.addEventListener('click', function () {
+            // type එක text සහ password අතර වෙනස් කිරීම
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            // Icon එක (ඇස ඇරලා / වහලා) වෙනස් කිරීම
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>
 
 </html>
