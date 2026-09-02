@@ -1,4 +1,5 @@
 <?php $activePage = 'admission'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,21 +11,21 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    
 </head>
 
 <body>
 
     <div class="Admin-wrapper">
 
-        <?php require 'admin_slide_bar.php'; ?>
+        <?php require 'admin_slide_bar.php'; ?> 
         <?php require 'admin_slide_bar_script.php'; ?>
 
         <main class="Admin-main">
 
             <div class="Admin-topbar">
                 <div class="Admin-topbar-search">
-                    <input type="text" placeholder="Search admissions...">
+                    <input type="text" placeholder="Search classroom...">
                 </div>
                 <div class="Admin-topbar-profile">
                     <span>Admin</span>
@@ -35,10 +36,16 @@
             <h1 class="Admin-page-title">Admission</h1>
             <p class="Admin-page-subtitle">Review and manage student admission applications.</p>
 
+            <?php if (isset($_GET['success'])): ?>
+                <div class="alert alert-success" style="padding:10px; background:#d1fae5; color:#065f46; border-radius:6px; margin-bottom:15px;">
+                   Admission application has been successfully submitted!
+                </div>
+            <?php endif; ?>
+
             <div class="Admin-panel">
                 <div class="Admin-panel-header">
-                    <h3>All Applications</h3>
-                    <a href="admin-admission-add.php">+ Add Application</a>
+                    <h3>All Admission</h3>
+                   
                 </div>
                 <div class="Admin-table-wrap">
                     <table class="Admin-table">
@@ -46,43 +53,42 @@
                             <tr>
                                 <th>Applicant</th>
                                 <th>University</th>
-                                <th>Course Applied</th>
-                                <th>Applied Date</th>
+                                <th>Applied Dat</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            // TODO: Replace me sample array eka database query result ekakin.
-                            $applications = [
-                                ['applicant' => 'Ravindu Jayasuriya', 'university' => 'University of Colombo', 'course' => 'Computer Science', 'date' => '2026-07-30', 'status' => 'pending'],
-                                ['applicant' => 'Sithumi Bandara', 'university' => 'University of Moratuwa', 'course' => 'Electronics Eng.', 'date' => '2026-07-29', 'status' => 'approved'],
-                                ['applicant' => 'Thisara Gunasekara', 'university' => 'University of Peradeniya', 'course' => 'Business Mgmt.', 'date' => '2026-07-26', 'status' => 'rejected'],
-                                ['applicant' => 'Hansika Rathnayake', 'university' => 'University of Kelaniya', 'course' => 'Arts', 'date' => '2026-07-24', 'status' => 'approved'],
-                            ];
+                            require '../database/connection.php';
 
-                            $badgeMap = [
-                                'approved' => 'Admin-badge-active',
-                                'pending'  => 'Admin-badge-pending',
-                                'rejected' => 'Admin-badge-inactive',
-                            ];
+                            $sql = "SELECT Classroom_name, course_code, Semester, Study_year, status 
+                                    FROM classrooms 
+                                    ORDER BY Classroom_name ASC";
 
-                            foreach ($applications as $a):
-                                $badgeClass = $badgeMap[$a['status']];
+                            $result = $conn->query($sql);
+
+                            if ($result && $result->num_rows > 0):
+                                while ($c = $result->fetch_assoc()):
+                                    $badgeClass = $c['status'] === 'active' ? 'Admin-badge-active' : 'Admin-badge-inactive';
                             ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($a['applicant']); ?></td>
-                                    <td><?php echo htmlspecialchars($a['university']); ?></td>
-                                    <td><?php echo htmlspecialchars($a['course']); ?></td>
-                                    <td><?php echo htmlspecialchars($a['date']); ?></td>
-                                    <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($a['status']); ?></span></td>
+                                    <td><?php echo htmlspecialchars($c['Classroom_name']); ?></td>
+                                    <td><?php echo htmlspecialchars($c['course_code']); ?></td>
+                                    <td><?php echo (int) $c['Semester']; ?></td>
+                                    <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
                                     <td>
-                                        <a href="admin-admission-view.php?id=<?php echo urlencode($a['applicant']); ?>">View</a>
-                                        <a href="#" class="Admin-action-delete">Reject</a>
+                                       <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['course_code']); ?>">Edit</a>
                                     </td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <?php
+                                endwhile;
+                            else:
+                            ?>
+                                <tr>
+                                    <td colspan="5" style="text-align:center;">I haven't added any classrooms yet.</td>
+                                </tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
