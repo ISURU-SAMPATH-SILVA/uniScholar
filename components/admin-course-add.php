@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
+   
 </head>
 
 <body>

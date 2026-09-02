@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    
 </head>
 
 <body>
@@ -41,11 +41,11 @@
                     <a href="admin_classroom.php">Back to Classrooms</a>
                 </div>
 
-                <form class="Admin-settings-form" action="admin-classroom-save.php" method="post">
+                <form class="Admin-settings-form" action="../database/admin-classroom-save.php" method="post">
 
                     <div class="Admin-field">
                         <label for="classroomName">Classroom Name</label>
-                        <input type="text" id="classroomName" name="name" placeholder="e.g. Room 101" required>
+                        <input type="text" id="classroomName" name="Classroom_name" placeholder="e.g. Room 101" required>
                     </div>
 
                     <div class="Admin-field">
@@ -54,65 +54,43 @@
                     </div>
 
                     <div class="Admin-field">
-                        <label for="classroomlecturerName">Lecturer Name</label>
-                        <input type="text" id="classroomlecturerName" name="lecturer_name" placeholder="e.g. Dr.S.Wejesiri" required>
+                        <label for="classroomCourse Code">Enrollment Key</label>
+                        <input type="text" id="classroomCourse Code" name="enrollment_key" placeholder="e.g. CMT2024" required>
                     </div>
-                     <div class="Admin-field">
+
+                   
+                    <div class="Admin-field">
                         <label for="classroomSemester">Semester</label>
-                        <select id="classroomSemester" name="semester">
-                            <option value="Semester">-- Select Semester --</option>
-                            <option value="Semester1" selected>First Semester</option>
-                            <option value="Semester2">Second Semester</option>
+                        <select id="classroomSemester" name="Semester">
+                            <option value="">-- Select Semester --</option>
+                            <option value="1" selected>First Semester</option>
+                            <option value="2">Second Semester</option>
                         </select>
                     </div>
                     <div class="Admin-field">
                         <label for="classroomStudyYear">Study Year</label>
-                        <select id="classroomStudyYear" name="study_year">
-                            <option value="StudyYear">-- Select Study Year --</option>
-                            <option value="StudyYear1" selected>First Year</option>
-                            <option value="StudyYear2">Second Year</option>
-                            <option value="StudyYear3">Third Year</option>
-                            <option value="StudyYear4">Fourth Year</option>
+                        <select id="classroomStudyYear" name="Study_year">
+                            <option value="">-- Select Study Year --</option>
+                            <option value="1" selected>First Year</option>
+                            <option value="2">Second Year</option>
+                            <option value="3">Third Year</option>
+                            <option value="4">Fourth Year</option>
                         </select>
                     </div>
-                    <div class="Admin-field">
-                        <label for="Admissionsuniversity">University</label>
-                        <select id="universitySelect" name="university">
-                            <option value="">-- Select University --</option>
-                            <option value="University of Colombo">University of Colombo</option>
-                            <option value="University of Peradeniya">University of Peradeniya</option>
-                            <option value="University of Moratuwa">University of Moratuwa</option>
-                            <option value="University of Sri Jayewardenepura">University of Sri Jayewardenepura</option>
-                            <option value="University of Kelaniya">University of Kelaniya</option>
-                            <option value="University of Jaffna">University of Jaffna</option>
-                            <option value="University of Ruhuna">University of Ruhuna</option>
-                            <option value="The Open University of Sri Lanka">The Open University of Sri Lanka</option>
-                            <option value="Eastern University, Sri Lanka">Eastern University, Sri Lanka</option>
-                            <option value="South Eastern University of Sri Lanka">South Eastern University of Sri Lanka</option>
-                            <option value="Rajarata University of Sri Lanka">Rajarata University of Sri Lanka</option>
-                            <option value="Sabaragamuwa University of Sri Lanka">Sabaragamuwa University of Sri Lanka</option>
-                            <option value="Wayamba University of Sri Lanka">Wayamba University of Sri Lanka</option>
-                            <option value="Uva Wellassa University">Uva Wellassa University</option>
-                            <option value="University of the Visual & Performing Arts">University of the Visual & Performing Arts</option>
-                            <option value="Gampaha Wickramarachchi University of Indigenous Medicine">Gampaha Wickramarachchi University of Indigenous Medicine</option>
-                            <option value="Institute of Technology University of Moratuwa">Institute of Technology University of Moratuwa</option>
-                            <option value="University of Vauniya, Sri Lanka">University of Vauniya, Sri Lanka</option>
-                        </select>
-                    </div>
-
+                   
                     <div class="Admin-field">
                         <label for="AdmissionsFaculty">Choose your Faculty</label>
-                        <select id="AdmissionsFaculty" name="faculty">
-                            <option value="">-- Select Faculty --</option>
-                            <option value="Faculty of Technology">Faculty of Technology</option>
-                            <option value="Faculty of Applied Sciences">Faculty of Applied Sciences</option>
-                            <option value="Faculty of Agriculture">Faculty of Agriculture</option>
-                            <option value="Faculty of Medicine">Faculty of Medicine</option>
-                            <option value="Faculty of Engineering">Faculty of Engineering</option>
-                            <option value="Faculty of Law">Faculty of Law</option>
-                            <option value="Faculty of Business">Faculty of Business</option>
-                            <option value="Faculty of Education">Faculty of Education</option>
-                            <option value="Faculty of Social Sciences">Faculty of Social Sciences</option>
+                        <select id="AdmissionsFaculty" name="faculy">
+                            <option name="faculy" value="">-- Select Faculty --</option>
+                            <option name="faculy" value="Faculty of Technology">Faculty of Technology</option>
+                            <option name="faculy" value="Faculty of Applied Sciences">Faculty of Applied Sciences</option>
+                            <option name="faculy" value="Faculty of Agriculture">Faculty of Agriculture</option>
+                            <option name="faculy" value="Faculty of Medicine">Faculty of Medicine</option>
+                            <option name="faculy" value="Faculty of Engineering">Faculty of Engineering</option>
+                            <option name="faculy" value="Faculty of Law">Faculty of Law</option>
+                            <option name="faculy" value="Faculty of Business">Faculty of Business</option>
+                            <option name="faculy" value="Faculty of Education">Faculty of Education</option>
+                            <option name="faculy" value="Faculty of Social Sciences">Faculty of Social Sciences</option>
                         </select>
                     </div>
 
