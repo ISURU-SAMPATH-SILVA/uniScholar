@@ -41,6 +41,7 @@ Access a structured directory of local and global financial aid programs. Filter
         <p>
 Take full control of your academic logs. Manage your file uploads and monitor the live approval states (Pending, Approved, Rejected) of your tracking sheets.</p>
     </div>
+    
 
     <?php require 'Footer.php'; ?>
 
