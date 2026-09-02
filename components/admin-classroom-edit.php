@@ -10,31 +10,26 @@ if (empty($course_code)) {
     die("The classroom code has not been provided.");
 }
 
-// ========== UPDATE (Form submit උනාම) ==========
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $Classroom_name = trim($_POST['Classroom_name'] ?? '');
     $new_course_code = trim($_POST['course_code'] ?? '');
     $enrollment_key = trim($_POST['enrollment_key'] ?? '');
-    $lecturer_name  = trim($_POST['lecturer_name'] ?? '');
     $Semester       = is_numeric($_POST['Semester'] ?? '') ? (int) $_POST['Semester'] : null;
     $Study_year     = is_numeric($_POST['Study_year'] ?? '') ? (int) $_POST['Study_year'] : null;
-    $university     = $_POST['university'] ?? '';
     $faculy         = $_POST['faculy'] ?? '';
     $status         = $_POST['status'] ?? 'active';
     $old_course_code = $_POST['old_course_code'] ?? '';
 
-    if (empty($Classroom_name) || empty($new_course_code) || empty($lecturer_name)) {
-        $message = "Classroom name, course code, and lecturer name are required.";
+    if (empty($Classroom_name) || empty($new_course_code) ) {
+        $message = "Classroom name, course code, and  are required.";
     } else {
         $sql = "UPDATE classrooms SET 
                     Classroom_name = ?, 
                     course_code = ?, 
                     enrollment_key = ?, 
-                    lecturer_name = ?, 
                     Semester = ?, 
                     Study_year = ?, 
-                    university = ?, 
                     faculy = ?, 
                     status = ?
                 WHERE course_code = ?";
@@ -148,10 +143,6 @@ $stmt->close();
                         <input type="text" id="enrollment_key" name="enrollment_key" value="<?php echo htmlspecialchars($classroom['enrollment_key']); ?>" required>
                     </div>
 
-                    <div class="Admin-field">
-                        <label for="classroomlecturerName">Lecturer Name</label>
-                        <input type="text" id="classroomlecturerName" name="lecturer_name" value="<?php echo htmlspecialchars($classroom['lecturer_name']); ?>" required>
-                    </div>
 
                     <div class="Admin-field">
                         <label for="classroomSemester">Semester</label>
@@ -173,28 +164,7 @@ $stmt->close();
                         </select>
                     </div>
 
-                    <div class="Admin-field">
-                        <label for="universitySelect">University</label>
-                        <select id="universitySelect" name="university">
-                            <?php
-                            $universities = [
-                                "University of Colombo", "University of Peradeniya", "University of Moratuwa",
-                                "University of Sri Jayewardenepura", "University of Kelaniya", "University of Jaffna",
-                                "University of Ruhuna", "The Open University of Sri Lanka", "Eastern University, Sri Lanka",
-                                "South Eastern University of Sri Lanka", "Rajarata University of Sri Lanka",
-                                "Sabaragamuwa University of Sri Lanka", "Wayamba University of Sri Lanka",
-                                "Uva Wellassa University", "University of the Visual & Performing Arts",
-                                "Gampaha Wickramarachchi University of Indigenous Medicine",
-                                "Institute of Technology University of Moratuwa", "University of Vauniya, Sri Lanka"
-                            ];
-                            foreach ($universities as $uni):
-                                $selected = ($classroom['university'] === $uni) ? 'selected' : '';
-                            ?>
-                                <option value="<?php echo htmlspecialchars($uni); ?>" <?php echo $selected; ?>><?php echo htmlspecialchars($uni); ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-
+                   
                     <div class="Admin-field">
                         <label for="AdmissionsFaculty">Choose your Faculty</label>
                         <select id="AdmissionsFaculty" name="faculy">
