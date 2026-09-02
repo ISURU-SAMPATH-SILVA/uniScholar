@@ -109,15 +109,15 @@
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">📑</div>
                     <div>
-                        <h2>342</h2>
+                        <h2><?= htmlspecialchars($totalCourses_Listed) ?></h2>
                         <p>Courses Listed</p>
                     </div>
                 </div>
                 <div class="Admin-stat-card">
                     <div class="Admin-stat-icon">✈️</div>
                     <div>
-                        <h2>Scholarships</h2>
-                        <p><?= htmlspecialchars($totalScholarships) ?></p>
+                        <h2><?= htmlspecialchars($totalScholarships) ?></h2>
+                        <p>Scholarships</p>
                     </div>
                 </div>
             </div>

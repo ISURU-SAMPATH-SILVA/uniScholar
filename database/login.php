@@ -34,6 +34,7 @@ $sql = "SELECT
         FROM users
         WHERE email = ?";
 
+
 $stmt = $conn->prepare($sql);
 
 if (!$stmt) {
@@ -53,13 +54,12 @@ if ($result->num_rows === 1) {
 
     if (password_verify($password, $user['password'])) {
 
-        // User basic information
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['fname'] = $user['fname'];
         $_SESSION['lname'] = $user['lname'];
         $_SESSION['email'] = $user['email'];
 
-        // University information
+        
         $_SESSION['university'] = $user['university'];
         $_SESSION['faculty'] = $user['choose_your_faculty'];
         $_SESSION['study_year'] = $user['study_year'];
@@ -68,7 +68,7 @@ if ($result->num_rows === 1) {
        
         $_SESSION['role'] = $user['role'];
 
-        // Redirect according to role
+        
         if ($user['role'] === 'admin') {
 
             header("Location: ../components/admin_dashbord.php");
@@ -97,3 +97,6 @@ $stmt->close();
 $conn->close();
 
 ?>
+<?php
+
+         
