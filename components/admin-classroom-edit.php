@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status         = $_POST['status'] ?? 'active';
     $old_course_code = $_POST['old_course_code'] ?? '';
 
-    if (empty($Classroom_name) || empty($new_course_code) ) {
+    if (empty($Classroom_name) || empty($new_course_code)) {
         $message = "Classroom name, course code, and  are required.";
     } else {
         $sql = "UPDATE classrooms SET 
@@ -36,21 +36,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
-            "sssiisssss",
+            "sssiisss",
             $Classroom_name,
             $new_course_code,
             $enrollment_key,
-            $lecturer_name,
             $Semester,
             $Study_year,
-            $university,
             $faculy,
             $status,
             $old_course_code
         );
 
         if ($stmt->execute()) {
-            header("Location: admin-classroom.php");
+            header("Location:admin_classroom.php?message=" . urlencode("Classroom updated successfully.")       );
             exit();
         } else {
             $message = "Update error: " . $stmt->error;
@@ -58,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->close();
     }
 
-    
+
     $course_code = $old_course_code;
 }
 
@@ -87,7 +85,7 @@ $stmt->close();
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
- 
+
 </head>
 
 <body>
@@ -132,7 +130,7 @@ $stmt->close();
                         <label for="classroomName">Classroom Name</label>
                         <input type="text" id="classroomName" name="Classroom_name" value="<?php echo htmlspecialchars($classroom['Classroom_name']); ?>" required>
                     </div>
-                  
+
 
                     <div class="Admin-field">
                         <label for="classroomCourseCode">Course Code</label>
@@ -164,15 +162,21 @@ $stmt->close();
                         </select>
                     </div>
 
-                   
+
                     <div class="Admin-field">
                         <label for="AdmissionsFaculty">Choose your Faculty</label>
                         <select id="AdmissionsFaculty" name="faculy">
                             <?php
                             $faculties = [
-                                "Faculty of Technology", "Faculty of Applied Sciences", "Faculty of Agriculture",
-                                "Faculty of Medicine", "Faculty of Engineering", "Faculty of Law",
-                                "Faculty of Business", "Faculty of Education", "Faculty of Social Sciences"
+                                "Faculty of Technology",
+                                "Faculty of Applied Sciences",
+                                "Faculty of Agriculture",
+                                "Faculty of Medicine",
+                                "Faculty of Engineering",
+                                "Faculty of Law",
+                                "Faculty of Business",
+                                "Faculty of Education",
+                                "Faculty of Social Sciences"
                             ];
                             foreach ($faculties as $fac):
                                 $selected = ($classroom['faculy'] === $fac) ? 'selected' : '';

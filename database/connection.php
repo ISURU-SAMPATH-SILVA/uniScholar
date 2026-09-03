@@ -59,4 +59,19 @@ if (!$conn->query($sqlCreateClassrooms)) {
     die("classrooms table eka create karanna baha: " . $conn->error);
 }
 
+// files table eka auto create kirima
+$sqlCreateFiles = "
+CREATE TABLE IF NOT EXISTS `files` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `file_name` VARCHAR(255) NOT NULL,
+    `file_path` VARCHAR(255) NOT NULL,
+    `uploaded_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+";
+
+if (!$conn->query($sqlCreateFiles)) {
+    die("files table eka create karanna baha: " . $conn->error);
+}
+
 ?>

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
 </head>
 
 <body>
@@ -53,27 +52,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            
-                            $Course = [
-                               
-                                ['Course Name' => 'Mathematics for Technology I', 'Course Code' => 'CMT 1307', 'Semester' => 1, 'status' => 'active'],
-                                ['Course Name' => 'CMT 1308 - Physics for Technology II', 'Course Code' => 'CMT 1308', 'Semester' => 2, 'status' => 'inactive'],
-                            ];
-
-                            foreach ($Course as $c):
-                                $badgeClass = $c['status'] === 'active' ? 'Admin-badge-active' : 'Admin-badge-inactive';
-                            ?>
-                                <tr>
-                                    <td><?php echo htmlspecialchars($c['Course Name']); ?></td>
-                                    <td><?php echo htmlspecialchars($c['Course Code']); ?></td>
-                                    <td><?php echo (int) $c['Semester']; ?></td>
-                                    <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
-                                    <td>
-                                       <a href="admin-course-edit.php?id=<?php echo urlencode($c['Course Name']); ?>">Edit</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
+                          
                         </tbody>
                     </table>
                 </div>

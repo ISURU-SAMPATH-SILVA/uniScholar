@@ -17,6 +17,7 @@ $Semester       = $_POST['Semester'] ?? '';
 $Study_year     = $_POST['Study_year'] ?? '';
 $faculy         = $_POST['faculy'] ?? '';
 $status         = $_POST['status'] ?? 'active';
+$up_date         = $_POST['up_date'] ?? 'active';
 
 if (empty($Classroom_name) || empty($course_code) || empty($enrollment_key)) {
     echo "Classroom name, course code, and enrollment key are required.";
@@ -42,8 +43,8 @@ $checkStmt->close();
 
 // Insert query
 $sql = "INSERT INTO classrooms 
-            (Classroom_name, enrollment_key, course_code,  Semester, Study_year, faculy, status)
-        VALUES (?, ?, ?, ?, ?, ?, ?)";
+            (Classroom_name, enrollment_key, course_code,  Semester, Study_year,up_date, faculy, status)
+        VALUES (?, ?, ?, ?, ?, ?,?, ?)";
 
 $stmt = $conn->prepare($sql);
 
@@ -60,7 +61,8 @@ $stmt->bind_param(
     $Semester,
     $Study_year,
     $faculy,
-    $status
+    $status,
+    $up_date
 );
 
 if ($stmt->execute()) {

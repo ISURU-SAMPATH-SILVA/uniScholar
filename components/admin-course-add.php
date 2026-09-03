@@ -53,49 +53,9 @@
                         <input type="text" id="courseName" name="name" placeholder="e.g. Data Structures" required>
                     </div>
 
-                    <div class="Admin-field">
-                        <label for="courseUniversity">University</label>
-                        <select id="courseUniversity" name="university" required>
-                            <option value="">-- Select University --</option>
-                            <?php
-                            $universities = [
-                                'University of Colombo',
-                                'University of Peradeniya',
-                                'University of Moratuwa',
-                                'University of Sri Jayewardenepura',
-                                'University of Kelaniya',
-                                'University of Jaffna',
-                                'University of Ruhuna',
-                                'The Open University of Sri Lanka',
-                                'Eastern University Sri Lanka',
-                                'South Eastern University of Sri Lanka',
-                                'Rajarata University of Sri Lanka',
-                                'Sabaragamuwa University of Sri Lanka',
-                                'Wayamba University of Sri Lanka',
-                                'Uva Wellassa University of Sri Lanka',
-                                'University of the Visual & Performing Arts',
-                                'Gampaha Wickramarachchi University of Indigenous Medicine',
-                                'Institute of Technology University of Moratuwa',
-                                'University of Vauniya, Sri Lanka',
-                            ];
-                            foreach ($universities as $uni):
-                            ?>
-                                <option value="<?php echo htmlspecialchars($uni); ?>"><?php echo htmlspecialchars($uni); ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
+                    
 
-                    <div class="Admin-field">
-                        <label for="courseCredits">Credits</label>
-                        <select id="courseCredits" name="credits" required>
-                            <option value="">Select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-
+                
                     <div class="Admin-field">
                         <label for="courseSemester">Semester</label>
                         <select id="courseSemester" name="semester" required>

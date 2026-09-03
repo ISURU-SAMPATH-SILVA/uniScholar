@@ -67,7 +67,7 @@ $fullName = $_SESSION['fname'] . " " . $_SESSION['lname'];
                             <tr>
                                 <th>Classroom</th>
                                 <th>Course Code</th>
-                                <th>Semester</th>
+                                <th> Year<br>/Semester</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -89,7 +89,7 @@ $fullName = $_SESSION['fname'] . " " . $_SESSION['lname'];
                                 <tr>
                                     <td><?php echo htmlspecialchars($c['Classroom_name']); ?></td>
                                     <td><?php echo htmlspecialchars($c['course_code']); ?></td>
-                                    <td><?php echo (int) $c['Semester']; ?></td>
+                                    <td><?php echo (int) $c['Study_year']; echo ' / '; echo (int) $c['Semester']; ?></td>
                                     <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
                                     <td>
                                        <a href="student-classroom-view.php?id=<?php echo urlencode($c['course_code']); ?>">View</a>

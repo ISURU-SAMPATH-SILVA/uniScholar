@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-    
+
 </head>
 
 <body>
 
     <div class="Admin-wrapper">
 
-        <?php require 'admin_slide_bar.php'; ?> 
+        <?php require 'admin_slide_bar.php'; ?>
         <?php require 'admin_slide_bar_script.php'; ?>
 
         <main class="Admin-main">
@@ -37,7 +37,7 @@
 
             <?php if (isset($_GET['success'])): ?>
                 <div class="alert alert-success" style="padding:10px; background:#d1fae5; color:#065f46; border-radius:6px; margin-bottom:15px;">
-                   Classroom has been successfully added!
+                    Classroom has been successfully added!
                 </div>
             <?php endif; ?>
 
@@ -55,13 +55,14 @@
                                 <th>Semester</th>
                                 <th>Status</th>
                                 <th>Actions</th>
+                                <th>Up Date</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             require '../database/connection.php';
 
-                            $sql = "SELECT Classroom_name, course_code, Semester, Study_year, status 
+                            $sql = "SELECT Classroom_name, course_code, Semester, Study_year, status, up_date
                                     FROM classrooms 
                                     ORDER BY Classroom_name ASC";
 
@@ -71,19 +72,22 @@
                                 while ($c = $result->fetch_assoc()):
                                     $badgeClass = $c['status'] === 'active' ? 'Admin-badge-active' : 'Admin-badge-inactive';
                             ?>
-                                <tr>
-                                    <td><?php echo htmlspecialchars($c['Classroom_name']); ?></td>
-                                    <td><?php echo htmlspecialchars($c['course_code']); ?></td>
-                                    <td><?php echo (int) $c['Semester']; ?></td>
-                                    <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
-                                    <td>
-                                       <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['course_code']); ?>">Edit</a>
-                                    </td>
-                                </tr>
-                            <?php
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($c['Classroom_name']); ?></td>
+                                        <td><?php echo htmlspecialchars($c['course_code']); ?></td>
+                                        <td><?php echo (int) $c['Semester']; ?></td>
+                                        <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
+                                        <td>
+                                            <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['course_code']); ?>">Edit</a>
+                                        </td>
+                                        <td>
+                                            <a href="admin-classroom-update.php?id=<?php echo urlencode($c['up_date']); ?>">Up Date</a>
+                                        </td>
+                                    </tr>
+                                <?php
                                 endwhile;
                             else:
-                            ?>
+                                ?>
                                 <tr>
                                     <td colspan="5" style="text-align:center;">I haven't added any classrooms yet.</td>
                                 </tr>
