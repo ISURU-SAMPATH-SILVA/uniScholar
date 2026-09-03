@@ -54,7 +54,7 @@ if (!$stmt) {
 }
 
 $stmt->bind_param(
-    "ssssiis",
+    "ssssiiss",
     $Classroom_name,
     $enrollment_key,
     $course_code,
