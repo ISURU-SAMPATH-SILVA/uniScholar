@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/style.css">
 
     <script src="../js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -109,16 +110,10 @@
                 <label for="reg-pass">
                     Password
                 </label>
-
-                <input
-                    type="password"
-                    id="reg-pass"
-                    name="password"
-                    placeholder="••••••••"
-                    autocomplete="new-password"
-                    minlength="6"
-                    required
-                >
+                <div class="password-wrapper">
+    <input type="password" id="password" name="password" placeholder="Password">
+    <i class="fa-solid fa-eye" id="togglePassword"></i>
+</div>
 
             </div>
 
@@ -129,16 +124,11 @@
                 <label for="confirm-pass">
                     Confirm Password
                 </label>
+                <div class="password-wrapper">
+    <input type="password" id="password" name="password" placeholder="Password">
+    <i class="fa-solid fa-eye" id="togglePassword"></i>
+</div>
 
-                <input
-                    type="password"
-                    id="confirm-pass"
-                    name="confirm_password"
-                    placeholder="••••••••"
-                    autocomplete="new-password"
-                    minlength="6"
-                    required
-                >
 
             </div>
 
@@ -168,6 +158,18 @@
         </p>
 
     </div>
+    <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function () {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
 
 </body>
 

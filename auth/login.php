@@ -26,37 +26,9 @@ if (
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Font Awesome icons සඳහා link එක -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        .password-container {
-            position: relative;
-            width: 300px;
-        }
-
-        .password-container input {
-            width: 100%;
-            padding: 10px 40px 10px 10px; /* දකුණු පසින් icon එකට ඉඩ තැබීමට */
-            box-sizing: border-box;
-        }
-
-        .toggle-icon {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #666;
-        }
-    </style>
 </head>
-
 
 <body>
     <div class="Login-card">
@@ -86,16 +58,12 @@ if (
 <div class="Login-input-group">
 
     <label for="password">Password</label>
+     <div class="password-wrapper">
+    <input type="password" id="password" name="password" placeholder="Password">
+    <i class="fa-solid fa-eye" id="togglePassword"></i>
+</div>
 
-    <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="******"
-        autocomplete="current-password"
-        required
-    >
-
+   
     <a href="ForgotPassword.php" class="forgot-link">
         Forgot Password?
     </a>
@@ -115,26 +83,20 @@ if (
         <p class="Login-footer-text">
             Don't have an account? <a href="register.php">Register</a>
         </p>
-    </div>
-    <div class="password-container">
-        <input type="password" id="passwordInput" placeholder="Password">
-        <i class="fa-solid fa-eye toggle-icon" id="togglePassword"></i>
-    </div>
 
+    </div>
     <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const passwordInput = document.querySelector('#passwordInput');
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
 
-        togglePassword.addEventListener('click', function () {
-            // type එක text සහ password අතර වෙනස් කිරීම
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            
-            // Icon එක (ඇස ඇරලා / වහලා) වෙනස් කිරීම
-            this.classList.toggle('fa-eye');
-            this.classList.toggle('fa-eye-slash');
-        });
-    </script>
+    togglePassword.addEventListener('click', function () {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
 </body>
 
 </html>
