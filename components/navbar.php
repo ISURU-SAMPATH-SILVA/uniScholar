@@ -1,9 +1,6 @@
 <nav class="main-navbar">
 
     <div class="logo-container">
-
-
-        
         <div class="">
             <a href="/uniScholar/index.php">
                 <h3>

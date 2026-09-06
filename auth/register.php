@@ -61,7 +61,6 @@
             <div class="Login-input-group">
                 <label for="confirm_password">Confirm Password</label>
                 <div class="password-wrapper">
-                    <!-- මෙතැන name="confirm_password" සහ id="confirm_password" ලෙස වෙනස් කර ඇත -->
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
                     <i class="fa-solid fa-eye toggle-password" data-target="confirm_password"></i>
                 </div>
@@ -82,7 +81,6 @@
 
     </div>
 
-    <!-- Multi-field toggle පහසුකම සහිත JS Code එක -->
     <script>
         const toggleIcons = document.querySelectorAll('.toggle-password');
 
