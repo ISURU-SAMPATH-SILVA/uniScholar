@@ -34,12 +34,12 @@ if ($classInfo) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
     <title>uniScholar - Classroom</title>
-    
+
     <!-- External CSS Files -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <script src="../js/bootstrap.bundle.min.js" defer></script>
 </head>
 
@@ -49,63 +49,75 @@ if ($classInfo) {
         <?php require 'studend_slide_bar.php'; ?>
         <?php require 'student_slide_bar_script.php'; ?>
 
-        <div class="Admin-main-content">
-            <div class="container-fluid p-0">
+        <div class="Admin-main">
+            <div class=" Classroom-page-wrap container-fluid p-0">
                 <?php if ($classInfo): ?>
-                    <!-- Classroom Header Box -->
-                    <div class="card bg-dark text-light border-secondary p-4 mb-4 rounded-3 shadow">
-                        <h2 class="text-warning fw-bold mb-2"><?php echo htmlspecialchars($classInfo['Classroom_name']); ?></h2>
-                        <p class="text-light opacity-75 mb-3">Course Code: <?php echo htmlspecialchars($classInfo['course_code'] ?? 'N/A'); ?></p>
-                        <div>
-                            <a href="student_classroom.php" class="btn btn-outline-warning btn-sm">
-                                <i class="fa-solid fa-arrow-left me-1"></i> Back to Classrooms
-                            </a>
+
+                    <!-- classroom hero header -->
+                    <div class="Classroom-hero">
+                        <div class="Classroom-hero-content">
+                            <span class="Classroom-hero-tag">
+                                <i class="fa-solid fa-chalkboard"></i> Classroom
+                            </span>
+                            <h2 class="Classroom-hero-title"><?php echo htmlspecialchars($classInfo['Classroom_name']); ?></h2>
+                            <p class="Classroom-hero-code">
+                                <i class="fa-solid fa-hashtag"></i>
+                                Course Code: <span><?php echo htmlspecialchars($classInfo['course_code'] ?? 'N/A'); ?></span>
+                            </p>
                         </div>
+                        <a href="student_classroom.php" class="Classroom-back-btn">
+                            <i class="fa-solid fa-arrow-left"></i> Back to Classrooms
+                        </a>
                     </div>
 
-                    <h4 class="text-light mb-4 border-start border-warning border-4 ps-2">Classroom Materials & Updates</h4>
-                    
-                    <?php if ($updates && $updates->num_rows > 0): ?>
-                        <div class="row g-4">
-                            <?php while ($row = $updates->fetch_assoc()): ?>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="card bg-dark text-light border-secondary h-100 p-3 d-flex flex-column justify-content-between shadow-sm">
-                                        <div>
-                                            <h5 class="text-warning fw-bold mb-1"><?php echo htmlspecialchars($row['title']); ?></h5>
-                                            <div class="text-secondary small mb-3">
-                                                <i class="fa-regular fa-clock me-1"></i>
-                                                <?php echo date("F j, Y, g:i a", strtotime($row['created_at'])); ?>
-                                            </div>
-                                            <div class="text-light opacity-90 mb-3">
-                                                <?php echo nl2br(htmlspecialchars($row['description'])); ?>
-                                            </div>
-                                        </div>
+                    <h4 class="Classroom-section-title">
+                        <i class="fa-solid fa-bell"></i> Classroom Materials & Updates
+                    </h4>
 
-                                        <?php if (!empty($row['file_path'])): ?>
-                                            <div class="pt-2">
-                                                <a href="../<?php echo htmlspecialchars($row['file_path']); ?>" download class="btn btn-warning fw-bold btn-sm text-dark">
-                                                    <i class="fa-solid fa-download me-1"></i> Download Attachment
-                                                </a>
-                                            </div>
-                                        <?php endif; ?>
+                    <?php if ($updates && $updates->num_rows > 0): ?>
+                        <div class="Classroom-updates-grid">
+                            <?php while ($row = $updates->fetch_assoc()): ?>
+                                <div class="Classroom-update-card">
+                                    <div class="Classroom-update-body">
+                                        <h5 class="Classroom-update-title"><?php echo htmlspecialchars($row['title']); ?></h5>
+                                        <div class="Classroom-update-date">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <?php echo date("F j, Y, g:i a", strtotime($row['created_at'])); ?>
+                                        </div>
+                                        <div class="Classroom-update-desc">
+                                            <?php echo nl2br(htmlspecialchars($row['description'])); ?>
+                                        </div>
                                     </div>
+
+                                    <?php if (!empty($row['file_path'])): ?>
+                                        <div class="Classroom-update-footer">
+                                            <a href="../<?php echo htmlspecialchars($row['file_path']); ?>" download class="Classroom-download-btn">
+                                                <i class="fa-solid fa-download"></i> Download Attachment
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             <?php endwhile; ?>
                         </div>
                     <?php else: ?>
-                        <div class="alert alert-secondary bg-dark text-light border-secondary">
-                            <i class="fa-solid fa-circle-info me-2 text-warning"></i>No updates or files have been added to this Classroom yet.
+                        <div class="Classroom-empty-state">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <p>No updates or files have been added to this Classroom yet.</p>
                         </div>
                     <?php endif; ?>
 
                 <?php else: ?>
-                    <div class="alert alert-danger bg-dark text-danger border-danger mb-3">
-                        <i class="fa-solid fa-triangle-exclamation me-2"></i>
-                       Classroom not found. (<strong><?php echo htmlspecialchars($search_param); ?></strong> There is no corresponding classroom in the database for the value.)
+                    <div class="Classroom-notfound-state">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <p>
+                            Classroom not found.
+                            <strong><?php echo htmlspecialchars($search_param); ?></strong>
+                            — There is no corresponding classroom in the database for this value.
+                        </p>
+                        <a href="student_classroom.php" class="Classroom-back-btn">
+                            <i class="fa-solid fa-arrow-left"></i> Go Back
+                        </a>
                     </div>
-                    <a href="student_classroom.php" class="btn btn-outline-warning btn-sm">
-                        <i class="fa-solid fa-arrow-left me-1"></i> Go Back
-                    </a>
                 <?php endif; ?>
             </div>
         </div>

@@ -80,7 +80,7 @@
                                             <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['id']); ?>">Edit</a>
                                         </td>
                                         <td>
-                                            <!-- URL එකේ dash (-) සහිතව නිවැරදි කර ඇත -->
+                                            
                                             <a href="admin-classroom-update.php?id=<?php echo urlencode($c['id']); ?>" style="color: #f59e0b; font-weight: bold;">Up Date</a>
                                         </td>
                                     </tr>
