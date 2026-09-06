@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
   <div class="search-container">
     <input 
       type="text" 
@@ -10,6 +11,20 @@
       autocomplete="off"
     >
     <button type="button" id="searchBtn" class="search-btn" onclick="executeSearch()">Search</button>
+=======
+ <div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search..." onkeyup="filterSearch()">
+  <button type="submit" class="search-btn">Search</button>
+  
+  <ul id="searchDropdown" class="dropdown-menu">
+    <li><a href="gpa-calculator.php">GPA Calculator</a></li>
+    <li><a href="course-modules.php">Course Modules</a></li>
+    <li><a href="past-papers.php">Past Papers</a></li>
+    <li><a href="timetable-calendar.php">Timetable & Calendar</a></li>
+    <li><a href="about-unschoolar.php">About UniScholar</a></li>
+  </ul>
+</div>
+>>>>>>> 15d33f6d37771e47f8ffb6c898e1e35d65f7c678
 
     <ul id="searchDropdown" class="dropdown-menu">
       <li><a href="/uniScholar/index.php">Home</a></li>
@@ -38,6 +53,7 @@
       let li = dropdown.getElementsByTagName('li');
       let hasResults = false;
 
+<<<<<<< HEAD
       for (let i = 0; i < li.length; i++) {
         let a = li[i].getElementsByTagName('a')[0];
         let txtValue = a.textContent || a.innerText;
@@ -101,3 +117,14 @@
       }
     });
   </script>
+=======
+document.addEventListener('click', function(e) {
+  let searchContainer = document.querySelector('.search-container');
+  let dropdown = document.getElementById('searchDropdown');
+  
+  if (!searchContainer.contains(e.target)) {
+    dropdown.style.display = 'none';
+  }
+});
+</script>   
+>>>>>>> 15d33f6d37771e47f8ffb6c898e1e35d65f7c678

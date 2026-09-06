@@ -18,6 +18,7 @@ if (!$conn->query($sqlCreateDb)) {
 
 $conn->select_db($dbName);
 
+// users table
 $sqlCreateUsers = "
 CREATE TABLE IF NOT EXISTS `users` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -39,6 +40,7 @@ if (!$conn->query($sqlCreateUsers)) {
     die("users table eka create karanna baha: " . $conn->error);
 }
 
+// classrooms Table
 $sqlCreateClassrooms = "
 CREATE TABLE IF NOT EXISTS `classrooms` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -59,7 +61,7 @@ if (!$conn->query($sqlCreateClassrooms)) {
     die("classrooms table eka create karanna baha: " . $conn->error);
 }
 
-// files table eka auto create kirima
+// 4. General Files Table
 $sqlCreateFiles = "
 CREATE TABLE IF NOT EXISTS `files` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -72,6 +74,24 @@ CREATE TABLE IF NOT EXISTS `files` (
 
 if (!$conn->query($sqlCreateFiles)) {
     die("files table eka create karanna baha: " . $conn->error);
+}
+
+$sqlCreateClassroomUpdates = "
+CREATE TABLE IF NOT EXISTS `classroom_updates` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `classroom_id` INT(11) NOT NULL,
+    `title` VARCHAR(255) NOT NULL,
+    `description` TEXT NULL,
+    `file_path` VARCHAR(255) NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+    KEY `classroom_id` (`classroom_id`),
+    CONSTRAINT `fk_classroom_updates` FOREIGN KEY (`classroom_id`) REFERENCES `classrooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+";
+
+if (!$conn->query($sqlCreateClassroomUpdates)) {
+    die("classroom_updates table eka create karanna baha: " . $conn->error);
 }
 
 ?>

@@ -6,11 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
-    <title>uniScholar - classroom</title>
+    <title>uniScholar - Classroom</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 
 <body>
@@ -62,7 +61,7 @@
                             <?php
                             require '../database/connection.php';
 
-                            $sql = "SELECT Classroom_name, course_code, Semester, Study_year, status, up_date
+                            $sql = "SELECT id, Classroom_name, course_code, Semester, Study_year, status 
                                     FROM classrooms 
                                     ORDER BY Classroom_name ASC";
 
@@ -78,10 +77,11 @@
                                         <td><?php echo (int) $c['Semester']; ?></td>
                                         <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
                                         <td>
-                                            <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['course_code']); ?>">Edit</a>
+                                            <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['id']); ?>">Edit</a>
                                         </td>
                                         <td>
-                                            <a href="admin-classroom-update.php?id=<?php echo urlencode($c['up_date']); ?>">Up Date</a>
+                                            <!-- URL එකේ dash (-) සහිතව නිවැරදි කර ඇත -->
+                                            <a href="admin-classroom-update.php?id=<?php echo urlencode($c['id']); ?>" style="color: #f59e0b; font-weight: bold;">Up Date</a>
                                         </td>
                                     </tr>
                                 <?php
@@ -89,7 +89,7 @@
                             else:
                                 ?>
                                 <tr>
-                                    <td colspan="5" style="text-align:center;">I haven't added any classrooms yet.</td>
+                                    <td colspan="6" style="text-align:center;">I haven't added any classrooms yet.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
