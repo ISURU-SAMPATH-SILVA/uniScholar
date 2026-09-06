@@ -47,13 +47,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $old_course_code
         );
 
-        if ($stmt->execute()) {
-            header("Location:admin_classroom.php?message=" . urlencode("Classroom updated successfully.")       );
-            exit();
-        } else {
-            $message = "Update error: " . $stmt->error;
-        }
-        $stmt->close();
+       try {
+    $stmt->execute();
+    header("Location:admin_classroom.php?message=" . urlencode("Classroom updated successfully.")       );
+    exit();
+} catch (mysqli_sql_exception $e) {
+    if (str_contains($e->getMessage(), 'unique_classroom_course')) {
+        $message = "A classroom with this same name and course code already exists. Please use a different course code.";
+    } else {
+        $message = "Update error: " . $e->getMessage();
+    }
+}
+$stmt->close();
     }
 
 

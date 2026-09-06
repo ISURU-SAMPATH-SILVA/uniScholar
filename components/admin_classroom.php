@@ -77,10 +77,10 @@
                                         <td><?php echo (int) $c['Semester']; ?></td>
                                         <td><span class="Admin-badge <?php echo $badgeClass; ?>"><?php echo ucfirst($c['status']); ?></span></td>
                                         <td>
-                                            <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['id']); ?>">Edit</a>
+                                            <a href="admin-classroom-edit.php?id=<?php echo urlencode($c['course_code']); ?>">Edit</a>
                                         </td>
                                         <td>
-                                            
+
                                             <a href="admin-classroom-update.php?id=<?php echo urlencode($c['id']); ?>" style="color: #f59e0b; font-weight: bold;">Up Date</a>
                                         </td>
                                     </tr>
