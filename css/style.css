@@ -1215,7 +1215,6 @@ color: var(--color-primary);
 
 .Admin-nav li.active .Admin-icon-img {
   opacity: 1;
-  /* Active state ekedi accent orange color ekata: */
   filter: invert(63%) sepia(59%) saturate(1830%) hue-rotate(360deg) brightness(101%) contrast(96%);
 }
 
@@ -1800,60 +1799,8 @@ color: var(--color-primary);
       box-sizing: border-box;
     }
 
-<<<<<<< HEAD
-    .search-btn {
-      height: 36px;
-      padding: 0 16px;
-      background-color: #f77f00;
-      border: none;
-      border-radius: 0 6px 6px 0;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      box-sizing: border-box;
-      transition: background 0.2s;
-    }
-
-    .search-btn:hover {
-      background-color: #e06d00;
-    }
-
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #0b132b;
-      border: 1px solid #f77f00;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-      z-index: 999;
-      list-style: none;
-      padding: 0;
-      margin: 2px 0 0 0;
-      max-height: 200px;
-      overflow-y: auto;
-    }
-
-    .dropdown-menu li a {
-      color: #ffffff;
-      padding: 8px 12px;
-      text-decoration: none;
-      display: block;
-      font-size: 13px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .dropdown-menu li a:hover {
-      background-color: #f77f00;
-      color: #000000;
-    }
-=======
 .dropdown-menu li a:hover {
-  background-color: #f77f00; /* Hover karaddi orange color eka */
+  background-color: #f77f00; 
   color: #000;
 }
  /* ===== Upload File Page ===== */
@@ -2052,4 +1999,74 @@ color: var(--color-primary);
     max-width: 100%;
   }
 }
->>>>>>> 15d33f6d37771e47f8ffb6c898e1e35d65f7c678
+
+/* ===== Responsive Enhancements (mobile fixes for sections that had none) ===== */
+
+@media (max-width: 576px) {
+  .main-navbar {
+    padding: 0.8rem 1rem;
+    min-height: 64px;
+  }
+
+  .main-navbar h3 {
+    font-size: 1rem;
+  }
+
+  .main-navbar h6 {
+    font-size: 0.68rem;
+  }
+
+  .main-navbar .logo img {
+    height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 45vh;
+  }
+
+  .carousel-inner h1 {
+    font-size: 1.4rem;
+    margin-top: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item img {
+    height: 32vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 100%;
+    margin: 5% auto 0 auto;
+  }
+
+  .multiCardCarousel-padi {
+    padding: 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    max-width: 100%;
+    margin: 15px auto;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_detals {
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Admin-resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
