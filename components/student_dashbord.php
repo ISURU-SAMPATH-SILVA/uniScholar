@@ -84,15 +84,15 @@ $semester = $_SESSION['semester'];
                     <div class="Admin-stat-card">
                         
                         <div>
-                            <h5><b>Past Paper</b></h5>
+                            <h5><b>Explore</b></h5>
                         </div>
                     </div>
                 </a>
-                <a href="student-classroom.php">
+                <a href="Contact.php">
                     <div class="Admin-stat-card">
                         
                         <div >
-                            <h5><b>Notes</b></h5>
+                            <h5><b>Contact</b></h5>
                         </div>
                     </div>
                 </a>

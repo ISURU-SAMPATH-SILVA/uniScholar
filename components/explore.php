@@ -37,19 +37,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 col-lg-4">
-                    <label class="form-label text-white-50 small">Category Field</label>
-                    <select class="form-select" name="category">
-                        <option value="">All Streams & Domains</option>
-                        <option value="notes">Lecture Archives / Material</option>
-                        <option value="papers">Past Exam Papers</option>
-                        <option value="scholarships">Financial Scholarships</option>
-                    </select>
-                </div>
 
-                <div class="col-md-3 col-lg-4 d-flex align-items-end">
-                    <button type="submit" class="btn btn-accent w-100 py-2"><i class="bi bi-funnel-fill me-2"></i>Apply Filters</button>
-                </div>
+               
             </form>
         </div>
 
@@ -70,26 +59,8 @@
             <div class="tab-pane fade show active" id="resources-pane" role="tabpanel" tabindex="0">
                 <div class="row g-4">
                     
-                    <!-- Card 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card explore-card bg-dark h-100 p-3 text-white border-secondary">
-                            <div class="card-body d-flex flex-column">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <span class="badge badge-accent px-2 py-1 fs-7">CMT 1307</span>
-                                    <span class="text-white-50 small"><i class="bi bi-filetype-pdf text-danger me-1"></i>PDF Archive</span>
-                                </div>
-                                <h5 class="card-title fw-bold mb-2">Mathematics for Technology Lecture Pack</h5>
-                                <p class="card-text text-white-50 small flex-grow-1">Comprehensive reference documents encompassing layout trees, logic, and core topics.</p>
-                                <hr class="border-secondary my-3">
-                                <div class="d-flex justify-content-between align-items-center mt-auto">
-                                    <span class="small opacity-50"><i class="bi bi-cloud-arrow-up me-1"></i>Batch 2023</span>
-                                    <a href="#" class="btn btn-outline-light btn-sm px-3"><i class="bi bi-download me-1"></i>Access</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
+                    
+                    <!-- card  -->
                     <div class="col-md-6 col-lg-4">
                         <div class="card explore-card bg-dark h-100 p-3 text-white border-secondary">
                             <div class="card-body d-flex flex-column">
@@ -108,24 +79,7 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card explore-card bg-dark h-100 p-3 text-white border-secondary">
-                            <div class="card-body d-flex flex-column">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <span class="badge badge-accent px-2 py-1 fs-7">ICT 1202</span>
-                                    <span class="text-white-50 small"><i class="bi bi-filetype-zip text-warning me-1"></i>ZIP Suite</span>
-                                </div>
-                                <h5 class="card-title fw-bold mb-2">Database Systems Mid-Term Papers</h5>
-                                <p class="card-text text-white-50 small flex-grow-1">Previous evaluation models focusing heavily on relational architecture and schema design.</p>
-                                <hr class="border-secondary my-3">
-                                <div class="d-flex justify-content-between align-items-center mt-auto">
-                                    <span class="small opacity-50"><i class="bi bi-cloud-arrow-up me-1"></i>Batch 2023</span>
-                                    <a href="#" class="btn btn-outline-light btn-sm px-3"><i class="bi bi-download me-1"></i>Access</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                 </div>
             </div>

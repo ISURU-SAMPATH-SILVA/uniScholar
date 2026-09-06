@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `users` (
     `email` VARCHAR(150) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
     `role` ENUM('user','admin') NOT NULL DEFAULT 'user',
-    `university` INT(50) NOT NULL,
+    `university`  VARCHAR(250) NOT NULL,
     `choose_your_faculty` VARCHAR(150) NOT NULL,
     `study_year` INT(5) NOT NULL,
     `semester` INT(2) NOT NULL,

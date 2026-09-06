@@ -64,6 +64,21 @@
             }
         }
 
+        // Handle delete user
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_delete'])) {
+            $userId = (int) $_POST['user_id'];
+
+            $stmt = mysqli_prepare($conn, "DELETE FROM users WHERE id = ?");
+            mysqli_stmt_bind_param($stmt, "i", $userId);
+
+            if (mysqli_stmt_execute($stmt)) {
+                $successMsg = "User #$userId successfully deleted.";
+            } else {
+                $errorMsg = "Delete error occurred.";
+            }
+            mysqli_stmt_close($stmt);
+        }
+
     
         $users = [];
         $result = mysqli_query($conn, "SELECT id, fname, lname, email, role, university, choose_your_faculty, study_year, semester FROM users ORDER BY role DESC, id DESC");
@@ -148,6 +163,7 @@
                                 <th>University</th>
                                 <th>Faculty</th>
                                 <th>Current Role</th>
+                                <th>Delete</th>
                                 <th>Change Role</th>
                             </tr>
                         </thead>
@@ -167,6 +183,12 @@
                                                 <span class="Admin-badge Admin-badge-pending">User</span>
                                             <?php endif; ?>
                                         </td>
+                                         <td>
+                                            <form method="POST" onsubmit="return confirm('Sure da me user delete karann?');">
+                                                <input type="hidden" name="user_id" value="<?= htmlspecialchars($u['id']) ?>">
+                                                <button type="submit" name="update_delete" class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                         <td>
                                             <form method="POST" style="display:flex; gap:6px; align-items:center;">
                                                 <input type="hidden" name="user_id" value="<?= htmlspecialchars($u['id']) ?>">
@@ -181,7 +203,7 @@
                                 <?php endforeach; ?>
                             <?php else: ?>
                                 <tr>
-                                    <td colspan="7" style="text-align:center;">No users found.</td>
+                                    <td colspan="8" style="text-align:center;">No users found.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
