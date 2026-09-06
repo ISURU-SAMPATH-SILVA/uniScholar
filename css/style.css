@@ -1771,280 +1771,65 @@ color: var(--color-primary);
     z-index: 10;
     color: #555;
 }
-
-    .search-container {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 600px;
-      margin: 20px auto;
-      font-family: Arial, sans-serif;
-    }
-
-    .main-search-input {
-      width: 100%;
-      height: 36px;
-      padding: 6px 12px;
-      background-color: #0b132b;
-      border: 1px solid #1c2541;
-      border-radius: 6px 0 0 6px;
-      color: #ffffff;
-      font-size: 14px;
-      outline: none;
-      box-sizing: border-box;
-    }
-
-<<<<<<< HEAD
-    .search-btn {
-      height: 36px;
-      padding: 0 16px;
-      background-color: #f77f00;
-      border: none;
-      border-radius: 0 6px 6px 0;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      box-sizing: border-box;
-      transition: background 0.2s;
-    }
-
-    .search-btn:hover {
-      background-color: #e06d00;
-    }
-
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #0b132b;
-      border: 1px solid #f77f00;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-      z-index: 999;
-      list-style: none;
-      padding: 0;
-      margin: 2px 0 0 0;
-      max-height: 200px;
-      overflow-y: auto;
-    }
-
-    .dropdown-menu li a {
-      color: #ffffff;
-      padding: 8px 12px;
-      text-decoration: none;
-      display: block;
-      font-size: 13px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .dropdown-menu li a:hover {
-      background-color: #f77f00;
-      color: #000000;
-    }
-=======
-.dropdown-menu li a:hover {
-  background-color: #f77f00; /* Hover karaddi orange color eka */
-  color: #000;
-}
- /* ===== Upload File Page ===== */
-.Upload-card {
+.search-container {
   position: relative;
-  top: auto;
-  left: auto;
-  transform: none;
-  width: 100%;
-  max-width: 480px;
-  margin: 5% auto 0 auto;
-  background-color: var(--color-secondary);
-  border: 1px solid rgba(241, 137, 10, 0.15);
-  border-radius: 18px;
-  padding: 2.75rem 2.25rem;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  animation: cardFadeIn 0.4s ease;
-}
-
-@keyframes cardFadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.Upload-card form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.Upload-dropzone {
-  width: 100%;
-  border: 2px dashed rgba(241, 137, 10, 0.4);
-  border-radius: 14px;
-  background-color: var(--color-body);
-  padding: 2.75rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
-}
-
-.Upload-dropzone:hover {
-  transform: translateY(-2px);
-}
-
-.Upload-dropzone:hover,
-.Upload-dropzone.is-dragover {
-  border-color: var(--color-accent);
-  background-color: rgba(241, 137, 10, 0.06);
-}
-
-.Upload-dropzone i {
-  font-size: 2.4rem;
-  color: var(--color-accent);
-  transition: transform 0.2s ease;
-}
-
-.Upload-dropzone.is-dragover i {
-  transform: scale(1.1) translateY(-4px);
-}
-
-.Upload-dropzone p {
-  color: var(--color-primary);
-  font-size: 0.9rem;
-  opacity: 0.75;
-  margin: 0;
-}
-
-.Upload-dropzone span.Upload-hint {
-  font-size: 0.75rem;
-  opacity: 0.5;
-  color: var(--color-primary);
-}
-
-.Upload-dropzone input[type="file"] {
-  display: none;
-}
-
-.Upload-file-preview {
-  width: 100%;
-  display: none;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: var(--color-body);
-  border: 1px solid rgba(241, 137, 10, 0.25);
-  border-radius: 10px;
-  padding: 0.65rem 0.9rem;
-  margin-top: 0.9rem;
-  text-align: left;
-}
-
-.Upload-file-preview.is-visible {
-  display: flex;
-}
-
-.Upload-file-preview i.Upload-file-icon {
-  font-size: 1.4rem;
-  color: var(--color-accent);
-  flex-shrink: 0;
-}
-
-.Upload-file-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.Upload-file-name {
-  color: var(--color-primary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.Upload-file-size {
-  color: var(--color-primary);
-  font-size: 0.75rem;
-  opacity: 0.55;
-}
-
-.Upload-file-remove {
-  background: none;
-  border: none;
-  color: #ef4444;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0.25rem;
-  line-height: 1;
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: opacity 0.15s ease;
-}
-
-.Upload-file-remove:hover {
-  opacity: 1;
-}
-
-.Upload-alert {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.8rem 1rem;
-  border-radius: 10px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  text-align: left;
-  animation: cardFadeIn 0.3s ease;
-}
-
-.Upload-alert-success {
-  background-color: rgba(34, 197, 94, 0.15);
-  color: #22c55e;
-}
-
-.Upload-alert-error {
-  background-color: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
-}
-
-.Login-btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  transition: opacity 0.15s ease;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
-.Login-btn-primary:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+.main-search-input {
+  width: 100%;
+  height: 40px;
+  padding: 6px 12px;
+  background-color: #0b132b;
+  border: 1px solid #1c2541;
+  border-radius: 6px 0 0 6px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+.search-btn {
+  height: 40px;
+  padding: 0 20px;
+  background-color: #ff9800; /* Orange color */
+  color: #ffffff;
+  border: 1px solid #ff9800;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.fa-spinner {
-  animation: spin 0.8s linear infinite;
+.search-btn:hover {
+  background-color: #e68a00; /* Darker orange on hover */
+  border-color: #e68a00;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #0b132b;
+  border: 1px solid #1c2541;
+  border-radius: 6px;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  z-index: 1000;
 }
 
-@media (max-width: 480px) {
-  .Upload-card {
-    width: calc(100% - 2rem);
-    padding: 1.75rem 1.25rem;
-    max-width: 100%;
-  }
+.dropdown-menu li a {
+  display: block;
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
 }
->>>>>>> 15d33f6d37771e47f8ffb6c898e1e35d65f7c678
+
+.dropdown-menu li a:hover {
+  background-color: #1c2541;
+}
