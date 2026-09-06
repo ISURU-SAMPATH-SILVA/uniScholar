@@ -8,7 +8,7 @@ $result = $conn->query("SELECT id, file_name, file_path, uploaded_at FROM Note O
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
-    <title>Past Papers</title>
+    <title>Note - uniScholar</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
@@ -46,7 +46,7 @@ $result = $conn->query("SELECT id, file_name, file_path, uploaded_at FROM Note O
         <?php else: ?>
             <div class="Classroom-empty-state">
                 <i class="fa-solid fa-inbox"></i>
-                <p>No past papers available.</p>
+                <p>not such as file</p>
             </div>
         <?php endif; ?>
 

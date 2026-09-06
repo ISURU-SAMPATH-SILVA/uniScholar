@@ -90,11 +90,11 @@ $semester = $_SESSION['semester'];
                         </div>
                     </div>
                 </a>
-                <a href="Contact.php">
+                <a href="student_Note.php">
                     <div class="Admin-stat-card">
 
                         <div>
-                            <h5><b>Contact</b></h5>
+                            <h5><b>Note</b></h5>
                         </div>
                     </div>
                 </a>

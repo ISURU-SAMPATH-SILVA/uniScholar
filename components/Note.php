@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['upload_file'])) {
             mkdir($uploadDir, 0755, true);
         }
 
-        // duplicate chack
+        // file name eka clean karala, duplicate wenna epa kiyala unique widihata hadanawa
         $originalName = basename($file['name']);
         $safeName = preg_replace("/[^A-Za-z0-9._-]/", "_", $originalName);
         $uniqueName = uniqid() . "_" . $safeName;
@@ -24,17 +24,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['upload_file'])) {
 
         if (move_uploaded_file($file['tmp_name'], $destination)) {
 
-           
             $relativePath = 'uploads/' . $uniqueName;
 
-            $stmt = $conn->prepare("INSERT INTO past_papers (file_name, file_path) VALUES (?, ?)");
+            $stmt = $conn->prepare("INSERT INTO Note (file_name, file_path) VALUES (?, ?)");
             $stmt->bind_param("ss", $originalName, $relativePath);
 
             if ($stmt->execute()) {
                 $message = "File eka upload success! ";
                 $messageType = "success";
             } else {
-                $message = "DB eke save karanna baha: " . $stmt->error;
+                $message = "file upload error: " . $stmt->error;
                 $messageType = "error";
             }
             $stmt->close();
@@ -58,7 +57,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../img/Brand/Favicon.svg">
-    <title>Past Papers - uniScholar</title>
+    <title>Note - uniScholar</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="../js/bootstrap.bundle.min.js" defer></script>
@@ -72,8 +71,8 @@ $conn->close();
             <i class="fa-solid fa-file-arrow-up" style="font-size: 1.6rem; color: var(--color-accent);"></i>
         </div>
 
-        <h2 class="Login-brand-name">Past Papers</h2>
-        <p class="Login-form-title">UPLOAD A NEW PAST PAPER</p>
+        <h2 class="Login-brand-name">Note</h2>
+        <p class="Login-form-title">UPLOAD A NEW NOTE</p>
 
         <?php if ($message): ?>
             <div class="Upload-alert Upload-alert-<?php echo $messageType; ?>">
@@ -82,11 +81,11 @@ $conn->close();
             </div>
         <?php endif; ?>
 
-        <form action="Past_Papers.php" method="post" enctype="multipart/form-data" id="uploadForm">
+        <form action="Note.php" method="post" enctype="multipart/form-data" id="uploadForm">
 
             <label class="Upload-dropzone" id="dropzone" for="fileInput">
                 <i class="fa-solid fa-cloud-arrow-up"></i>
-                <p>Drag & drop file</p>
+                <p>Drag & drop file </p>
                 <span class="Upload-hint">PDF, DOC, DOCX, JPG, PNG — Max 10MB</span>
                 <input type="file" name="upload_file" id="fileInput" required>
             </label>
@@ -109,7 +108,7 @@ $conn->close();
         </form>
 
         <p class="Login-footer-text">
-            <a href="Past_Papers_List.php"><i class="fa-solid fa-list"></i> Uploaded past papers list</a>
+            <a href="Note_List.php"><i class="fa-solid fa-list"></i> Uploaded notes list</a>
         </p>
     </div>
 

@@ -88,6 +88,19 @@ CREATE TABLE IF NOT EXISTS `past_papers` (
 if (!$conn->query($sqlPast_Papers)) {
     die("past_papers table eka create karanna baha: " . $conn->error);
 }   
+$sqlNote = "
+CREATE TABLE IF NOT EXISTS `Note` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `file_name` VARCHAR(255) NOT NULL,
+    `file_path` VARCHAR(255) NOT NULL,
+    `uploaded_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+";
+
+if (!$conn->query($sqlNote)) {
+    die("Note table eka create karanna baha: " . $conn->error);
+}
 
 
 $sqlCreateClassroomUpdates = "
