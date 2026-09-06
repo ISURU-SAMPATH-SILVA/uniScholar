@@ -32,12 +32,16 @@ if (!isset($activePage)) {
                 <a href="admin_search.php"><img src="../img/icon/loupe.png" alt="" class="Admin-icon-img"> Search</a>
             </li>
              <li class="<?php echo $activePage === 'student' ? 'active' : ''; ?>">
-                <a href="admin_student.php"><img src="../img/icon/user.png" alt="" class="Admin-icon-img"> Student</a>
+                <a href="admin_student.php"><img src="../img/icon/graduated.png" alt="" class="Admin-icon-img"> Student</a>
             </li>
            
             <li class="<?php echo $activePage === 'classroom' ? 'active' : ''; ?>">
                 <a href="admin_classroom.php"><img src="../img/icon/home.png" alt="" class="Admin-icon-img"> Classroom</a>
             </li>
+              <li class="<?php echo $activePage === 'Admission' ? 'active' : ''; ?>">
+                <a href="admin-admission.php"><img src="../img/icon/edit.png" alt="" class="Admin-icon-img"> Admission</a>
+            </li>
+          
           
            
             <li class="<?php echo $activePage === 'course' ? 'active' : ''; ?>">

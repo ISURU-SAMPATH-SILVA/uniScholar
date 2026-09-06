@@ -20,7 +20,7 @@
         <?php require 'admin_slide_bar_script.php'; ?>
 
         <?php
-  
+
         require '../database/connection.php'; /*data base eke path eka*/
 
         $successMsg = '';
@@ -46,7 +46,7 @@
             $userId  = (int) $_POST['user_id'];
             $newRole = $_POST['new_role'];
 
-          
+
             $allowedRoles = ['user', 'admin'];
             if (in_array($newRole, $allowedRoles, true)) {
 
@@ -79,7 +79,7 @@
             mysqli_stmt_close($stmt);
         }
 
-    
+
         $users = [];
         $result = mysqli_query($conn, "SELECT id, fname, lname, email, role, university, choose_your_faculty, study_year, semester FROM users ORDER BY role DESC, id DESC");
         if ($result) {
@@ -91,7 +91,7 @@
 
         <!-- Main content -->
         <main class="Admin-main">
-            
+
 
             <div class="Admin-topbar">
                 <div class="Admin-topbar-search">
@@ -103,8 +103,8 @@
                 </div>
             </div>
 
-            <h1 class="Admin-page-title">Manage Users</h1>
-            
+            <h1 class="Admin-page-title">Admin Dashboard</h1>
+
 
             <div class="Admin-stats-grid">
                 <div class="Admin-stat-card">
@@ -148,68 +148,48 @@
                     <?= htmlspecialchars($errorMsg) ?>
                 </div>
             <?php endif; ?>
+            <div class="Admin-stats-grid">
 
-            <div class="Admin-panel">
-                <div class="Admin-panel-header">
-                    <h3>All Users (<?= count($users) ?>)</h3>
-                </div>
-                <div class="Admin-table-wrap">
-                    <table class="Admin-table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>University</th>
-                                <th>Faculty</th>
-                                <th>Current Role</th>
-                                <th>Delete</th>
-                                <th>Change Role</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (count($users) > 0): ?>
-                                <?php foreach ($users as $u): ?>
-                                    <tr>
-                                        <td><?= htmlspecialchars($u['id']) ?></td>
-                                        <td><?= htmlspecialchars($u['fname'] . ' ' . $u['lname']) ?></td>
-                                        <td><?= htmlspecialchars($u['email']) ?></td>
-                                        <td><?= htmlspecialchars($u['university']) ?></td>
-                                        <td><?= htmlspecialchars($u['choose_your_faculty']) ?></td>
-                                        <td>
-                                            <?php if ($u['role'] === 'admin'): ?>
-                                                <span class="Admin-badge Admin-badge-active">Admin</span>
-                                            <?php else: ?>
-                                                <span class="Admin-badge Admin-badge-pending">User</span>
-                                            <?php endif; ?>
-                                        </td>
-                                         <td>
-                                            <form method="POST" onsubmit="return confirm('Sure da me user delete karann?');">
-                                                <input type="hidden" name="user_id" value="<?= htmlspecialchars($u['id']) ?>">
-                                                <button type="submit" name="update_delete" class="btn btn-sm btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                        <td>
-                                            <form method="POST" style="display:flex; gap:6px; align-items:center;">
-                                                <input type="hidden" name="user_id" value="<?= htmlspecialchars($u['id']) ?>">
-                                                <select name="new_role" style="padding:4px 8px; border-radius:5px;">
-                                                    <option value="user" <?= $u['role'] === 'user' ? 'selected' : '' ?>>User</option>
-                                                    <option value="admin" <?= $u['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>
-                                                </select>
-                                                <button type="submit" name="update_role" class="btn btn-sm btn-primary">Update</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td colspan="8" style="text-align:center;">No users found.</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
+                <a href="admin-classroom-add.php">
+                    <div class="Admin-stat-card">
+
+                        <div>
+                            <h5><b>Create New
+                                    Clasroom</b></h5>
+                        </div>
+                    </div>
+                </a>
+                <a href="admin-admission.php">
+                    <div class="Admin-stat-card">
+
+                        <div>
+                            <h5><b>Create New
+                                    Admission</b></h5>
+                        </div>
+                    </div>
+                </a>
+                <a href="admin-course-add.php">
+                    <div class="Admin-stat-card">
+
+                        <div>
+                            <h5><b>  Create New
+                Course</b></h5>
+                        </div>
+                    </div>
+                </a>
+              
+                <a href="Note.php">
+                    <div class="Admin-stat-card">
+
+                        <div>
+                            <h5><b>Create New
+                                    Note</b></h5>
+                        </div>
+                    </div>
+                </a>
             </div>
+
+
 
         </main>
     </div>
