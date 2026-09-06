@@ -37,7 +37,7 @@ if (
     die("Please complete all fields.");
 }
 
-/* Update user's university details */
+
 
 $sql = "UPDATE users
         SET university = ?,
