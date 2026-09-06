@@ -11,11 +11,11 @@
   <button type="submit" class="search-btn">Search</button>
   
   <ul id="searchDropdown" class="dropdown-menu">
-    <li><a href="#">GPA Calculator</a></li>
-    <li><a href="#">Course Modules</a></li>
-    <li><a href="#">Past Papers</a></li>
-    <li><a href="#">Timetable & Calendar</a></li>
-    <li><a href="#">About UniScholar</a></li>
+    <li><a href="gpa-calculator.php">GPA Calculator</a></li>
+    <li><a href="course-modules.php">Course Modules</a></li>
+    <li><a href="past-papers.php">Past Papers</a></li>
+    <li><a href="timetable-calendar.php">Timetable & Calendar</a></li>
+    <li><a href="about-unschoolar.php">About UniScholar</a></li>
   </ul>
 </div>
 
@@ -47,7 +47,6 @@ function filterSearch() {
   dropdown.style.display = hasResults ? 'block' : 'none';
 }
 
-// Search bar eken eliye click kalama dropdown eka close wenna
 document.addEventListener('click', function(e) {
   let searchContainer = document.querySelector('.search-container');
   let dropdown = document.getElementById('searchDropdown');

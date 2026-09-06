@@ -14,7 +14,7 @@
 <body>
     <?php require 'navbar.php'; ?>
     <?php require 'search.php'; ?>
-    <?php require 'calendar.php'; ?>
+   
     
     <?php require 'footer.php'; ?> 
 </body>
