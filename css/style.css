@@ -1776,40 +1776,82 @@ color: var(--color-primary);
     z-index: 10;
     color: #555;
 }
-.search-container {
-  position: relative;
-  display: inline-block;
-  width: 50%; /* Oyage requirement ekata anuwa width eka wadi/adu karaganna */
-}
 
-/* Search Dropdown Styling */
-.dropdown-menu {
-  display: none; /* Mulin hide wela thiyenne */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #0b132b; /* Website theme ekata galapena dark color ekak */
-  border: 1px solid #f77f00; /* Border color eka */
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-  z-index: 1000;
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0 0;
-  max-height: 200px;
-  overflow-y: auto;
-}
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 600px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
 
-.dropdown-menu li a {
-  color: #ffffff;
-  padding: 10px 15px;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
-  transition: background 0.2s;
-}
+    .main-search-input {
+      width: 100%;
+      height: 36px;
+      padding: 6px 12px;
+      background-color: #0b132b;
+      border: 1px solid #1c2541;
+      border-radius: 6px 0 0 6px;
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      box-sizing: border-box;
+    }
 
+<<<<<<< HEAD
+    .search-btn {
+      height: 36px;
+      padding: 0 16px;
+      background-color: #f77f00;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      box-sizing: border-box;
+      transition: background 0.2s;
+    }
+
+    .search-btn:hover {
+      background-color: #e06d00;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #0b132b;
+      border: 1px solid #f77f00;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      list-style: none;
+      padding: 0;
+      margin: 2px 0 0 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .dropdown-menu li a {
+      color: #ffffff;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+      font-size: 13px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f77f00;
+      color: #000000;
+    }
+=======
 .dropdown-menu li a:hover {
   background-color: #f77f00; /* Hover karaddi orange color eka */
   color: #000;
@@ -2010,3 +2052,4 @@ color: var(--color-primary);
     max-width: 100%;
   }
 }
+>>>>>>> 15d33f6d37771e47f8ffb6c898e1e35d65f7c678

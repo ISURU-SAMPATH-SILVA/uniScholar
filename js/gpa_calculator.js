@@ -102,17 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const gradeKey = gradeSelect.value;
 
     if (!universitySelect.value) {
-      alert('University ekak select karanna.');
+      alert('Select a University.');
       return;
     }
     if (!code || !year || !semester || !credits || !gradeKey) {
-      alert('Course add karanna kalin okkoma fields fill karanna.');
+      alert('Fill in all the files before adding the coirse.');
       return;
     }
 
     const points = GRADE_POINTS[gradeKey];
     if (points === undefined) {
-      alert('Valid grade ekak select karanna.');
+      alert('Select the Valid grade ');
       return;
     }
 
