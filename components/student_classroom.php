@@ -29,6 +29,7 @@ $fullName = $_SESSION['fname'] . " " . $_SESSION['lname'];
 </head>
 
 <body>
+     <?php require 'navbar.php'; ?>
 
     <div class="Admin-wrapper">
 

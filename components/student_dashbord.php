@@ -107,7 +107,7 @@ $semester = $_SESSION['semester'];
                     </div>
                 </a>
 
-                <a href="Last Note.php">
+                <a href="student_classroom.php">
                     <div class="Admin-stat-card">
 
                         <div>
@@ -132,14 +132,11 @@ $semester = $_SESSION['semester'];
                     </div>
                 </a>
 
-
-
-
-
             </div>
-
-
-
+            <div class="Course-heading">
+                <h3>YOUR TAGLINE HERE</h3>
+                <h1>Select the program tailored to your success</h1>
+            </div>
 
         </main>
     </div>
