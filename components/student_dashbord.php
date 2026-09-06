@@ -29,14 +29,16 @@ $semester = $_SESSION['semester'];
 </head>
 
 <body>
+    <?php require 'navbar.php'; ?>
     <div class="Admin-wrapper">
 
         <?php require 'studend_slide_bar.php'; ?>
         <?php require 'student_slide_bar_script.php'; ?>
 
+
         <main class="Admin-main">
 
-            <div class="Admin-topbar">
+            <div class="Admin-topbar ">
                 <div class="Admin-topbar-search">
                     <input type="text" placeholder="Search students, courses...">
                 </div>
@@ -72,47 +74,64 @@ $semester = $_SESSION['semester'];
                     <div>
 
                         <p>Semester</p>
-                         <h2><?php echo htmlspecialchars($semester); ?></h2>
+                        <h2><?php echo htmlspecialchars($semester); ?></h2>
                     </div>
                 </div>
 
             </div>
 
             <div class="Admin-stats-grid">
-               
-                <a href="Past-Paper.php">
+
+                <a href="student_Past_Papers_Viwe.php">
                     <div class="Admin-stat-card">
-                        
+
                         <div>
-                            <h5><b>Explore</b></h5>
+                            <h5><b>Past Papers</b></h5>
                         </div>
                     </div>
                 </a>
                 <a href="Contact.php">
                     <div class="Admin-stat-card">
-                        
-                        <div >
+
+                        <div>
                             <h5><b>Contact</b></h5>
                         </div>
                     </div>
                 </a>
                 <a href="GPA.php">
                     <div class="Admin-stat-card">
-                       
+
                         <div>
                             <h5><b>GPA-Cal</b></h5>
                         </div>
                     </div>
                 </a>
+
+                <a href="Last Note.php">
+                    <div class="Admin-stat-card">
+
+                        <div>
+                            <h5><b>Last Note</b></h5>
+                        </div>
+                    </div>
+                </a>
                 <a href="Course.php">
                     <div class="Admin-stat-card">
-                        
+
                         <div>
                             <h5><b>Course</b></h5>
                         </div>
                     </div>
                 </a>
-                
+                <a href="Contact.php">
+                    <div class="Admin-stat-card">
+
+                        <div>
+                            <h5><b>Need Help</b></h5>
+                        </div>
+                    </div>
+                </a>
+
 
 
 

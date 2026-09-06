@@ -40,6 +40,9 @@ if (!isset($activePage)) {
             <li class="<?php echo $activePage === 'course' ? 'active' : ''; ?>">
                 <a href="admin-course.php"><img src="../img/icon/folder.png" alt="" class="Admin-icon-img"> Course</a>
             </li>
+            <li class="<?php echo $activePage === 'Past_Papers' ? 'active' : ''; ?>">
+                <a href="Past_Papers.php"><img src="../img/icon/folder.png" alt="" class="Admin-icon-img"> Past Papers</a>
+            </li>
         </ul>
     </nav>
 
