@@ -6,6 +6,7 @@ A database-driven web application where students can upload, browse, and downloa
 ## 🔗 Project Resources
 * **🎨 Figma Design:** [View Wireframes & UI Components](https://www.figma.com/design/jELQAJaf5DkNNVfiscqRnF/uniScholar?node-id=12-2&t=wD71Vq9IuCy68lJv-1)
 * **📄 Project Proposal:** [Read Documentation (OneDrive)](https://1drv.ms/w/c/934766f0936f6af8/IQAMKWC3WVbjQZtNHSvbXc7lAeTUH-EKvZGMdhdKr-umInk?e=3r6cjM)
+* **📄 Final Project Report:** [View uniScholar Final Project Report](uniScholar%20Final%20Project%20Report.pdf)
 
 ---
 ## 🏛️ Academic Context
@@ -106,7 +107,12 @@ You can log in using this pre-configured testing account or register a new one:
 * **Email:** `admin@gmail.com`
 * **Password:** `123456`
 * **Email:** `user@gmail.com`
-* **Password:** `123456`
+* **Password:** `123456`  
+---
+
+✏️ Project Documentation
+
+📄 [View uniScholar Final Project Report](uniScholar%20Final%20Project%20Report.pdf)
 
 ---
 
